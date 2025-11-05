@@ -185,6 +185,7 @@ nav {
     
     .nav-links.active {
         right: 0;
+        /* this is nav */
     }
     
     .dropdown-content {
