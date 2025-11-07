@@ -2673,6 +2673,51 @@
             line-height: 1.6;
             margin: 0;
         }
+        /* Required field asterisk styling */
+.required-asterisk {
+    color: var(--accent);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+/* Form group label styling */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--light);
+    font-weight: 500;
+}
+
+/* Validation hint styling */
+.validation-hint {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: var(--gray);
+    opacity: 0.8;
+}
+
+/* Invalid input styling */
+.form-control:invalid {
+    border-color: var(--accent);
+    background: rgba(255, 51, 102, 0.05);
+}
+
+.form-control:valid {
+    border-color: var(--success);
+    background: rgba(39, 174, 96, 0.05);
+}
+
+/* Focus state for better UX */
+.form-control:focus:invalid {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(255, 51, 102, 0.2);
+}
+
+.form-control:focus:valid {
+    border-color: var(--success);
+    box-shadow: 0 0 0 2px rgba(39, 174, 96, 0.2);
+}
 
         /* Responsive Modal */
         @media (max-width: 768px) {
@@ -2803,6 +2848,7 @@
             .success-message p {
                 font-size: 0.9rem;
             }
+
         }
 
         /* iPad and Tablet Specific Navbar Fixes */
@@ -3500,89 +3546,115 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact section-padding" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Ready to start your next project? Connect with our team to discuss your requirements and find the
-                    right solution.</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div>
-                        <h3>Contact Information</h3>
-                        <p>Have questions about our software development services or want to discuss a potential
-                            project? Reach out to us through any of the channels below.</p>
-                    </div>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Our Location</h4>
-                                <a href="https://www.google.com/maps?q=Zonixtec+IT+Services+PVT+LTD+2nd+Floor,+Vasukamal+Express,+Rohan+Sehar+Ln,+Pan+Card+Club+Rd,+behind+Beverly+Hills+Society,+Samarth+Colony,+Baner"
-                                    target="_blank" rel="noopener">
-                                    Zonixtec IT Services PVT LTD 2nd Floor, Vasukamal Express, Rohan Sehar Ln, Pan Card
-                                    Club Rd, behind Beverly Hills Society, Samarth Colony, Baner 411045, Pune,
-                                    Maharashtra, India
-                                </a>
-                            </div>
+    <!-- Contact Section -->
+<section class="contact section-padding" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Ready to start your next project? Connect with our team to discuss your requirements and find the
+                right solution.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div>
+                    <h3>Contact Information</h3>
+                    <p>Have questions about our software development services or want to discuss a potential
+                        project? Reach out to us through any of the channels below.</p>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Call Us</h4>
-                                <a href="tel:+919209670926">+91 9209670926</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-text">
-                                <h4>Email Us</h4>
-                                <a href="mailto:info@zonixtec.com">support@office.zonixtec.com</a>
-                            </div>
+                        <div class="contact-text">
+                            <h4>Our Location</h4>
+                            <a href="https://www.google.com/maps?q=Zonixtec+IT+Services+PVT+LTD+2nd+Floor,+Vasukamal+Express,+Rohan+Sehar+Ln,+Pan+Card+Club+Rd,+behind+Beverly+Hills+Society,+Samarth+Colony,+Baner"
+                                target="_blank" rel="noopener">
+                                Zonixtec IT Services PVT LTD 2nd Floor, Vasukamal Express, Rohan Sehar Ln, Pan Card
+                                Club Rd, behind Beverly Hills Society, Samarth Colony, Baner 411045, Pune,
+                                Maharashtra, India
+                            </a>
                         </div>
                     </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/company/zonixtec-it-services-private-limited/"
-                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.instagram.com/zonixtec_it_services" aria-label="Instagram"><i
-                                class="fab fa-instagram"></i></a>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Call Us</h4>
+                            <a href="tel:+919209670926">+91 9209670926</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email Us</h4>
+                            <a href="mailto:info@zonixtec.com">support@office.zonixtec.com</a>
+                        </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" class="form-control" required
-                                pattern="^[A-Za-z\s]+$" title="Please enter letters and spaces only" inputmode="text"
-                                autocomplete="name" onkeypress="return /[a-zA-Z\s]/.test(event.key)">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Send Message</button>
-                    </form>
-                    <div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/company/zonixtec-it-services-private-limited/"
+                        aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/zonixtec_it_services" aria-label="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name <span class="required-asterisk">*</span></label>
+                        <input type="text" id="name" name="name" class="form-control" required
+                            pattern="^[A-Za-z\s]{2,}$" 
+                            title="Please enter at least 2 characters (letters and spaces only)" 
+                            inputmode="text"
+                            autocomplete="name" 
+                            minlength="2"
+                            maxlength="100"
+                            onkeypress="return /[a-zA-Z\s]/.test(event.key)">
+                        <small class="validation-hint">Minimum 2 characters required</small>
                     </div>
+                    <div class="form-group">
+                        <label for="email">Your Email <span class="required-asterisk">*</span></label>
+                        <input type="email" 
+       id="email" 
+       name="email" 
+       class="form-control" 
+       required
+       pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+       title="Please enter a valid email address (e.g., name@example.com)"
+       autocomplete="email"
+       inputmode="email"
+       maxlength="100">
+                        <small class="validation-hint">Enter a valid email address</small>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject <span class="required-asterisk">*</span></label>
+                        <input type="text" id="subject" name="subject" class="form-control" required
+                            minlength="5"
+                            maxlength="200"
+                            title="Please enter at least 5 characters">
+                        <small class="validation-hint">Minimum 5 characters required</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message <span class="required-asterisk">*</span></label>
+                        <textarea id="message" name="message" class="form-control" required
+                            minlength="10"
+                            maxlength="1000"
+                            title="Please enter at least 10 characters"></textarea>
+                        <small class="validation-hint">Minimum 10 characters required</small>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                <div id="form-message" style="display: none; margin-top: 15px; padding: 10px; border-radius: 5px;">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -3693,7 +3765,6 @@
                     <div class="footer-links">
                         <a href="index.html"><i class="fas fa-chevron-right"></i> Home</a>
                         <a href="FAQs.html"><i class="fas fa-chevron-right"></i> FAQ Section</a>
-                        <a href="Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
                         <a href="Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
                         <a href="aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
                         <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
@@ -3840,68 +3911,93 @@
 
         // Navigation functionality removed - handled by external files
 
+        // Contact Form Functionality with localStorage database
         // Contact Form with LocalStorage Database (Working Solution)
-        document.addEventListener('DOMContentLoaded', function () {
-            const contactForm = document.getElementById('contactForm');
-            const formMessage = document.getElementById('form-message');
+document.addEventListener('DOMContentLoaded', function () {
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('form-message');
 
-            if (contactForm) {
-                contactForm.addEventListener('submit', function (e) {
-                    e.preventDefault();
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
 
-                    const submitBtn = contactForm.querySelector('.submit-btn');
-                    const originalText = submitBtn.textContent;
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
 
-                    submitBtn.disabled = true;
-                    submitBtn.textContent = 'Saving...';
-                    formMessage.style.display = 'none';
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Saving...';
+            formMessage.style.display = 'none';
 
-                    const formData = {
-                        id: Date.now(), // Unique ID
-                        name: document.getElementById('name').value.trim(),
-                        email: document.getElementById('email').value.trim(),
-                        subject: document.getElementById('subject').value.trim(),
-                        message: document.getElementById('message').value.trim(),
-                        timestamp: new Date().toLocaleString(),
-                        ip: 'local',
-                        status: 'new'
-                    };
+            const formData = {
+                id: Date.now(), // Unique ID
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                subject: document.getElementById('subject').value.trim(),
+                message: document.getElementById('message').value.trim(),
+                timestamp: new Date().toLocaleString(),
+                ip: 'local',
+                status: 'new'
+            };
 
-                    // Validation
-                    if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-                        showMessage('Please fill in all fields.', 'error');
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                        return;
-                    }
-
-                    if (!isValidEmail(formData.email)) {
-                        showMessage('Please enter a valid email address.', 'error');
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                        return;
-                    }
-
-                    // Save to localStorage database
-                    try {
-                        saveToLocalDatabase(formData);
-                        showMessage('✅ Thank you! Your message has been saved successfully. We will contact you soon.', 'success');
-                        contactForm.reset();
-
-                        // Log to console for verification
-                        console.log('📁 Saved to Local Database:', formData);
-                        displayAllMessages(); // Show all saved messages in console
-
-                    } catch (error) {
-                        showMessage('Thank you! Message received. (Temporary storage)', 'success');
-                        contactForm.reset();
-                        console.log('Form data:', formData);
-                    } finally {
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = originalText;
-                    }
-                });
+            // Enhanced Validation
+            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
+                showMessage('Please fill in all required fields.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
             }
+
+            // Name validation (min 2 characters)
+            if (formData.name.length < 2) {
+                showMessage('Name must be at least 2 characters long.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
+            }
+
+            // Subject validation (min 5 characters)
+            if (formData.subject.length < 5) {
+                showMessage('Subject must be at least 5 characters long.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
+            }
+
+            // Message validation (min 10 characters)
+            if (formData.message.length < 10) {
+                showMessage('Message must be at least 10 characters long.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
+            }
+
+            if (!isValidEmail(formData.email)) {
+                showMessage('Please enter a valid email address.', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+                return;
+            }
+
+            // Save to localStorage database
+            try {
+                saveToLocalDatabase(formData);
+                showMessage('✅ Thank you! Your message has been saved successfully. We will contact you soon.', 'success');
+                contactForm.reset();
+
+                // Log to console for verification
+                console.log('📁 Saved to Local Database:', formData);
+                displayAllMessages(); // Show all saved messages in console
+
+            } catch (error) {
+                showMessage('Thank you! Message received. (Temporary storage)', 'success');
+                contactForm.reset();
+                console.log('Form data:', formData);
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        });
+    }
 
             // Save to localStorage database
             function saveToLocalDatabase(formData) {
