@@ -135,10 +135,6 @@
             gap: 30px;
             align-items: center;
         }
-        
-
-
-
 
         .nav-links a {
             color: var(--light);
@@ -168,7 +164,8 @@
             width: 100%;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--secondary);
         }
 
@@ -201,109 +198,107 @@
             width: 100%;
             height: 2px;
             background-color: var(--secondary);
-
         }
 
-
         /* ===== Dropdown Styles ===== */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
 
-.dropdown-toggle {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-.dropdown-toggle i {
-    font-size: 0.8rem;
-    transition: transform 0.3s ease;
-}
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
 
-.dropdown:hover .dropdown-toggle i {
-    transform: rotate(180deg);
-}
+        .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
 
-/* .dropdown-content {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: rgba(15, 23, 42, 0.98);
-    backdrop-filter: blur(15px);
-    min-width: 280px;
-    border-radius: 8px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(100, 116, 139, 0.3);
-    z-index: 1000;
-    padding: 8px 0;
-    margin-top: 8px;
-    overflow: hidden;
-}
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
+            min-width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 8px;
+            overflow: hidden;
+        }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-    animation: fadeInUp 0.3s ease;
-} */
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
 
-.dropdown-content a {
-    display: block;
-    padding: 12px 20px;
-    color: var(--light);
-    text-decoration: none;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border-left: 4px solid transparent;
-    margin: 2px 8px;
-    border-radius: 4px;
-}
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 4px solid transparent;
+            margin: 2px 8px;
+            border-radius: 4px;
+        }
 
-.dropdown-content a:hover {
-    background: rgba(37, 99, 235, 0.15);
-    color: var(--secondary);
-    border-left: 4px solid var(--secondary);
-    transform: translateX(5px);
-}
+        .dropdown-content a:hover {
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--secondary);
+            border-left: 4px solid var(--secondary);
+            transform: translateX(5px);
+        }
 
- .dropdown-scroll {
-    max-height: 300px; /* Slightly less than parent to account for padding */
-    overflow-y: auto; /* Enable vertical scrolling */
-    padding: 8px 0; /* Add padding to scroll container */
-}
+        .dropdown-scroll {
+            max-height: 300px;
+            overflow-y: auto;
+            padding: 8px 0;
+        }
 
-/* Custom scrollbar styling */
-.dropdown-scroll::-webkit-scrollbar {
-    width: 6px;
-}
+        .dropdown-scroll::-webkit-scrollbar {
+            width: 6px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-track {
-    background: rgba(15, 23, 42, 0.5);
-    border-radius: 3px;
-}
+        .dropdown-scroll::-webkit-scrollbar-track {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 3px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-thumb {
-    background: var(--secondary);
-    border-radius: 3px;
-}
+        .dropdown-scroll::-webkit-scrollbar-thumb {
+            background: var(--secondary);
+            border-radius: 3px;
+        }
 
-.dropdown-scroll::-webkit-scrollbar-thumb:hover {
-    background: var(--primary);
-}
+        .dropdown-scroll::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
 
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(-8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Contact Hero Section */
         .contact-hero {
             padding: 200px 0 100px;
@@ -653,7 +648,6 @@
 
         /* Footer */
         .footer {
-            /* background: rgba(2, 6, 23, 0.9); */
             padding: 70px 0 0;
             border-top: 1px solid rgba(100, 116, 139, 0.2);
         }
@@ -677,17 +671,6 @@
             position: relative;
             padding-bottom: 10px;
         }
-
-        /* .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--tech-gradient);
-            border-radius: 3px;
-        } */
 
         .footer-col p {
             color: #cbd5e1;
@@ -805,16 +788,16 @@
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
-            
+
             .contact-card {
                 margin-bottom: 25px;
             }
-            
+
             .contact-links {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
-            
+
             .footer-container {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -825,70 +808,8 @@
                 max-height: 250px;
             }
 
-            /* Header adjustments */
             .logo {
                 font-size: 1.5rem;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 100vw;
-                height: 100vh;
-                background: rgba(15, 23, 42, 0.98);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 30px;
-                transition: right 0.4s ease;
-                z-index: 999;
-                overflow-y: auto;
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links a {
-                font-size: 1.2rem;
-                padding: 15px 30px;
-                text-align: center;
-                width: auto;
-            }
-
-            /* Mobile dropdown styles */
-            .dropdown {
-                width: auto;
-            }
-
-            .dropdown-content {
-                position: static;
-                background: rgba(15, 23, 42, 0.9);
-                box-shadow: none;
-                border: 1px solid rgba(100, 116, 139, 0.2);
-                border-radius: 8px;
-                margin: 10px 0;
-                display: none;
-                width: 250px;
-                padding: 8px 0;
-            }
-
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-
-            .dropdown-toggle {
-                /* justify-content: center; */
-                padding: 15px 20px;
-                gap: 10px;
-            }
-
-            .dropdown-content a {
-                padding: 12px 20px;
-                font-size: 0.95rem;
-                margin: 2px 5px;
             }
 
             .mobile-menu-btn {
@@ -976,6 +897,7 @@
         }
 
         @media (max-width: 576px) {
+
             /* Header */
             nav {
                 padding: 15px 0;
@@ -1121,7 +1043,7 @@
                 font-size: 1rem;
                 margin-bottom: 6px;
             }
-            
+
             .info-item {
                 flex-direction: row;
                 align-items: flex-start;
@@ -1129,7 +1051,7 @@
                 margin-bottom: 15px;
                 text-align: left;
             }
-            
+
             .info-content {
                 text-align: left;
                 flex: 1;
@@ -1167,14 +1089,36 @@
             .contact-card:hover {
                 transform: none;
             }
-            
+
             .info-icon {
                 pointer-events: none;
             }
         }
     </style>
-    <!-- Responsive Fixes CSS -->
 
+    <!-- Footer dropdown styles -->
+    <style>
+        .footer-dropdown-content {
+            display: none;
+            margin-left: 15px;
+        }
+
+        .footer-dropdown.open .footer-dropdown-content {
+            display: block;
+        }
+
+        .footer-dropdown-header {
+            display: flex;
+            color: var(--gray);
+            justify-content: space-between;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+
+        .footer-dropdown-header:hover {
+            color: var(--secondary);
+        }
+    </style>
 
     <!-- Navbar CSS -->
     <link rel="stylesheet" href="./CSS/navbar.css">
@@ -1189,11 +1133,10 @@
                 <a href="index.html" class="logo">
                     <img src="./Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
                 </a>
-                <div class="nav-links">
 
+                <div class="nav-links">
                     <a href="aboutus.html">About Us</a>
 
-                    <!-- Services Dropdown -->
                     <div class="dropdown">
                         <a href="Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
@@ -1219,8 +1162,8 @@
                         <i class="fas fa-phone-alt"></i>Book A 30 Min Call
                     </a>
                 </div>
-                
-                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="window.toggleMobileMenu && window.toggleMobileMenu()">
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -1229,7 +1172,7 @@
         </div>
     </header>
 
-        <!-- Contact Hero Section -->
+    <!-- Contact Hero Section -->
     <section class="contact-hero">
         <div class="container">
             <div class="contact-hero-content">
@@ -1603,7 +1546,6 @@
                             <i class="fas fa-chevron-right"></i> Mission & Vision
                         </a>
 
-
                         <a href="aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
                         <a href="aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
                         <a href="carrer.html"><i class="fas fa-chevron-right"></i> Careers</a>
@@ -1642,140 +1584,12 @@
         </div>
     </footer>
 
-    <style>
-        .footer-dropdown-content {
-            display: none;
-            margin-left: 15px;
-        }
-
-        .footer-dropdown.open .footer-dropdown-content {
-            display: block;
-        }
-
-        .footer-dropdown-header {
-            display: flex;
-            color: var(--gray);
-            /* transform: ; */
-            justify-content: space-between;
-            cursor: pointer;
-            margin: 5px 0;
-        }
-
-        .footer-dropdown-header:hover {
-            color: var(--secondary);
-        }
-    </style>
-
     <script>
+        // Footer dropdown functionality
         document.querySelectorAll('.footer-dropdown-header').forEach(header => {
             header.addEventListener('click', () => {
                 const parent = header.parentElement;
                 parent.classList.toggle('open');
-            });
-        });
-    </script>
-
-    <script>
-        // Fix layout stability and prevent alignment issues on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add loaded class to body to fade in content
-            setTimeout(() => {
-                document.body.classList.add('loaded');
-            }, 100);
-            
-            // Force layout recalculation to prevent alignment issues
-            const sections = document.querySelectorAll('.contact-section, .footer-container');
-            sections.forEach(section => {
-                section.style.display = 'none';
-                section.offsetHeight; // Force reflow
-                section.style.display = '';
-            });
-        });
-
-        // Mobile menu toggle with improved functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            const navLinks = document.querySelector('.nav-links');
-            const body = document.body;
-            
-            if (mobileMenuBtn && navLinks) {
-                mobileMenuBtn.addEventListener('click', function () {
-                    navLinks.classList.toggle('active');
-                    body.classList.toggle('menu-open');
-                    
-                    // Prevent scroll when menu is open
-                    if (navLinks.classList.contains('active')) {
-                        body.style.overflow = 'hidden';
-                    } else {
-                        body.style.overflow = '';
-                    }
-                });
-                
-                // Close menu when clicking on a link
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.addEventListener('click', function() {
-                        navLinks.classList.remove('active');
-                        body.classList.remove('menu-open');
-                        body.style.overflow = '';
-                    });
-                });
-                
-                // Close menu when clicking outside
-                document.addEventListener('click', function(e) {
-                    if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                        navLinks.classList.remove('active');
-                        body.classList.remove('menu-open');
-                        body.style.overflow = '';
-                    }
-                });
-            }
-        });
-
-        // Mobile dropdown functionality with improved responsive behavior
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function (e) {
-                    // Always prevent default on mobile dropdown toggles
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        
-                        const dropdown = this.parentElement;
-                        const isActive = dropdown.classList.contains('active');
-                        
-                        // Close all other dropdowns
-                        document.querySelectorAll('.dropdown').forEach(otherDropdown => {
-                            if (otherDropdown !== dropdown) {
-                                otherDropdown.classList.remove('active');
-                            }
-                        });
-                        
-                        // Toggle current dropdown
-                        dropdown.classList.toggle('active', !isActive);
-                    }
-                });
-            });
-
-            // Close dropdowns when clicking outside on mobile
-            document.addEventListener('click', function (e) {
-                if (window.innerWidth <= 768) {
-                    if (!e.target.closest('.dropdown') && !e.target.closest('.mobile-menu-btn')) {
-                        document.querySelectorAll('.dropdown').forEach(dropdown => {
-                            dropdown.classList.remove('active');
-                        });
-                    }
-                }
-            });
-            
-            // Handle window resize to reset dropdowns
-            window.addEventListener('resize', function() {
-                if (window.innerWidth > 768) {
-                    document.querySelectorAll('.dropdown').forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                    });
-                }
             });
         });
 
@@ -1783,14 +1597,14 @@
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
                 const faqItem = question.parentElement;
-                
+
                 // Close other FAQs
                 document.querySelectorAll('.faq-item').forEach(item => {
                     if (item !== faqItem && item.classList.contains('active')) {
                         item.classList.remove('active');
                     }
                 });
-                
+
                 // Toggle current FAQ
                 faqItem.classList.toggle('active');
             });
@@ -1840,42 +1654,20 @@
             }
         });
 
-        // Newsletter functionality
+        // Fix layout stability and prevent alignment issues on page load
         document.addEventListener('DOMContentLoaded', function () {
-            const btn = document.getElementById('newsletter-btn');
-            const emailInput = document.getElementById('newsletter-email');
-            const thankyou = document.getElementById('newsletter-thankyou');
-            if (btn && emailInput && thankyou) {
-                btn.addEventListener('click', function () {
-                    if (emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
-                        thankyou.style.display = 'block';
-                        setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
-                        emailInput.value = '';
-                    } else {
-                        emailInput.focus();
-                        emailInput.style.borderColor = '#e74c3c';
-                        setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
-                    }
-                });
-            }
-        });
-
-        // Footer dropdown functionality
-        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const parent = header.parentElement;
-                parent.classList.toggle('open');
-            });
-        });
-
-        // Prevent layout shifts on orientation change
-        window.addEventListener('orientationchange', function() {
+            // Add loaded class to body to fade in content
             setTimeout(() => {
-                // Force reflow to fix any alignment issues
-                document.body.style.display = 'none';
-                document.body.offsetHeight;
-                document.body.style.display = '';
+                document.body.classList.add('loaded');
             }, 100);
+
+            // Force layout recalculation to prevent alignment issues
+            const sections = document.querySelectorAll('.contact-section, .footer-container');
+            sections.forEach(section => {
+                section.style.display = 'none';
+                section.offsetHeight; // Force reflow
+                section.style.display = '';
+            });
         });
 
         // Viewport height fix for mobile
@@ -1883,7 +1675,7 @@
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         }
-        
+
         setVh();
         window.addEventListener('resize', setVh);
         window.addEventListener('orientationchange', () => {
@@ -1897,89 +1689,87 @@
     <link rel="stylesheet" href="./CSS/chatbot.css">
     <script src="./script/chatbot.js"></script>
 
-
     <!-- Booking Modal -->
-<div class="modal" id="bookingModal">
-    <div class="modal-content">
-        <button class="close-modal" onclick="closeBookingModal()">
-            <i class="fas fa-times"></i>
-        </button>
-        
-        <div class="modal-header">
-            <h2>Book Your Free 30-Minute Consultation</h2>
-            <p>Let's discuss how we can help transform your business</p>
-        </div>
-
-        <form class="booking-form" id="bookingForm">
-            <div class="form-row">
-                <div class="form-group-modal">
-                    <label>Full Name <span>*</span></label>
-                    <input type="text" id="bookingName" placeholder="Enter your full name" required>
-                </div>
-                <div class="form-group-modal">
-                    <label>Email Address <span>*</span></label>
-                    <input type="email" id="bookingEmail" placeholder="your@email.com" required>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group-modal">
-                    <label>Phone Number <span>*</span></label>
-                    <input type="tel" id="bookingPhone" placeholder="+91 999999999" required>
-                </div>
-                <div class="form-group-modal">
-                    <label>Company Name</label>
-                    <input type="text" id="bookingCompany" placeholder="Your company (optional)">
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group-modal">
-                    <label>Preferred Date <span>*</span></label>
-                    <input type="date" id="bookingDate" required>
-                </div>
-                <div class="form-group-modal">
-                    <label>Preferred Time <span>*</span></label>
-                    <input type="time" id="bookingTime" required>
-                </div>
-            </div>
-
-            <div class="form-group-modal">
-                <label>Service Interested In <span>*</span></label>
-                <select id="bookingService" required>
-                    <option value="">Select a service</option>
-                    <option value="CRM Solutions">CRM Solutions</option>
-                    <option value="ERP Solutions">ERP Solutions</option>
-                    <option value="Billing Software">Billing Software</option>
-                    <option value="Website Development">Website Development</option>
-                    <option value="Mobile App Development">Mobile App Development</option>
-                    <option value="AI Solutions">AI Solutions</option>
-                    <option value="Cloud Solutions">Cloud Solutions</option>
-                    <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="UI/UX Design">UI/UX Design</option>
-                    <option value="Other">Other</option>
-                </select>
-            </div>
-
-            <div class="form-group-modal">
-                <label>Message / Additional Details</label>
-                <textarea id="bookingMessage" placeholder="Tell us about your project or questions..."></textarea>
-            </div>
-
-            <button type="submit" class="submit-booking-btn">
-                <i class="fas fa-calendar-check"></i> Book My Call
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeBookingModal()">
+                <i class="fas fa-times"></i>
             </button>
-        </form>
+
+            <div class="modal-header">
+                <h2>Book Your Free 30-Minute Consultation</h2>
+                <p>Let's discuss how we can help transform your business</p>
+            </div>
+
+            <form class="booking-form" id="bookingForm">
+                <div class="form-row">
+                    <div class="form-group-modal">
+                        <label>Full Name <span>*</span></label>
+                        <input type="text" id="bookingName" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group-modal">
+                        <label>Email Address <span>*</span></label>
+                        <input type="email" id="bookingEmail" placeholder="your@email.com" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group-modal">
+                        <label>Phone Number <span>*</span></label>
+                        <input type="tel" id="bookingPhone" placeholder="+91 999999999" required>
+                    </div>
+                    <div class="form-group-modal">
+                        <label>Company Name</label>
+                        <input type="text" id="bookingCompany" placeholder="Your company (optional)">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group-modal">
+                        <label>Preferred Date <span>*</span></label>
+                        <input type="date" id="bookingDate" required>
+                    </div>
+                    <div class="form-group-modal">
+                        <label>Preferred Time <span>*</span></label>
+                        <input type="time" id="bookingTime" required>
+                    </div>
+                </div>
+
+                <div class="form-group-modal">
+                    <label>Service Interested In <span>*</span></label>
+                    <select id="bookingService" required>
+                        <option value="">Select a service</option>
+                        <option value="CRM Solutions">CRM Solutions</option>
+                        <option value="ERP Solutions">ERP Solutions</option>
+                        <option value="Billing Software">Billing Software</option>
+                        <option value="Website Development">Website Development</option>
+                        <option value="Mobile App Development">Mobile App Development</option>
+                        <option value="AI Solutions">AI Solutions</option>
+                        <option value="Cloud Solutions">Cloud Solutions</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="UI/UX Design">UI/UX Design</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group-modal">
+                    <label>Message / Additional Details</label>
+                    <textarea id="bookingMessage" placeholder="Tell us about your project or questions..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-booking-btn">
+                    <i class="fas fa-calendar-check"></i> Book My Call
+                </button>
+            </form>
+        </div>
     </div>
-</div>
 
-<!-- Success Message Overlay -->
-<div class="success-message" id="bookingSuccess">
-    <i class="fas fa-check-circle"></i> 
-    <strong>Your Call is Booked!</strong>
-    <p>Our team will connect with you as soon as possible. Thank you for choosing Zonixtec!</p>
-</div>
-
+    <!-- Success Message Overlay -->
+    <div class="success-message" id="bookingSuccess">
+        <i class="fas fa-check-circle"></i>
+        <strong>Your Call is Booked!</strong>
+        <p>Our team will connect with you as soon as possible. Thank you for choosing Zonixtec!</p>
+    </div>
 
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
