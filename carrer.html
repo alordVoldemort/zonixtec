@@ -2177,8 +2177,9 @@
 
     <script>
         // Global variables
-        let allJobs = [];
-        let filteredJobs = [];
+         let allJobs = [];
+            let filteredJobs = [];
+
 
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
@@ -2187,31 +2188,31 @@
 
         // FAQ functionality
         document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                faqItem.classList.toggle('active');
+                question.addEventListener('click', () => {
+                    const faqItem = question.parentElement;
+                    faqItem.classList.toggle('active');
+                });
             });
-        });
 
         // Newsletter functionality
         document.addEventListener('DOMContentLoaded', function () {
-            const btn = document.getElementById('newsletter-btn');
-            const emailInput = document.getElementById('newsletter-email');
-            const thankyou = document.getElementById('newsletter-thankyou');
-            if (btn && emailInput && thankyou) {
-                btn.addEventListener('click', function () {
-                    if (emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
-                        thankyou.style.display = 'block';
-                        setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
-                        emailInput.value = '';
-                    } else {
-                        emailInput.focus();
-                        emailInput.style.borderColor = '#e74c3c';
-                        setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
-                    }
-                });
-            }
-        });
+                const btn = document.getElementById('newsletter-btn');
+                const emailInput = document.getElementById('newsletter-email');
+                const thankyou = document.getElementById('newsletter-thankyou');
+                if (btn && emailInput && thankyou) {
+                    btn.addEventListener('click', function () {
+                        if (emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
+                            thankyou.style.display = 'block';
+                            setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
+                            emailInput.value = '';
+                        } else {
+                            emailInput.focus();
+                            emailInput.style.borderColor = '#e74c3c';
+                            setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
+                        }
+                    });
+                }
+            });
 
         // Load jobs from backend
         async function loadJobs() {
@@ -2819,6 +2820,8 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
     <strong>Your Call is Booked!</strong>
     <p>Our team will connect with you as soon as possible. Thank you for choosing Zonixtec!</p>
 </div>
+
+
 
 
     <!-- Booking Modal Script -->
