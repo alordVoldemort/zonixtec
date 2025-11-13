@@ -12,6 +12,163 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+
+
+        
+        <style>/* Benefits Section - Custom Styles */
+.benefits-section-padding {
+    padding: 80px 0;
+}
+
+.benefits-section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+    color: #f8fafc;
+}
+
+.benefits-section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #0066ff, #00f2ff);
+    border-radius: 2px;
+}
+
+.benefits-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.benefits-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.benefits-slider-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.benefits-card {
+    /* padding: 22px 10px 18px 10px; */
+    min-width: 158px;
+    /* max-width: 220px; */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.16s ease;
+}
+
+.benefits-card img {
+    width: 100%;
+    max-width: 224px;
+    margin-bottom: 14px;
+    filter: drop-shadow(0px 5px 10px rgba(0, 242, 255, 0.2));
+    transition: filter 0.3s ease;
+}
+
+.benefits-card:hover {
+    transform: scale(1.08);
+}
+
+.benefits-card:hover img {
+    filter: drop-shadow(0px 8px 16px rgba(0, 242, 255, 0.4));
+}
+
+/* Desktop (1025px+): Static Grid - NO Slider */
+@media (min-width: 1025px) {
+    .benefits-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        overflow: visible !important;
+    }
+
+    #benefits-slider-wrapper {
+        width: 100%;
+        overflow: visible !important;
+    }
+
+    #benefits-slider-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* Tablet & Mobile (below 1024px): Enable Slider */
+@media (max-width: 1024px) {
+    .benefits-wrapper {
+        overflow: hidden;
+        position: relative;
+    }
+
+    #benefits-slider-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    #benefits-slider-list {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 34px;
+        transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+        padding: 20px 0;
+    }
+}
+
+/* Tablet View (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .benefits-card {
+        flex: 0 0 calc(50% - 17px);
+        min-width: calc(50% - 17px);
+    }
+}
+
+/* Mobile View (below 768px) */
+@media (max-width: 768px) {
+    .benefits-section-title {
+        font-size: 1.8rem;
+    }
+
+    .benefits-card {
+        /* flex: 0 0 100%; */
+        /* min-width: 100%;
+        max-width: 100%; */
+    }
+}
+
+/* Small Mobile (below 600px) */
+@media (max-width: 600px) {
+    .benefits-section-title {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    .benefits-section-padding {
+        padding: 60px 0;
+    }
+}</style>
     <style>
         :root {
             --primary: #0066ff;
@@ -308,7 +465,7 @@
             display: flex;
             gap: 34px;
             /* transition: transform 0.4s ease-in-out; */
-                transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1);
+                transition: transform 0.9s cubic-bezier(0.25, 0.1, 0.25, 1); /* smoother & slower */
             padding: 20px 0;
         }
 
@@ -777,6 +934,7 @@
         }
     </style>
 
+
    
 </head>
 
@@ -950,31 +1108,9 @@
 
 
 
-        <!-- Benefits Section -->
-       <!-- <section class="section-padding">
-  <h2 class="section-title">How Choosing Zonixtec Helps Your Business</h2>
-  <p class="section-subtitle">
-    Your Trusted Partner for Reliable & Scalable Digital Solutions
-  </p>
-
-  <div class="container benefits-row">
-    
-
-      <div class="testimonial-wrapper">
-                    <div id="testimonial-list" class="testimonial-container">
-                       
-      <div class="benefit-box"><img src="./Assets/Faster workflow execution.png" alt="Faster workflow execution"></div>
-      <div class="benefit-box"><img src="./Assets/Better customer experience.png" alt="Better customer experience"></div>
-      <div class="benefit-box"><img src="./Assets/Higher productivity.png" alt="Higher productivity"></div>
-      <div class="benefit-box"><img src="./Assets/Scalable systems for future growth.png" alt="Scalable systems"></div>
-    </div>
-                    
-                </div>
-  </div>
-</section> -->
 
         <!-- How Choosing Zonixtec Helps Your Business -->
-<section class="section-padding">
+<!-- <section class="section-padding">
   <h2 class="section-title">How Choosing Zonixtec Helps Your Business</h2>
   <div class="container benefits-row">
     <div class="testimonial-wrapper" id="benefit-wrapper">
@@ -986,6 +1122,30 @@
       </div>
     </div>
   </div>
+</section> -->
+
+
+<!-- How Choosing Zonixtec Helps Your Business -->
+<section class="benefits-section-padding" id="zonixtec-benefits">
+    <h2 class="benefits-section-title">How Choosing Zonixtec Helps Your Business</h2>
+    <div class="benefits-container">
+        <div class="benefits-wrapper" id="benefits-slider-wrapper">
+            <div id="benefits-slider-list" class="benefits-slider-container">
+                <div class="benefits-card">
+                    <img src="./Assets/Faster workflow execution.png" alt="Faster workflow execution">
+                </div>
+                <div class="benefits-card">
+                    <img src="./Assets/Better customer experience.png" alt="Better customer experience">
+                </div>
+                <div class="benefits-card">
+                    <img src="./Assets/Higher productivity.png" alt="Higher productivity">
+                </div>
+                <div class="benefits-card">
+                    <img src="./Assets/Scalable systems for future growth.png" alt="Scalable systems">
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 
@@ -1961,6 +2121,81 @@ document.addEventListener("DOMContentLoaded", () => {
   createAutoScroller("testimonial-list", 2000);
 });
 </script>
+
+<script>
+    // ==============================
+// BENEFITS SECTION AUTO SCROLLER (Mobile & Tablet Only)
+// ==============================
+function initBenefitsSlider() {
+  // Only run on mobile and tablet (disable on desktop)
+  if (window.innerWidth >= 1025) return;
+
+  const sliderContainer = document.getElementById("benefits-slider-list");
+  if (!sliderContainer) return;
+
+  const benefitCards = sliderContainer.children;
+  let currentIndex = 0;
+  let autoScrollInterval;
+
+  function getVisibleCards() {
+    if (window.innerWidth > 768) return 2; // Tablet: 2 items
+    return 1; // Mobile: 1 item
+  }
+
+  function scrollBenefits() {
+    const visibleCards = getVisibleCards();
+    const maxIndex = benefitCards.length - visibleCards;
+    currentIndex = (currentIndex + 1) > maxIndex ? 0 : (currentIndex + 1);
+
+    const cardWidth = benefitCards[0].offsetWidth;
+    const gap = 34;
+    const scrollOffset = currentIndex * (cardWidth + gap);
+    sliderContainer.style.transform = `translateX(-${scrollOffset}px)`;
+  }
+
+  function startBenefitsAutoScroll() {
+    stopBenefitsAutoScroll();
+    autoScrollInterval = setInterval(scrollBenefits, 1000); // Change every 2.5 seconds
+  }
+
+  function stopBenefitsAutoScroll() {
+    if (autoScrollInterval) {
+      clearInterval(autoScrollInterval);
+    }
+  }
+
+  // Start auto-scroll
+  startBenefitsAutoScroll();
+
+  // Pause on hover
+  sliderContainer.addEventListener("mouseenter", stopBenefitsAutoScroll);
+  sliderContainer.addEventListener("mouseleave", startBenefitsAutoScroll);
+
+  // Handle resize
+  window.addEventListener("resize", () => {
+    if (window.innerWidth >= 1025) {
+      // Desktop: Stop slider and reset
+      stopBenefitsAutoScroll();
+      sliderContainer.style.transform = "translateX(0)";
+    } else {
+      // Mobile/Tablet: Restart slider
+      currentIndex = 0;
+      sliderContainer.style.transform = "translateX(0)";
+      startBenefitsAutoScroll();
+    }
+  });
+}
+
+// Initialize on DOM load
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initBenefitsSlider);
+} else {
+  initBenefitsSlider();
+}
+</script>
+
+
+
 
 
     <script src="./script/navbar.js"></script>
