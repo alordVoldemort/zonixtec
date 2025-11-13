@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>From CEO's Desk | Zonixtec - Advanced AI Solutions</title>
     <link rel="stylesheet" href="CustomDrop.css">
-    <link rel="stylesheet" href="./CSS/allDropdown.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -570,11 +569,7 @@
     .breakthrough-stat-number {
         font-size: 2.5rem;
     }
-    
-    .home-service,
-    .highlight-item {
-        padding: 20px;
-    }
+
     
     .beginning-highlights {
         grid-template-columns: 1fr;
@@ -998,7 +993,7 @@
     
     .highlight-wrapper {
         flex-direction: column;
-        gap: 15px;
+        gap: 5px;
     }
     
     .set {
@@ -1123,6 +1118,7 @@
         .highlight-box img{
             width: 90%;
             height: 50%;
+            margin-bottom: 5px;
         }
 
          .highlight-boxx img{
@@ -1143,10 +1139,6 @@
 
         /* Responsive Styles */
         @media (max-width: 992px) {
-
-
-
-
              .highlight-boxx{
             width: 100%;
             /* margin-left: -12px; */
@@ -1250,34 +1242,7 @@
                 </a>
                 <div class="nav-links">
 
-                   <a href="#" class="about-toggle">About Us</a>
-                     <!-- ABOUT DROPDOWN PANEL -->
-                    <div class="about-dropdown">
-                        <div><h2>About Us</h2></div>
-
-                        <div class="about-container">
-                            
-                            <div class="about-links">
-                                <div>
-                                    <a href="aboutus.html">About Zonixtec</a>
-                                    <a href="Why-Zonixtec.html">Why Zonixtec?</a>
-                                    <a href="#">Our Journey</a>
-                                </div>
-                                <div>
-                                    <a href="#">From CEO’s Desk</a>
-                                    <a href="#">Leadership</a>
-                                    <a href="#">Case Study</a>
-                                </div>
-                            </div>
-                    
-                            <span class="about-close">&times;</span>
-                    
-                            <div class="about-image">
-                                <img src="./Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    
+                    <a href="aboutus.html">About Us</a>
 
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -1331,52 +1296,111 @@
         <p class="beginning-subtitle">A Journey of Passion & Purpose</p>
     </div>
 </div>
+    <section class="beginning-section">
+            <div class="beginning-card">
+                <div class="beginning-left">
+                    <p class="beginning-desc">
+                        When I think back to the early days of Zonixtec IT Services, I remember sitting
+                        in a small room with just five passionate developers, all sharing one dream:
+                        to build technology that truly makes a difference.
+                    </p>
 
-<section class="beginning-section">
-    <div class="container">
-        <div class="beginning-card">
-            <div class="beginning-left">
-                <p class="beginning-desc">
-                    When I think back to the early days of Zonixtec IT Services, I remember sitting
-                    in a small room with just five passionate developers, all sharing one dream:
-                    to build technology that truly makes a difference.
-                </p>
+                    <p class="beginning-desc">
+                        I often tell people, the idea wasn't just to write code — it was to create solutions
+                        that solve real problems, help businesses grow, and push the boundaries of what
+                        technology can do.
+                    </p>
 
-                <p class="beginning-desc">
-                    I often tell people, the idea wasn't just to write code — it was to create solutions
-                    that solve real problems, help businesses grow, and push the boundaries of what
-                    technology can do.
-                </p>
-
-                <div class="highlight-wrapper">
-                    <div class="highlight-box">
-                        <div>
-                           <div style="text-align: center;">
-  <img class="icon" src="./Assets/Frame 1686551419.png" alt="Rocket Icon" />
-</div>
-
-                            <!-- <h3>Quality Focused</h3>
-                            <p>Excellence in every line of code</p> -->
+                    <div class="highlight-wrapper">
+                        <div class="highlight-box">
+                            <div class="highlight-item">
+                                <div class="icon-circle">
+                                    <img src="./Assets/Vector.svg" alt="Innovation Icon" />
+                                </div>
+                                <div>
+                                    <h3>Quality Focused</h3>
+                                    <p>Excellence in every line of code</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="highlight-boxx">
-                        <div>
-                            <div style="text-align: center;"></div>
-                            <img class="icon" src="./Assets//Frame 1686551420.png" alt="Handshake Icon" />
-                            <!-- <h3>Client Satisfaction</h3>
-                            <p>Your success is our mission</p> -->
+                        <div class="highlight-box">
+                            <div class="highlight-item">
+                                <div class="icon-circlee">
+                                    <img src="./Assets/Vector (1).svg" alt="Collaboration Icon" />
+                                </div>
+                                <div>
+                                    <h3>Client Satisfaction</h3>
+                                    <p>Your success is our mission</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="beginning-right">
+                 <div class="beginning-right">
                 <img src="Assets/f66bd6d71df987ce9f925f8f235198e943023de5.jpg" alt="Handshake" />
             </div>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+
+<style>
+    .highlight-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-align: left;
+}
+
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  background-color: #0d0d0d; /* black circle */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+
+.icon-circlee {
+  width: 55px;
+  height: 55px;
+  background-color: #0d0d0d; /* black circle */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1); /* makes icon white */
+}
+
+.highlight-box h3 {
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+}
+
+.highlight-box p {
+  color: #cfcfcf;
+  font-size: 14px;
+  margin: 4px 0 0;
+}
+</style>
 
  <!-- The Breakthrough Section -->
   <div class="container">
@@ -1419,6 +1443,55 @@
             
         </div>
     </section>
+
+
+<!-- <div class="container">
+    <div class="section-header">
+        <h2 class="beginning-title">Building Our Home</h2>
+        <p class="beginning-subtitle">2024: A Milestone Year</p>
+    </div>
+</div> -->
+
+<!-- <section class="beginning-section">
+    <div class="container">
+        <div class="beginning-card">
+            <div class="beginning-left">
+                <p class="beginning-desc">
+                    Later that year, we took another bold step: opening our own office. It wasn't just a physical space — it became the heartbeat of our culture.
+                </p>
+
+                <p class="beginning-desc">
+                    A place where ideas collide, creativity flourishes, and collaboration drives impact. Today, Zonixtec has grown beyond those first five developers, delivering AI-powered solutions, cloud services, and digital transformation projects for clients across industries, all while keeping Quality and Client satisfaction at the center.
+                </p>
+
+                <div class="highlight-wrapper">
+                    <div class="highlight-boxx">
+                        <div class="set">
+                            <div><img class="icon" src="./Assets//recommendations-ai-svgrepo-com 1.png" alt="Rocket Icon" /></div>
+                            <h3>CRM & ERP Solutions</h3>
+
+                             <div><img class="icon" src="./Assets//cloud-generic-svgrepo-com 1.png" alt="Handshake Icon" /></div>
+                            <h3>Billing  Services</h3>
+
+                        </div>
+                        <div class="set">
+                            <div><img class="icon" src="./Assets//cloud-asset-inventory-svgrepo-com 1.png" alt="Handshake Icon" /></div>
+                            <h3>Digital Transformation</h3>
+
+                            <div><img class="icon" src="./Assets//cloud-shell-svgrepo-com 1.png" alt="Handshake Icon" /></div>
+                            <h3>Custom Development</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="beginning-right">
+                <img src="Assets/cabinet-svgrepo-com 1.png" alt="Handshake" />
+            </div>
+        </div>
+    </div>
+</section> -->
 
 
 <div class="container">
@@ -1468,6 +1541,7 @@
         </div>
     </div>
 </section>
+
 
 
 
@@ -1557,7 +1631,7 @@
     }
 
     .highlight-wrapper {
-        /* flex-direction: row; */
+        flex-direction: row;
         /* margin-left:-28px ; */
     }
 }
@@ -2017,7 +2091,6 @@
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
-    <script src="./script/allabout.js"></script>
 
 </body>
 </html>
