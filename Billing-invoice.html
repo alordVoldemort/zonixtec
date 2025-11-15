@@ -9,7 +9,9 @@
     <meta name="description"
         content="Simplify your financial operations with Zonixtec's Billing & Invoice Software—automating invoicing, payments, and reporting for faster transactions and better cash flow management.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./CSS/allDropdown.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./CSS/navbar.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -67,7 +69,7 @@
         }
 
         .section-padding {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .section-title {
@@ -345,7 +347,6 @@
             border: 1px solid var(--card-border);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             overflow: hidden;
-            transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
             transition: transform 0.5s ease;
         }
 
@@ -592,6 +593,15 @@
             color: var(--gray);
             transition: all 0.3s ease;
         }
+
+        .tech-itemm {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: var(--gray);
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
         
         .tech-item:hover {
             background: rgba(255, 255, 255, 0.08);
@@ -737,17 +747,22 @@
             margin-right: auto;
         }
 
-        .cta-button-large {
+         .cta-button-large {
             background: var(--dark);
-            color: var(--light);
-            padding: 18px 40px;
+            color: white;
+            padding: 15px 40px;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
-            text-decoration: none;
+            border: none;
+            cursor: pointer !important;
+            pointer-events: auto !important;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             display: inline-block;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
         .cta-button-large:hover {
@@ -801,41 +816,23 @@
             color: var(--gray);
         }
 
-        /* ===== COMPREHENSIVE RESPONSIVE FIXES ===== */
+        .mobile-menu-btn {
+            display: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+            background: transparent;
+            border: none;
+            outline: none;
+        }
 
-/* Navigation Responsive Fixes */
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-}
 
-.nav-links a {
-    color: var(--light);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;
-}
-
-.nav-links a:hover,
-.nav-links a.active {
-    color: var(--secondary);
-}
-
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--secondary);
-}
+        /* ===== COMPREHENSIVE RESPONSIVE FIXES ===== *
 
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
-    .nav-links {
+    /* .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
@@ -863,7 +860,7 @@
         text-align: left;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+     */
     .dropdown-content {
         position: static;
         background: transparent;
@@ -1078,12 +1075,12 @@
     /* Improve touch targets */
     .cta-button,
     .cta-button-large,
-    .nav-links a {
+    /* .nav-links a {
         min-height: 44px;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
+    } */
     
     .faq-question {
         min-height: 44px;
@@ -1356,7 +1353,6 @@ img {
 }
 
 
-
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero-content {
@@ -1427,7 +1423,34 @@ img {
                 </a>
                 <div class="nav-links">
 
-                    <a href="aboutus.html">About Us</a>
+                     <a href="#" class="about-toggle">About Us</a>
+                     <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div><h2>About Us</h2></div>
+
+                        <div class="about-container">
+                            
+                            <div class="about-links">
+                                <div>
+                                    <a href="aboutus.html">About Zonixtec</a>
+                                    <a href="Why-Zonixtec.html">Why Zonixtec?</a>
+                                    <a href="#">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="#">From CEO’s Desk</a>
+                                    <a href="#">Leadership</a>
+                                    <a href="#">Case Study</a>
+                                </div>
+                            </div>
+                    
+                            <span class="about-close">&times;</span>
+                    
+                            <div class="about-image">
+                                <img src="./Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
 
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -1439,12 +1462,13 @@ img {
                                 <a href="CustomSoftware.html">Custom Software Development</a>
                                 <a href="crm-solutions.html">Custom CRM Solutions</a>
                                 <a href="erp-solutions.html">Custom ERP Solutions</a>
-                                <a href="Billing-invoice.html">Billing-Invoice</a>
+                                <a href="Billing-invoice.html">Billing-Invoice Solutions</a>
                                 <a href="AIStrategy.html">AI Strategy & Consulting</a>
                                 <a href="DigitalMarketing.html">Digital Marketing Services</a>
                                 <a href="MobileDevelopment.html">Mobile App Development</a>
                                 <a href="ui.html">UI/UX Design Services</a>
                                 <a href="CloudSolutions.html">Cloud Solutions</a>
+                                 <a href="hrms-solutions.html">HRMS Solutions</a>
                             </div>
                         </div>
                     </div>
@@ -1456,11 +1480,11 @@ img {
                     </a>
                 </div>
                 
-                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="window.toggleMobileMenu && window.toggleMobileMenu()">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+    <span class="hamburger-line"></span>
+</button>
             </nav>
         </div>
     </header>
@@ -1722,7 +1746,7 @@ img {
                 <div class="tech-category">
                     <h3>Databases</h3>
                     <div class="tech-items">
-                        <div class="tech-item">PostgreSQL</div>
+                        <div class="tech-itemm">PostgreSQL</div>
                         <div class="tech-item">MySQL</div>
                         <div class="tech-item">MongoDB</div>
                         <div class="tech-item">Redis</div>
@@ -1733,7 +1757,7 @@ img {
                 <div class="tech-category">
                     <h3>Payment Gateways</h3>
                     <div class="tech-items">
-                        <div class="tech-item">Stripe</div>
+                        <div class="tech-itemm">Stripe</div>
                         <div class="tech-item">Razorpay</div>
                         <div class="tech-item">PayPal</div>
                         <div class="tech-item">Square</div>
@@ -1905,19 +1929,19 @@ img {
     </section>
 
     <!-- CTA Section -->
-    <section class="section-padding" id="contact">
-        <div class="container">
-            <div class="cta-section">
-                <h2 class="cta-title">Ready to Simplify Your Billing Process?</h2>
-                <p class="cta-subtitle">Let's build a billing and invoice solution that automates your financial
-                    operations, reduces errors, and improves cash flow. Contact us for a free consultation and discover
-                    how our expertise can transform your billing processes.</p>
-                <a href="booking.html?service=billing-invoice" class="cta-button-large">Schedule a Free Consultation</a>
-            </div>
+    <!-- CTA Section -->
+<section class="section-padding" id="contact">
+    <div class="container">
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Simplify Your Billing Process?</h2>
+            <p class="cta-subtitle">Let's build a billing and invoice solution that automates your financial
+                operations, reduces errors, and improves cash flow. Contact us for a free consultation and discover
+                how our expertise can transform your billing processes.</p>
+            <a href="contact.html" class="cta-button-large" style="cursor: pointer;">Schedule a Free Consultation</a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -2031,6 +2055,19 @@ img {
                         <a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
                     </div>
                 </div>
+
+                <!-- Newsletter Section -->
+                <!-- <div class="footer-col">
+        <h3>Newsletter</h3>
+        <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
+        <div class="form-group" id="newsletter-group">
+          <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
+          <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
+        </div>
+        <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
+          Thank you for subscribing!
+        </div>
+      </div> -->
             </div>
 
             <div class="footer-bottom">
@@ -2056,17 +2093,179 @@ img {
             cursor: pointer;
             margin: 5px 0;
         }
+
+        /* Mobile Menu Styles */
+@media (max-width: 768px) {
+    /* .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 80px;
+        gap: 20px;
+        transition: right 0.3s ease;
+        z-index: 999;
+        overflow-y: auto;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links a {
+        padding: 12px 20px;
+        width: 100%;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+     */
+    .dropdown-content {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        border: none;
+        padding: 10px 0 10px 20px;
+        display: block !important;
+        max-height: none;
+    }
+    
+    .dropdown-content a {
+        margin: 5px 0;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    
+    .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--light);
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 1001;
+    }
+}
+
+/* Hamburger menu animation */
+.hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: var(--light);
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
     </style>
 
     <script>
-        // Footer dropdown functionality
-        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const parent = header.parentElement;
-                parent.classList.toggle('open');
+// Mobile menu toggle function
+// Mobile menu functionality
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    
+    navLinks.classList.toggle('active');
+    mobileMenuBtn.classList.toggle('active');
+}
+
+// Make function globally available
+window.toggleMobileMenu = toggleMobileMenu;
+
+// Close mobile menu when clicking on links
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const navLinksContainer = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (navLinksContainer.classList.contains('active')) {
+                navLinksContainer.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const navLinks = document.querySelector('.nav-links');
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const isClickInsideNav = navLinks.contains(event.target);
+        const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+        
+        if (!isClickInsideNav && !isClickOnMenuBtn && navLinks.classList.contains('active')) {
+            navLinks.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+        }
+    });
+});
+// Make function globally available
+window.toggleMobileMenu = toggleMobileMenu;
+
+// Close mobile menu when clicking on links
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            const navLinksContainer = document.querySelector('.nav-links');
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            
+            if (navLinksContainer.classList.contains('active')) {
+                navLinksContainer.classList.remove('active');
+                mobileMenuBtn.classList.remove('active');
+            }
+        });
+    });
+});
+    // Footer dropdown functionality
+    document.querySelectorAll('.footer-dropdown-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const parent = header.parentElement;
+            parent.classList.toggle('open');
+        });
+    });
+
+    // FAQ Accordion Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all FAQ items first
+                faqItems.forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                // If the clicked item wasn't active, open it
+                if (!isActive) {
+                    item.classList.add('active');
+                }
             });
         });
-    </script>
+    });
+</script>
     <script src="Customscroll.js"></script>
 
     <!-- Chatbot -->
@@ -2159,7 +2358,9 @@ img {
 
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
+    <script src="./script/allabout.js"></script>
     <script src="./script/navbar.js"></script>
+    
 
 </body>
 

@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Favicon -->
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="./CSS/allDropdown.css">
+    <link rel="stylesheet" href="./CSS/chatbot.css">
 
     <!-- Responsive Fixes CSS -->
 
@@ -667,13 +669,13 @@
             color: var(--gray);
         }
 
-        .about-image {
+        .about-imagee {
             flex: 1 1 300px;
             min-width: 250px;
             text-align: center;
         }
 
-        .about-image img {
+        .about-imagee img {
             max-width: 100%;
             height: auto;
             border-radius: 10px;
@@ -3044,7 +3046,38 @@
                 </a>
                 <div class="nav-links">
                     
-                    <a href="aboutus.html">About Us</a>
+                    <!-- <a href="aboutus.html">About Us</a> -->
+                    <!-- ABOUT DROPDOWN TRIGGER -->
+                    <a href="#" class="about-toggle">About Us</a>
+                    
+                    <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div><h2>About Us</h2></div>
+
+                        <div class="about-container">
+                            
+                            <div class="about-links">
+                                <div>
+                                    <a href="aboutus.html">About Zonixtec</a>
+                                    <a href="Why-Zonixtec.html">Why Zonixtec?</a>
+                                    <a href="#">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="#">From CEO’s Desk</a>
+                                    <a href="#">Leadership</a>
+                                    <a href="#">Case Study</a>
+                                </div>
+                            </div>
+                    
+                            <span class="about-close">&times;</span>
+                    
+                            <div class="about-image">
+                                <img src="./Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
+
 
                     
                     <div class="dropdown">
@@ -3056,12 +3089,13 @@
                                 <a href="CustomSoftware.html">Custom Software Development</a>
                                 <a href="crm-solutions.html">Custom CRM Solutions</a>
                                 <a href="erp-solutions.html">Custom ERP Solutions</a>
-                                <a href="Billing-invoice.html">Billing-Invoice</a>
+                                <a href="Billing-invoice.html">Billing-Invoice Solutions</a>
                                 <a href="AIStrategy.html">AI Strategy & Consulting</a>
                                 <a href="DigitalMarketing.html">Digital Marketing Services</a>
                                 <a href="MobileDevelopment.html">Mobile App Development</a>
                                 <a href="ui.html">UI/UX Design Services</a>
                                 <a href="CloudSolutions.html">Cloud Solutions</a>
+                                <a href="hrms-solutions.html">HRMS Solutions</a>
                             </div>
                         </div>
                     </div>
@@ -3203,7 +3237,7 @@
                             Applications</strong>, we design and
                         develop platforms that make businesses <strong>smarter, faster, and future-ready</strong>.</p>
                 </div>
-                <div class="about-image">
+                <div class="about-imagee">
                     <img src="./Assets/aboutus1.webp" alt="Zonixtec Technology Solutions">
                 </div>
             </div>
@@ -4536,7 +4570,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-    </script>
+    </script>   
 
 
     <script>
@@ -4624,10 +4658,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
 
     <!-- Chatbot -->
-    <link rel="stylesheet" href="./CSS/chatbot.css">
+    
     <script src="./script/chatbot.js"></script>
     
 <script src="./script/navbar.js"></script>
+<script src="./script/allabout.js"></script>
 </body>
 
 </html>

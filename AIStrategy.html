@@ -8,6 +8,7 @@
     <meta name="description"
         content="Transform your business with Zonixtec's AI Strategy & Consulting services – from AI maturity assessment to ROI-driven implementation roadmaps, we help organizations unlock measurable growth.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./CSS/allDropdown.css">
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -65,7 +66,7 @@
         }
 
         .section-padding {
-            padding: 22px 0;
+            padding: 40px 0;
         }
 
         .section-title {
@@ -430,7 +431,7 @@
         .challenges-container {
             background: rgba(15, 23, 42, 0.5);
             border-radius: 20px;
-            padding: 50px;
+            padding: 15px;
             border: 1px solid rgba(100, 116, 139, 0.2);
         }
 
@@ -540,6 +541,7 @@
             text-align: center;
             color: var(--secondary);
             margin-bottom: 40px;
+            font-family: 'Orbitron', sans-serif;
         }
         
         .tech-grid {
@@ -556,6 +558,7 @@
             color: var(--light);
             margin-bottom: 20px;
             font-size: 1.3rem;
+            font-family: 'Orbitron', sans-serif;
         }
         
         .tech-items {
@@ -572,6 +575,15 @@
             transition: all 0.3s ease;
         }
         
+        .tech-itemm {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: var(--gray);
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
         .tech-item:hover {
             background: rgba(255, 255, 255, 0.08);
             color: var(--light);
@@ -612,7 +624,7 @@
 
         .impact-value {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 10px;
             background: var(--tech-gradient);
@@ -1060,7 +1072,34 @@
                 </a>
                 <div class="nav-links">
 
-                    <a href="aboutus.html">About Us</a>
+                     <a href="#" class="about-toggle">About Us</a>
+                     <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div><h2>About Us</h2></div>
+
+                        <div class="about-container">
+                            
+                            <div class="about-links">
+                                <div>
+                                    <a href="aboutus.html">About Zonixtec</a>
+                                    <a href="Why-Zonixtec.html">Why Zonixtec?</a>
+                                    <a href="#">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="#">From CEO’s Desk</a>
+                                    <a href="#">Leadership</a>
+                                    <a href="#">Case Study</a>
+                                </div>
+                            </div>
+                    
+                            <span class="about-close">&times;</span>
+                    
+                            <div class="about-image">
+                                <img src="./Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
 
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -1072,12 +1111,13 @@
                                 <a href="CustomSoftware.html">Custom Software Development</a>
                                 <a href="crm-solutions.html">Custom CRM Solutions</a>
                                 <a href="erp-solutions.html">Custom ERP Solutions</a>
-                                <a href="Billing-invoice.html">Billing-Invoice</a>
+                                <a href="Billing-invoice.html">Billing-Invoice Solutions</a>
                                 <a href="AIStrategy.html">AI Strategy & Consulting</a>
                                 <a href="DigitalMarketing.html">Digital Marketing Services</a>
                                 <a href="MobileDevelopment.html">Mobile App Development</a>
                                 <a href="ui.html">UI/UX Design Services</a>
                                 <a href="CloudSolutions.html">Cloud Solutions</a>
+                                 <a href="hrms-solutions.html">HRMS Solutions</a>
                             </div>
                         </div>
                     </div>
@@ -1415,7 +1455,7 @@
                 <div class="tech-category">
                     <h3>AI & ML Platforms</h3>
                     <div class="tech-items">
-                        <div class="tech-item">TensorFlow</div>
+                        <div class="tech-itemm">TensorFlow</div>
                         <div class="tech-item">PyTorch</div>
                         <div class="tech-item">Scikit-learn</div>
                         <div class="tech-item">Keras</div>
@@ -1426,7 +1466,7 @@
                 <div class="tech-category">
                     <h3>Cloud AI Services</h3>
                     <div class="tech-items">
-                        <div class="tech-item">AWS AI Services</div>
+                        <div class="tech-itemm">AWS AI Services</div>
                         <div class="tech-item">Azure Cognitive Services</div>
                         <div class="tech-item">Google Cloud AI</div>
                         <div class="tech-item">IBM Watson</div>
@@ -1437,7 +1477,7 @@
                 <div class="tech-category">
                     <h3>Data Engineering</h3>
                     <div class="tech-items">
-                        <div class="tech-item">Apache Spark</div>
+                        <div class="tech-itemm">Apache Spark</div>
                         <div class="tech-item">Hadoop</div>
                         <div class="tech-item">Snowflake</div>
                         <div class="tech-item">Databricks</div>
@@ -1774,6 +1814,24 @@
                 parent.classList.toggle('open');
             });
         });
+
+        // FAQ Accordion - Only one open at a time
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const wasActive = item.classList.contains('active');
+        
+        // Close all FAQ items first
+        document.querySelectorAll('.faq-item').forEach(faqItem => {
+            faqItem.classList.remove('active');
+        });
+        
+        // If the clicked item wasn't active, open it
+        if (!wasActive) {
+            item.classList.add('active');
+        }
+    });
+});
     </script>
 
     <script>
@@ -1800,14 +1858,23 @@
                 }
             });
 
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
+            // FAQ Accordion - Only one open at a time
+document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const wasActive = item.classList.contains('active');
+        
+        // Close all FAQ items first
+        document.querySelectorAll('.faq-item').forEach(faqItem => {
+            faqItem.classList.remove('active');
+        });
+        
+        // If the clicked item wasn't active, open it
+        if (!wasActive) {
+            item.classList.add('active');
+        }
+    });
+});
 
             // Show image placeholder if image fails to load
             const image = document.querySelector('.services-image img');
@@ -1913,7 +1980,8 @@
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
-    
+    <script src="./script/allabout.js"></script>
+
 
 </body>
 

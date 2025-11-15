@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Marketing Services | Zonixtec</title>
+    <link rel="stylesheet" href="./CSS/allDropdown.css">
     <meta name="description" content="Boost your brand's online presence with Zonixtec's Digital Marketing Services—SEO, social media marketing, PPC campaigns, content strategy, and analytics that drive visibility, engagement, and conversions.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
@@ -527,6 +528,7 @@
         .tech-section {
             background: rgba(10, 10, 26, 0.7);
             border-radius: 10px;
+            margin-top: 80px;
             padding: 60px;
             margin-bottom: 60px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -570,6 +572,15 @@
             transition: all 0.3s ease;
         }
         
+        .tech-itemm {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: var(--gray);
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+
         .tech-item:hover {
             background: rgba(255, 255, 255, 0.08);
             color: var(--light);
@@ -1179,7 +1190,34 @@
                 </a>
                 <div class="nav-links">
 
-                    <a href="aboutus.html">About Us</a>
+                   <a href="#" class="about-toggle">About Us</a>
+                     <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div><h2>About Us</h2></div>
+
+                        <div class="about-container">
+                            
+                            <div class="about-links">
+                                <div>
+                                    <a href="aboutus.html">About Zonixtec</a>
+                                    <a href="Why-Zonixtec.html">Why Zonixtec?</a>
+                                    <a href="#">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="#">From CEO’s Desk</a>
+                                    <a href="#">Leadership</a>
+                                    <a href="#">Case Study</a>
+                                </div>
+                            </div>
+                    
+                            <span class="about-close">&times;</span>
+                    
+                            <div class="about-image">
+                                <img src="./Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
 
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -1191,12 +1229,13 @@
                                 <a href="CustomSoftware.html">Custom Software Development</a>
                                 <a href="crm-solutions.html">Custom CRM Solutions</a>
                                 <a href="erp-solutions.html">Custom ERP Solutions</a>
-                                <a href="Billing-invoice.html">Billing-Invoice</a>
+                                <a href="Billing-invoice.html">Billing-Invoice Solutions</a>
                                 <a href="AIStrategy.html">AI Strategy & Consulting</a>
                                 <a href="DigitalMarketing.html">Digital Marketing Services</a>
                                 <a href="MobileDevelopment.html">Mobile App Development</a>
                                 <a href="ui.html">UI/UX Design Services</a>
                                 <a href="CloudSolutions.html">Cloud Solutions</a>
+                                <a href="hrms-solutions.html">HRMS Solutions</a>
                             </div>
                         </div>
                     </div>
@@ -1451,7 +1490,7 @@
         <div class="tech-category">
             <h3>SEO & Analytics</h3>
             <div class="tech-items">
-                <div class="tech-item">Google Search Console</div>
+                <div class="tech-itemm">Google Search Console</div>
                 <div class="tech-item">Ahrefs</div>
                 <div class="tech-item">SEMrush</div>
                 <div class="tech-item">Google Analytics</div>
@@ -1484,7 +1523,7 @@
         <div class="tech-category">
             <h3>Social Media & Ads</h3>
             <div class="tech-items">
-                <div class="tech-item">Meta Business Suite</div>
+                <div class="tech-itemm">Meta Business Suite</div>
                 <div class="tech-item">Hootsuite</div>
                 <div class="tech-item">Buffer</div>
                 <div class="tech-item">Google Ads</div>
@@ -1852,6 +1891,7 @@
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
+    <script src="./script/allabout.js"></script>
 
 </body>
 

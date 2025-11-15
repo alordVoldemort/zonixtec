@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="./CSS/allDropdown.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
     <style>
@@ -391,6 +392,15 @@
             color: var(--gray);
             transition: all 0.3s ease;
         }
+
+        .tech-itemm {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: var(--gray);
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
         
         .tech-item:hover {
             background: rgba(255, 255, 255, 0.08);
@@ -420,7 +430,7 @@
             transform: rotate(180deg);
         }
 
-        .dropdown-content {
+        /* .dropdown-content {
             display: none;
             position: absolute;
             top: 100%;
@@ -460,7 +470,7 @@
             color: var(--secondary);
             border-left: 4px solid var(--secondary);
             transform: translateX(5px);
-        }
+        } */
 
         .dropdown-scroll {
     max-height: 300px; /* Slightly less than parent to account for padding */
@@ -1202,7 +1212,34 @@
                 </a>
                 <div class="nav-links">
 
-                    <a href="aboutus.html">About Us</a>
+                    <a href="#" class="about-toggle">About Us</a>
+                     <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div><h2>About Us</h2></div>
+
+                        <div class="about-container">
+                            
+                            <div class="about-links">
+                                <div>
+                                    <a href="aboutus.html">About Zonixtec</a>
+                                    <a href="Why-Zonixtec.html">Why Zonixtec?</a>
+                                    <a href="#">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="#">From CEO’s Desk</a>
+                                    <a href="#">Leadership</a>
+                                    <a href="#">Case Study</a>
+                                </div>
+                            </div>
+                    
+                            <span class="about-close">&times;</span>
+                    
+                            <div class="about-image">
+                                <img src="./Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
 
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -1214,12 +1251,13 @@
                                 <a href="CustomSoftware.html">Custom Software Development</a>
                                 <a href="crm-solutions.html">Custom CRM Solutions</a>
                                 <a href="erp-solutions.html">Custom ERP Solutions</a>
-                                <a href="Billing-invoice.html">Billing-Invoice</a>
+                                <a href="Billing-invoice.html">Billing-Invoice Solutions</a>
                                 <a href="AIStrategy.html">AI Strategy & Consulting</a>
                                 <a href="DigitalMarketing.html">Digital Marketing Services</a>
                                 <a href="MobileDevelopment.html">Mobile App Development</a>
                                 <a href="ui.html">UI/UX Design Services</a>
                                 <a href="CloudSolutions.html">Cloud Solutions</a>
+                                <a href="hrms-solutions.html">HRMS Solutions</a>
                             </div>
                         </div>
                     </div>
@@ -1427,7 +1465,7 @@
         <div class="tech-category">
             <h3>Native Development</h3>
             <div class="tech-items">
-                <div class="tech-item">iOS (Swift)</div>
+                <div class="tech-itemm">iOS (Swift)</div>
                 <div class="tech-item">Android (Kotlin)</div>
                 <div class="tech-item">Java</div>
                 <div class="tech-item">Objective-C</div>
@@ -1438,7 +1476,7 @@
         <div class="tech-category">
             <h3>Cross-Platform</h3>
             <div class="tech-items">
-                <div class="tech-item">React Native</div>
+                <div class="tech-itemm">React Native</div>
                 <div class="tech-item">Flutter</div>
                 <div class="tech-item">Ionic</div>
                 <div class="tech-item">Xamarin</div>
@@ -1460,7 +1498,7 @@
         <div class="tech-category">
             <h3>Backend & APIs</h3>
             <div class="tech-items">
-                <div class="tech-item">Node.js</div>
+                <div class="tech-itemm">Node.js</div>
                 <div class="tech-item">Python</div>
                 <div class="tech-item">REST APIs</div>
                 <div class="tech-item">GraphQL</div>
@@ -1471,7 +1509,7 @@
         <div class="tech-category">
             <h3>Cloud & Databases</h3>
             <div class="tech-items">
-                <div class="tech-item">Firebase</div>
+                <div class="tech-itemm">Firebase</div>
                 <div class="tech-item">AWS Amplify</div>
                 <div class="tech-item">MongoDB</div>
                 <div class="tech-item">PostgreSQL</div>
@@ -1482,7 +1520,7 @@
         <div class="tech-category">
             <h3>DevOps & Tools</h3>
             <div class="tech-items">
-                <div class="tech-item">Docker</div>
+                <div class="tech-itemm">Docker</div>
                 <div class="tech-item">Jenkins</div>
                 <div class="tech-item">Fastlane</div>
                 <div class="tech-item">Git</div>
@@ -1577,60 +1615,63 @@
             </div>
             
             <!-- FAQ Section -->
-            <div class="faq-section">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <div class="faq-container">
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How long does it take to develop a mobile app?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>The timeline varies based on complexity, features, and platform. A basic app can take 2-4 months, while more complex applications may require 6+ months. We provide detailed timelines after understanding your specific requirements.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Should I choose native or cross-platform development?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Native development offers optimal performance and platform-specific features, while cross-platform solutions are more cost-effective and faster to develop. We'll help you choose the right approach based on your budget, timeline, and performance requirements.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How much does mobile app development cost?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Costs vary significantly based on features, complexity, and platforms. Basic apps start around $15,000, while enterprise solutions can range from $50,000 to $200,000+. We provide transparent pricing after a detailed requirements analysis.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Do you provide post-launch support?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>Yes, we offer comprehensive post-launch support including bug fixes, updates for new OS versions, feature enhancements, and performance monitoring. We provide flexible support packages to meet your ongoing needs.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>How do you ensure app security?</span>
-                            <i class="fas fa-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            <p>We implement multiple security layers including data encryption, secure API communication, biometric authentication, code obfuscation, and regular security audits. We follow industry best practices and compliance standards for data protection.</p>
-                        </div>
-                    </div>
-                </div>
+            <!-- FAQ Section -->
+<div class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How long does it take to develop a mobile app?</span>
+                <i class="fas fa-chevron-down"></i>
             </div>
+            <div class="faq-answer">
+                <p>The timeline varies based on complexity, features, and platform. A basic app can take 2-4 months, while more complex applications may require 6+ months. We provide detailed timelines after understanding your specific requirements.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Should I choose native or cross-platform development?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Native development offers optimal performance and platform-specific features, while cross-platform solutions are more cost-effective and faster to develop. We'll help you choose the right approach based on your budget, timeline, and performance requirements.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How much does mobile app development cost?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Costs vary significantly based on features, complexity, and platforms. Basic apps start around $15,000, while enterprise solutions can range from $50,000 to $200,000+. We provide transparent pricing after a detailed requirements analysis.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Do you provide post-launch support?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, we offer comprehensive post-launch support including bug fixes, updates for new OS versions, feature enhancements, and performance monitoring. We provide flexible support packages to meet your ongoing needs.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How do you ensure app security?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>We implement multiple security layers including data encryption, secure API communication, biometric authentication, code obfuscation, and regular security audits. We follow industry best practices and compliance standards for data protection.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
             
             <div class="cta-container">
                 <h2 class="cta-title">Ready for Mobile Transformation?</h2>
@@ -1641,6 +1682,26 @@
             </div>
         </div>
     </section>
+
+    <script>
+    // FAQ functionality with auto-collapse
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const item = question.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items first
+            document.querySelectorAll('.faq-item').forEach(faqItem => {
+                faqItem.classList.remove('active');
+            });
+            
+            // If the clicked item wasn't active, open it
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        });
+    });
+</script>
     
     <footer class="footer">
   <div class="container">
@@ -1820,33 +1881,26 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
         });
         
         // Close menu when clicking outside of it
-        document.addEventListener('click', function(event) {
-            const isClickInsideNav = navLinks.contains(event.target);
-            const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+        // document.addEventListener('click', function(event) {
+        //     const isClickInsideNav = navLinks.contains(event.target);
+        //     const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
             
-            if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnMenuBtn) {
-                navLinks.classList.remove('active');
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-            }
-        });
+        //     if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnMenuBtn) {
+        //         navLinks.classList.remove('active');
+        //         menuIcon.classList.remove('fa-times');
+        //         menuIcon.classList.add('fa-bars');
+        //     }
+        // });
         
         // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuIcon.classList.remove('fa-times');
-                menuIcon.classList.add('fa-bars');
-            });
-        });
-        
-        // FAQ functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                item.classList.toggle('active');
-            });
-        });
+        // document.querySelectorAll('.nav-links a').forEach(link => {
+        //     link.addEventListener('click', () => {
+        //         navLinks.classList.remove('active');
+        //         menuIcon.classList.remove('fa-times');
+        //         menuIcon.classList.add('fa-bars');
+        //     });
+        // });
+    
         
         // Newsletter functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -1971,6 +2025,8 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
+
+    <script src="./script/allabout.js"></script>
 
 </body>
 </html>

@@ -8,6 +8,7 @@
     <meta name="description" content="Unlock innovation with Zonixtec's custom software development services.
 We design scalable, secure, and user-friendly applications tailored to your business needs.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/allDropdown.css">
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
@@ -479,11 +480,7 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             line-height: 1.5;
         }
 
-
-
         /* Technology Stack Section */
-
-        /* Technology Stack */
         .tech-section {
             background: rgba(10, 10, 26, 0.7);
             border-radius: 10px;
@@ -513,6 +510,7 @@ We design scalable, secure, and user-friendly applications tailored to your busi
         .tech-category h3 {
             color: var(--light);
             margin-bottom: 20px;
+            margin-top: 30px;
             font-size: 1.3rem;
             font-family: 'Orbitron', sans-serif;
         }
@@ -528,6 +526,15 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             padding: 12px 15px;
             border-radius: 8px;
             color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .tech-itemm {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: var(--gray);
+            margin-top: 30px;
             transition: all 0.3s ease;
         }
         
@@ -1385,7 +1392,34 @@ img {
                 </a>
                 <div class="nav-links">
 
-                    <a href="aboutus.html">About Us</a>
+                    <a href="#" class="about-toggle">About Us</a>
+                     <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div><h2>About Us</h2></div>
+
+                        <div class="about-container">
+                            
+                            <div class="about-links">
+                                <div>
+                                    <a href="aboutus.html">About Zonixtec</a>
+                                    <a href="Why-Zonixtec.html">Why Zonixtec?</a>
+                                    <a href="#">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="#">From CEO’s Desk</a>
+                                    <a href="#">Leadership</a>
+                                    <a href="#">Case Study</a>
+                                </div>
+                            </div>
+                    
+                            <span class="about-close">&times;</span>
+                    
+                            <div class="about-image">
+                                <img src="./Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    
 
                     <!-- Services Dropdown -->
                     <div class="dropdown">
@@ -1397,12 +1431,13 @@ img {
                                 <a href="CustomSoftware.html">Custom Software Development</a>
                                 <a href="crm-solutions.html">Custom CRM Solutions</a>
                                 <a href="erp-solutions.html">Custom ERP Solutions</a>
-                                <a href="Billing-invoice.html">Billing-Invoice</a>
+                                <a href="Billing-invoice.html">Billing-Invoice Solutions</a>
                                 <a href="AIStrategy.html">AI Strategy & Consulting</a>
                                 <a href="DigitalMarketing.html">Digital Marketing Services</a>
                                 <a href="MobileDevelopment.html">Mobile App Development</a>
                                 <a href="ui.html">UI/UX Design Services</a>
                                 <a href="CloudSolutions.html">Cloud Solutions</a>
+                                <a href="hrms-solutions.html">HRMS Solutions</a>
                             </div>
                         </div>
                     </div>
@@ -1714,7 +1749,7 @@ img {
         <div class="tech-category">
             <h3>Databases</h3>
             <div class="tech-items">
-                <div class="tech-item">MongoDB</div>
+                <div class="tech-itemm">MongoDB</div>
                 <div class="tech-item">MySQL</div>
                 <div class="tech-item">PostgreSQL</div>
             </div>
@@ -1723,7 +1758,7 @@ img {
         <div class="tech-category">
             <h3>CMS Platforms</h3>
             <div class="tech-items">
-                <div class="tech-item">WordPress</div>
+                <div class="tech-itemm">WordPress</div>
                 <div class="tech-item">Drupal</div>
                 <div class="tech-item">Strapi</div>
                 <div class="tech-item">Shopify</div>
@@ -2149,6 +2184,7 @@ img {
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
+    <script src="./script/allabout.js"></script>
 
 </body>
 
