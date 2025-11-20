@@ -1269,6 +1269,55 @@
             line-height: 1.4;
         }
 
+        /* Impact Section */
+        .impact-section {
+            margin-bottom: 60px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .impact-item {
+            background: rgba(10, 10, 26, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .impact-item:hover {
+            border-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+
+        .impact-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin: 0 auto 20px;
+        }
+
+        .impact-item h3 {
+            color: var(--light);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .impact-item p {
+            color: var(--gray);
+            margin: 0;
+        }
+
         /* Features Section */
         .features-section {
             margin-bottom: 30px;
@@ -1707,29 +1756,6 @@
         </div>
     </section>
 
-    <!-- Advantages Section -->
-    <section class="section-padding advantage-section">
-        <div class="advantage-section">
-            <h2 class="section-title">What We <span>Bring</span></h2>
-
-            <div class="advantage-content">
-                <div style="text-align: center;">
-                    <p>We don’t just build web apps—we build digital solutions that transform operations.</p>
-
-                    <ul class="advantage-list"
-                        style="list-style: none; padding: 0; display: inline-block; text-align: left;">
-                        <li><i class="fas fa-check"></i> Agile development for faster time-to-market</li>
-                        <li><i class="fas fa-check"></i> Cloud-native and microservices-ready architecture</li>
-                        <li><i class="fas fa-check"></i> Tailored user experience and design flow</li>
-                        <li><i class="fas fa-check"></i> Enterprise-grade security and compliance</li>
-                        <li><i class="fas fa-check"></i> Continuous improvement with performance monitoring</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
     <!-- Challenges Section -->
     <section class="challenges-section section-padding">
         <div class="container">
@@ -1771,6 +1797,30 @@
         </div>
         </div>
     </section>
+
+
+    <!-- Advantages Section -->
+    <section class="section-padding advantage-section">
+        <div class="advantage-section">
+            <h2 class="section-title">What We <span>Bring</span></h2>
+
+            <div class="advantage-content">
+                <div style="text-align: center;">
+                    <p>We don’t just build web apps—we build digital solutions that transform operations.</p>
+
+                    <ul class="advantage-list"
+                        style="list-style: none; padding: 0; display: inline-block; text-align: left;">
+                        <li><i class="fas fa-check"></i> Agile development for faster time-to-market</li>
+                        <li><i class="fas fa-check"></i> Cloud-native and microservices-ready architecture</li>
+                        <li><i class="fas fa-check"></i> Tailored user experience and design flow</li>
+                        <li><i class="fas fa-check"></i> Enterprise-grade security and compliance</li>
+                        <li><i class="fas fa-check"></i> Continuous improvement with performance monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <!-- Development Process Section -->
@@ -1817,7 +1867,7 @@
         </div>
     </section>
 
-    <!-- Technology Stack Section -->
+
     <!-- Technology Stack Section -->
     <section class="section-padding">
         <div class="container">
@@ -1878,6 +1928,65 @@
                             <div class="tech-item">PWA</div>
                             <div class="tech-item">Capacitor</div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Impact Section -->
+     <section class="section-padding">
+        <div class="container">
+            <div class="impact-section">
+                <h2 class="section-title">Impact on Your <span>Business</span></h2>
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Process Efficiency</h3>
+                        <p>Streamlined business processes with automation built specifically for your workflows</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h3>Smarter Decisions</h3>
+                        <p>Real-time visibility into data to support faster, smarter decision-making</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-search-location"></i>
+                        </div>
+                        <h3>Customer Experience</h3>
+                        <p>Enhanced customer experience through tailored, user-friendly features</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3>Cost Reduction</h3>
+                        <p>Reduced operational costs by removing manual work and outdated systems</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Scalable Growth</h3>
+                        <p>Faster scalability as your software grows smoothly with your business needs</p>
+                    </div>
+
+                    <div class="impact-item">
+                        <div class="impact-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>Better Accuracy</h3>
+                        <p>Improved accuracy and consistency through centralized, custom-built systems</p>
                     </div>
                 </div>
             </div>

@@ -77,6 +77,7 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             font-size: 2.5rem;
             font-family: 'Orbitron', sans-serif;
             text-align: center;
+            padding: 70px;
             margin-bottom: 3rem;
             position: relative;
         }
@@ -224,6 +225,62 @@ We design scalable, secure, and user-friendly applications tailored to your busi
             color: #cbd5e1;
             margin-bottom: 40px;
             line-height: 1.8;
+        }
+
+        
+       .overview-section  {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 60px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .overview-section h2 {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            font-size: 2.2rem;
+        }
+
+        .overview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .overview-text {
+            font-size: 1.1rem;
+            color: var(--gray);
+            line-height: 1.8;
+            text-align: left;
+            /* Ensure text is left-aligned */
+        }
+
+        .overview-text p {
+            margin-bottom: 20px;
+            text-align: justify;
+            /* Optional: makes text look more polished */
+        }
+
+        .overview-highlight-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .overview-highlight {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--secondary);
+            text-align: center;
+            padding: 30px;
+            background: rgba(0, 102, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 102, 255, 0.3);
+            line-height: 1.4;
         }
 
         .benefits-grid {
@@ -1478,6 +1535,22 @@ We design scalable, secure, and user-friendly applications tailored to your busi
                     <a href="booking.html?service=custom-software" class="cta-button">Start Your Project</a>
                 </div>
 
+                 <div class="overview-section">
+                <h2>Build | Operate | Grow </h2>
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <p>At Zonixtec, we turn your business challenges into powerful custom software 
+                           solutions built for precision, speed, and long-term scalability. Our Custom 
+                           Software Development services help you automate processes, eliminate inefficiencies, 
+                           and run your operations with unmatched clarity and control — whether you need a CRM, ERP, HRMS, billing system, 
+                           or a complete end-to-end business platform.</p>
+                    </div>
+                    <div class="overview-highlight-container">
+                        <div class="overview-highlight">Your Vision, Our Code, Exceptional Results</div>
+                    </div>
+                </div>
+            </div>
+                
                 <div class="service-types">
                     <h2 class="section-title">Our Custom Software Development Services</h2>
                     <div class="service-types-grid">
@@ -1779,64 +1852,6 @@ We design scalable, secure, and user-friendly applications tailored to your busi
                     </div>
                 </div>
 
-<div class="tech-section">
-    <h2>Our Technology Stack</h2>
-    
-    <div class="tech-grid">
-        <div class="tech-category">
-            <h3>Languages & Frameworks</h3>
-            <div class="tech-items">
-                <div class="tech-item">HTML5</div>
-                <div class="tech-item">CSS3</div>
-                <div class="tech-item">JavaScript</div>
-                <div class="tech-item">React</div>
-                <div class="tech-item">Angular</div>
-                <div class="tech-item">Node.js</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Backend Technologies</h3>
-            <div class="tech-items">
-                <div class="tech-item">PHP</div>
-                <div class="tech-item">Python</div>
-                <div class="tech-item">Express.js</div>
-                <div class="tech-item">Laravel</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Databases</h3>
-            <div class="tech-items">
-                <div class="tech-itemm">MongoDB</div>
-                <div class="tech-item">MySQL</div>
-                <div class="tech-item">PostgreSQL</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>CMS Platforms</h3>
-            <div class="tech-items">
-                <div class="tech-itemm">WordPress</div>
-                <div class="tech-item">Drupal</div>
-                <div class="tech-item">Strapi</div>
-                <div class="tech-item">Shopify</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Cloud & Hosting</h3>
-            <div class="tech-items">
-                <div class="tech-item">AWS</div>
-                <div class="tech-item">Azure</div>
-                <div class="tech-item">Google Cloud</div>
-                <div class="tech-item">DigitalOcean</div>
-            </div>
-        </div>
-    </div>
-</div>
->>>>>>> main
-
                 <div class="impact-section">
                     <div class="impact-container">
                         <h2 class="impact-title">Business Impact</h2>
@@ -1929,6 +1944,7 @@ and other tools you already use.</p>
                     </div>
                 </div>
 
+                <section class="section-padding">
                 <div class="cta-container">
                     <h2 class="cta-title">Ready to Transform Your Business?</h2>
                     <p class="cta-description">Let's discuss how our custom software solutions can address your unique
@@ -1937,6 +1953,7 @@ and other tools you already use.</p>
                     <a href="booking.html?service=custom-software" class="cta-button-large">Schedule a Free
                         Consultation</a>
                 </div>
+                </section>
 
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
