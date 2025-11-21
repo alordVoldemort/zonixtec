@@ -67,7 +67,7 @@
         }
 
         .section-padding {
-            padding: 100px 0;
+            padding: 20px 0;
         }
 
         .section-title {
@@ -193,7 +193,7 @@
 
         /* Services Hero Section */
         .services-hero {
-            padding: 180px 0 100px;
+            padding: 140px 0 100px;
             text-align: center;
             position: relative;
         }
@@ -1687,14 +1687,14 @@
                 }
             });
 
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
+            // // FAQ functionality
+            // const faqItems = document.querySelectorAll('.faq-item');
+            // faqItems.forEach(item => {
+            //     const question = item.querySelector('.faq-question');
+            //     question.addEventListener('click', () => {
+            //         item.classList.toggle('active');
+            //     });
+            // });
 
             // Show image placeholder if image fails to load
             const image = document.querySelector('.services-image img');
@@ -1707,6 +1707,70 @@
         });
     </script>
     <script src="Customscroll.js"></script>
+
+     <script>
+// FAQ functionality - Complete working solution
+function initFAQ() {
+    console.log('Initializing FAQ functionality...');
+    
+    const faqItems = document.querySelectorAll('.faq-item');
+    console.log('Found FAQ items:', faqItems.length);
+    
+    if (faqItems.length === 0) {
+        console.error('No FAQ items found!');
+        return;
+    }
+    
+    faqItems.forEach((item, index) => {
+        const question = item.querySelector('.faq-question');
+        
+        if (!question) {
+            console.error('No FAQ question found in item:', index);
+            return;
+        }
+        
+        // Remove any existing event listeners
+        const newQuestion = question.cloneNode(true);
+        question.parentNode.replaceChild(newQuestion, question);
+        
+        // Add click event
+        newQuestion.addEventListener('click', function(e) {
+            console.log('FAQ clicked:', index);
+            e.stopPropagation();
+            
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                console.log('Opened FAQ:', index);
+            }
+        });
+        
+        // Add hover effect
+        newQuestion.addEventListener('mouseenter', function() {
+            this.style.cursor = 'pointer';
+        });
+    });
+    
+    console.log('FAQ initialization complete');
+}
+
+// Initialize when DOM is fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+} else {
+    initFAQ();
+}
+
+// Alternative initialization method
+window.addEventListener('load', initFAQ);
+</script>
 
     <!-- Chatbot -->
     <link rel="stylesheet" href="./CSS/chatbot.css">
@@ -1789,11 +1853,11 @@
 </div>
 
 <!-- Success Message Overlay -->
-<div class="success-message" id="bookingSuccess">
+<!-- <div class="success-message" id="bookingSuccess">
     <i class="fas fa-check-circle"></i> 
     <strong>Your Call is Booked!</strong>
     <p>Our team will connect with you as soon as possible. Thank you for choosing Zonixtec!</p>
-</div>
+</div> -->
 
 
     <!-- Booking Modal Script -->

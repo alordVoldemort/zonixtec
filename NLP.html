@@ -667,6 +667,56 @@
             transform: rotate(180deg);
         }
 
+/* FAQ Section Improvements */
+.faq-answer {
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, padding 0.3s ease;
+    color: #94a3b8;
+    opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+    padding: 0 20px 20px;
+    max-height: 1000px; /* Increased to accommodate content */
+    opacity: 1;
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    user-select: none; /* Prevent text selection */
+}
+
+.faq-question:hover {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+.faq-toggle {
+    color: var(--secondary);
+    transition: transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.faq-item.active .faq-toggle {
+    transform: rotate(180deg);
+}
+
+/* Ensure FAQ items are properly spaced */
+.faq-item {
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+    transition: border-color 0.3s ease;
+}
         /* CTA Section */
         .cta-section {
             background: var(--tech-gradient);
@@ -1614,15 +1664,6 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
                 }
             });
             
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                question.addEventListener('click', () => {
-                    item.classList.toggle('active');
-                });
-            });
-            
             // Show image placeholder if image fails to load
             const image = document.querySelector('.services-image img');
             const placeholder = document.getElementById('image-placeholder');
@@ -1634,7 +1675,73 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
         });
     </script>
 
+    
+
     <script src="Customscroll.js"></script>
+
+    <script>
+// FAQ functionality - Complete working solution
+function initFAQ() {
+    console.log('Initializing FAQ functionality...');
+    
+    const faqItems = document.querySelectorAll('.faq-item');
+    console.log('Found FAQ items:', faqItems.length);
+    
+    if (faqItems.length === 0) {
+        console.error('No FAQ items found!');
+        return;
+    }
+    
+    faqItems.forEach((item, index) => {
+        const question = item.querySelector('.faq-question');
+        
+        if (!question) {
+            console.error('No FAQ question found in item:', index);
+            return;
+        }
+        
+        // Remove any existing event listeners
+        const newQuestion = question.cloneNode(true);
+        question.parentNode.replaceChild(newQuestion, question);
+        
+        // Add click event
+        newQuestion.addEventListener('click', function(e) {
+            console.log('FAQ clicked:', index);
+            e.stopPropagation();
+            
+            const isActive = item.classList.contains('active');
+            
+            // Close all FAQ items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                console.log('Opened FAQ:', index);
+            }
+        });
+        
+        // Add hover effect
+        newQuestion.addEventListener('mouseenter', function() {
+            this.style.cursor = 'pointer';
+        });
+    });
+    
+    console.log('FAQ initialization complete');
+}
+
+// Initialize when DOM is fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFAQ);
+} else {
+    initFAQ();
+}
+
+// Alternative initialization method
+window.addEventListener('load', initFAQ);
+</script>
 
     <!-- Chatbot -->
     <link rel="stylesheet" href="./CSS/chatbot.css">

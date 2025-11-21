@@ -577,14 +577,6 @@
             color: var(--gray);
             transition: all 0.3s ease;
         }
-        .tech-itemm {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px 15px;
-            border-radius: 8px;
-            color: var(--gray);
-            margin-top: 30px;
-            transition: all 0.3s ease;
-        }
 
         .tech-item:hover {
             background: rgba(255, 255, 255, 0.08);
@@ -1452,18 +1444,17 @@
     </section>
 
     <!-- Technology Stack Section -->
-    <!-- Technology Stack -->
     <section class="section-padding">
         <div class="container">
             <div class="tech-section">
                 <h2>Our Technology Stack</h2>
-
+                <p style="text-align: center; color: #94a3b8; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">We leverage cutting-edge technologies and platforms to deliver robust AI solutions</p>
 
                 <div class="tech-grid">
                     <div class="tech-category">
                         <h3>AI & ML Platforms</h3>
                         <div class="tech-items">
-                            <div class="tech-itemm">TensorFlow</div>
+                            <div class="tech-item">TensorFlow</div>
                             <div class="tech-item">PyTorch</div>
                             <div class="tech-item">Scikit-learn</div>
                             <div class="tech-item">Keras</div>
@@ -1474,7 +1465,7 @@
                     <div class="tech-category">
                         <h3>Cloud AI Services</h3>
                         <div class="tech-items">
-                            <div class="tech-itemm">AWS AI Services</div>
+                            <div class="tech-item">AWS AI Services</div>
                             <div class="tech-item">Azure Cognitive Services</div>
                             <div class="tech-item">Google Cloud AI</div>
                             <div class="tech-item">IBM Watson</div>
@@ -1485,43 +1476,12 @@
                     <div class="tech-category">
                         <h3>Data Engineering</h3>
                         <div class="tech-items">
-                            <div class="tech-itemm">Apache Spark</div>
+                            <div class="tech-item">Apache Spark</div>
                             <div class="tech-item">Hadoop</div>
                             <div class="tech-item">Snowflake</div>
                             <div class="tech-item">Databricks</div>
                             <div class="tech-item">Apache Kafka</div>
                         </div>
-            <div class="tech-grid">
-                <div class="tech-category">
-                    <h3>AI & ML Platforms</h3>
-                    <div class="tech-items">
-                        <div class="tech-itemm">TensorFlow</div>
-                        <div class="tech-item">PyTorch</div>
-                        <div class="tech-item">Scikit-learn</div>
-                        <div class="tech-item">Keras</div>
-                        <div class="tech-item">Hugging Face</div>
-                    </div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3>Cloud AI Services</h3>
-                    <div class="tech-items">
-                        <div class="tech-itemm">AWS AI Services</div>
-                        <div class="tech-item">Azure Cognitive Services</div>
-                        <div class="tech-item">Google Cloud AI</div>
-                        <div class="tech-item">IBM Watson</div>
-                        <div class="tech-item">OpenAI API</div>
-                    </div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3>Data Engineering</h3>
-                    <div class="tech-items">
-                        <div class="tech-itemm">Apache Spark</div>
-                        <div class="tech-item">Hadoop</div>
-                        <div class="tech-item">Snowflake</div>
-                        <div class="tech-item">Databricks</div>
-                        <div class="tech-item">Apache Kafka</div>
                     </div>
 
                     <div class="tech-category">
@@ -1848,6 +1808,7 @@
     </style>
 
     <script>
+        // Footer dropdown functionality
         document.querySelectorAll('.footer-dropdown-header').forEach(header => {
             header.addEventListener('click', () => {
                 const parent = header.parentElement;
@@ -1872,23 +1833,6 @@
                 }
             });
         });
-
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const item = question.parentElement;
-        const wasActive = item.classList.contains('active');
-        
-        // Close all FAQ items first
-        document.querySelectorAll('.faq-item').forEach(faqItem => {
-            faqItem.classList.remove('active');
-        });
-        
-        // If the clicked item wasn't active, open it
-        if (!wasActive) {
-            item.classList.add('active');
-        }
-    });
-});
 
     </script>
 
@@ -1916,40 +1860,7 @@ document.querySelectorAll('.faq-question').forEach(question => {
                 }
             });
 
-            // FAQ Accordion - Only one open at a time
-
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', () => {
-                    const item = question.parentElement;
-                    const wasActive = item.classList.contains('active');
-
-                    // Close all FAQ items first
-                    document.querySelectorAll('.faq-item').forEach(faqItem => {
-                        faqItem.classList.remove('active');
-                    });
-
-                    // If the clicked item wasn't active, open it
-                    if (!wasActive) {
-                        item.classList.add('active');
-                    }
-                });
-            });
-document.querySelectorAll('.faq-question').forEach(question => {
-    question.addEventListener('click', () => {
-        const item = question.parentElement;
-        const wasActive = item.classList.contains('active');
-        
-        // Close all FAQ items first
-        document.querySelectorAll('.faq-item').forEach(faqItem => {
-            faqItem.classList.remove('active');
-        });
-        
-        // If the clicked item wasn't active, open it
-        if (!wasActive) {
-            item.classList.add('active');
-        }
-    });
-});
+            // FAQ accordion is handled in the first script block above
 
 
             // Show image placeholder if image fails to load
@@ -2156,11 +2067,9 @@ document.querySelectorAll('.faq-question').forEach(question => {
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
-<<<<<<< HEAD
     <script src="./script/30min-booking.js"></script>
-=======
     <script src="./script/allabout.js"></script>
->>>>>>> main
+
 
 
 </body>

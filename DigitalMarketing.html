@@ -8,15 +8,12 @@
 
     <meta name="description"
         content="Boost your brand's online presence with Zonixtec's Digital Marketing Services—SEO, social media marketing, PPC campaigns, content strategy, and analytics that drive visibility, engagement, and conversions.">
-
-    <link rel="stylesheet" href="./CSS/allDropdown.css">
-    <meta name="description" content="Boost your brand's online presence with Zonixtec's Digital Marketing Services—SEO, social media marketing, PPC campaigns, content strategy, and analytics that drive visibility, engagement, and conversions.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="./CSS/allDropdown.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="./CSS/30min-model.css">
@@ -71,15 +68,19 @@
         }
 
         .section-padding {
-            padding: 100px 0;
+            padding: 60px 0;
         }
 
         .section-title {
             font-family: 'Orbitron', sans-serif;
             font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 20px;
             position: relative;
+        }
+
+        .section-title span {
+            color: var(--secondary);
         }
 
         .section-title::after {
@@ -92,6 +93,62 @@
             height: 4px;
             background: var(--tech-gradient);
             border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .benefits-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--tech-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 30px;
+            color: white;
+        }
+
+        .benefit-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .benefit-description {
+            color: #666;
+            line-height: 1.6;
         }
 
         /* ===== Header Styles ===== */
@@ -540,13 +597,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .tech-section h2 {
-            text-align: center;
-            color: var(--secondary);
-            margin-bottom: 40px;
-            font-family: 'Orbitron', sans-serif;
-        }
-
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -577,65 +627,11 @@
             color: var(--gray);
             transition: all 0.3s ease;
         }
-        .tech-itemm {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 12px 15px;
-            border-radius: 8px;
-            color: var(--gray);
-            margin-top: 30px;
-            transition: all 0.3s ease;
-        }
 
         .tech-item:hover {
             background: rgba(255, 255, 255, 0.08);
             color: var(--light);
             transform: translateY(-3px);
-        }
-
-        .impact-section {
-            margin-bottom: 80px;
-        }
-
-        .impact-container {
-            background: rgba(15, 23, 42, 0.5);
-            border-radius: 20px;
-            padding: 50px;
-            border: 1px solid rgba(100, 116, 139, 0.2);
-        }
-
-        .impact-title {
-            text-align: center;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
-            background: var(--tech-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .impact-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .impact-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .impact-icon {
-            color: var(--success);
-            margin-right: 15px;
-            font-size: 1.2rem;
-            margin-top: 3px;
-        }
-
-        .impact-text {
-            color: #94a3b8;
-            line-height: 1.7;
         }
 
         .cta-container {
@@ -734,65 +730,40 @@
         }
 
         .footer {
-            padding: 70px 0 0;
-            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            padding: 80px 0 30px;
+            margin-top: 100px;
         }
 
         .footer-container {
             display: grid;
-            grid-template-columns: repeat(5, minmax(255px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 50px;
             margin-bottom: 40px;
         }
 
-        .footer-col {
-            padding: 20px;
-        }
-
         .footer-col h3 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
             color: var(--secondary);
-            position: relative;
-            padding-bottom: 10px;
+            margin-bottom: 25px;
+            font-size: 1.3rem;
         }
 
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--tech-gradient);
-            border-radius: 3px;
-        }
-
-        .footer-col p {
-            color: #cbd5e1;
-            margin-bottom: 20px;
-            line-height: 1.7;
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
         }
 
         .footer-links a {
-            display: flex;
-            align-items: center;
             color: var(--gray);
             text-decoration: none;
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .footer-links a:hover {
             color: var(--secondary);
-            transform: translateX(5px);
-        }
-
-        .footer-links i {
-            margin-right: 10px;
-            color: var(--gray);
-            font-size: 0.8rem;
         }
 
         .social-links {
@@ -946,37 +917,14 @@
 
         .footer-bottom {
             text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid rgba(100, 116, 139, 0.2);
-            color: #94a3b8;
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom i {
-            color: #ef4444;
-            margin: 0 5px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
         }
 
         @media (min-width: 768px) {
             .dropdown-scroll {
                 max-height: 250px;
-            }
-
-            .footer-container {
-                grid-template-columns: repeat(4, 1fr);
-            }
-
-            .footer-col {
-                padding: 18px 1px;
-            }
-
-            .footer-col h3 {
-                font-family: 'Orbitron', sans-serif;
-                font-size: 1.2rem;
-                margin-bottom: 20px;
-                color: var(--secondary);
-                position: relative;
-                padding-bottom: 10px;
             }
         }
 
@@ -1036,7 +984,6 @@
             .faq-section,
             .challenges-container,
             .what-we-bring-container,
-            .impact-container,
             .features-container {
                 padding: 30px 20px;
             }
@@ -1273,10 +1220,6 @@
                         data-driven Digital Marketing solutions that attract, engage, and convert audiences. From search
                         engine optimization to paid campaigns and social media strategy, our services are designed to
                         deliver measurable growth and brand visibility.</p>
-                    <a href="booking.html?service=digital-marketing" class="cta-button">Let's Grow Your Digital
-                        Presence</a>
-
-                    <p class="hero-description">At Zonixtec, we help businesses thrive in the digital landscape with data-driven Digital Marketing solutions that attract, engage, and convert audiences. <br>From search engine optimization to paid campaigns and social media strategy, our services are designed to deliver measurable growth and brand visibility.</p>
                     <a href="booking.html?service=digital-marketing" class="cta-button">Let's Grow Your Digital Presence</a>
                 </div>
 
@@ -1471,120 +1414,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-
-
-                
-        <div class="container">
-            <h2 class="section-title">How We'll Do It</h2>
-            <div class="process-container">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Market Research & Strategy</h3>
-                    <p class="step-description">Identify audience behavior, competitors, and marketing goals.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Campaign Planning</h3>
-                    <p class="step-description">Design SEO, social media, and ad strategies aligned with your objectives.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Content Creation & Optimization</h3>
-                    <p class="step-description">Develop engaging, keyword-rich content for all digital channels.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <h3 class="step-title">Execution & Monitoring</h3>
-                    <p class="step-description">Launch campaigns and track results in real time.</p>
-                </div>
-                
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <h3 class="step-title">Reporting & Optimization</h3>
-                    <p class="step-description">Analyze performance and continuously refine strategies for better ROI.</p>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-                <!-- Technology Stack -->
-<div class="tech-section">
-    <h2>Our Technology Stack</h2>
-    <div class="tech-grid">
-        <div class="tech-category">
-            <h3>SEO & Analytics</h3>
-            <div class="tech-items">
-                <div class="tech-itemm">Google Search Console</div>
-                <div class="tech-item">Ahrefs</div>
-                <div class="tech-item">SEMrush</div>
-                <div class="tech-item">Google Analytics</div>
-                <div class="tech-item">Google Tag Manager</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>User Behavior & Testing</h3>
-            <div class="tech-items">
-                <div class="tech-item">Hotjar</div>
-                <div class="tech-item">Crazy Egg</div>
-                <div class="tech-item">Optimizely</div>
-                <div class="tech-item">Google Optimize</div>
-                <div class="tech-item">Mouseflow</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Marketing Automation</h3>
-            <div class="tech-items">
-                <div class="tech-item">HubSpot</div>
-                <div class="tech-item">Mailchimp</div>
-                <div class="tech-item">ActiveCampaign</div>
-                <div class="tech-item">Marketo</div>
-                <div class="tech-item">Pardot</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Social Media & Ads</h3>
-            <div class="tech-items">
-                <div class="tech-itemm">Meta Business Suite</div>
-                <div class="tech-item">Hootsuite</div>
-                <div class="tech-item">Buffer</div>
-                <div class="tech-item">Google Ads</div>
-                <div class="tech-item">LinkedIn Ads</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Integration & Automation</h3>
-            <div class="tech-items">
-                <div class="tech-item">Zapier</div>
-                <div class="tech-item">Make (Integromat)</div>
-                <div class="tech-item">API Integrations</div>
-                <div class="tech-item">Webhooks</div>
-                <div class="tech-item">Custom Scripts</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Content & Design</h3>
-            <div class="tech-items">
-                <div class="tech-item">Canva</div>
-                <div class="tech-item">Adobe Creative Suite</div>
-                <div class="tech-item">Figma</div>
-                <div class="tech-item">WordPress</div>
-                <div class="tech-item">Shopify</div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-                <div class="container">
+        <!-- Process Section -->
+        <section class="process-section">
+            <div class="container">
                     <h2 class="section-title">How We'll Do It</h2>
                     <div class="process-container">
                         <div class="process-step">
@@ -1623,126 +1458,138 @@
 
                     </div>
                 </div>
+            </div>
         </section>
+
         <!-- Technology Stack -->
-        <div class="tech-section">
-            <h2>Our Technology Stack</h2>
-            <div class="tech-grid">
-                <div class="tech-category">
-                    <h3>SEO & Analytics</h3>
-                    <div class="tech-items">
-                        <div class="tech-itemm">Google Search Console</div>
-                        <div class="tech-item">Ahrefs</div>
-                        <div class="tech-item">SEMrush</div>
-                        <div class="tech-item">Google Analytics</div>
-                        <div class="tech-item">Google Tag Manager</div>
+        <section class="section-padding">
+            <div class="container">
+                <div class="tech-section">
+                    <h2 class="section-title">Our Technology <span>Stack</span></h2>
+                    <p class="section-subtitle">We leverage cutting-edge tools and platforms to deliver effective digital marketing solutions</p>
+                    <div class="tech-grid">
+                    <div class="tech-category">
+                        <h3>SEO & Analytics</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">Google Search Console</div>
+                            <div class="tech-item">Ahrefs</div>
+                            <div class="tech-item">SEMrush</div>
+                            <div class="tech-item">Google Analytics</div>
+                            <div class="tech-item">Google Tag Manager</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="tech-category">
-                    <h3>User Behavior & Testing</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">Hotjar</div>
-                        <div class="tech-item">Crazy Egg</div>
-                        <div class="tech-item">Optimizely</div>
-                        <div class="tech-item">Google Optimize</div>
-                        <div class="tech-item">Mouseflow</div>
+                    <div class="tech-category">
+                        <h3>User Behavior & Testing</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">Hotjar</div>
+                            <div class="tech-item">Crazy Egg</div>
+                            <div class="tech-item">Optimizely</div>
+                            <div class="tech-item">Google Optimize</div>
+                            <div class="tech-item">Mouseflow</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="tech-category">
-                    <h3>Marketing Automation</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">HubSpot</div>
-                        <div class="tech-item">Mailchimp</div>
-                        <div class="tech-item">ActiveCampaign</div>
-                        <div class="tech-item">Marketo</div>
-                        <div class="tech-item">Pardot</div>
+                    <div class="tech-category">
+                        <h3>Marketing Automation</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">HubSpot</div>
+                            <div class="tech-item">Mailchimp</div>
+                            <div class="tech-item">ActiveCampaign</div>
+                            <div class="tech-item">Marketo</div>
+                            <div class="tech-item">Pardot</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="tech-category">
-                    <h3>Social Media & Ads</h3>
-                    <div class="tech-items">
-                        <div class="tech-itemm">Meta Business Suite</div>
-                        <div class="tech-item">Hootsuite</div>
-                        <div class="tech-item">Buffer</div>
-                        <div class="tech-item">Google Ads</div>
-                        <div class="tech-item">LinkedIn Ads</div>
+                    <div class="tech-category">
+                        <h3>Social Media & Ads</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">Meta Business Suite</div>
+                            <div class="tech-item">Hootsuite</div>
+                            <div class="tech-item">Buffer</div>
+                            <div class="tech-item">Google Ads</div>
+                            <div class="tech-item">LinkedIn Ads</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="tech-category">
-                    <h3>Integration & Automation</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">Zapier</div>
-                        <div class="tech-item">Make (Integromat)</div>
-                        <div class="tech-item">API Integrations</div>
-                        <div class="tech-item">Webhooks</div>
-                        <div class="tech-item">Custom Scripts</div>
+                    <div class="tech-category">
+                        <h3>Integration & Automation</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">Zapier</div>
+                            <div class="tech-item">Make (Integromat)</div>
+                            <div class="tech-item">API Integrations</div>
+                            <div class="tech-item">Webhooks</div>
+                            <div class="tech-item">Custom Scripts</div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="tech-category">
-                    <h3>Content & Design</h3>
-                    <div class="tech-items">
-                        <div class="tech-item">Canva</div>
-                        <div class="tech-item">Adobe Creative Suite</div>
-                        <div class="tech-item">Figma</div>
-                        <div class="tech-item">WordPress</div>
-                        <div class="tech-item">Shopify</div>
+                    <div class="tech-category">
+                        <h3>Content & Design</h3>
+                        <div class="tech-items">
+                            <div class="tech-item">Canva</div>
+                            <div class="tech-item">Adobe Creative Suite</div>
+                            <div class="tech-item">Figma</div>
+                            <div class="tech-item">WordPress</div>
+                            <div class="tech-item">Shopify</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="impact-section">
-            <div class="impact-container">
-                <h2 class="impact-title">The Impact of Digital Marketing on Your Business</h2>
-                <div class="impact-list">
-                    <div class="impact-item">
-                        <div class="impact-icon">
+        <!-- Impact Section -->
+        <section class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Business <span>Impact</span></h2>
+                <p class="section-subtitle">How our digital marketing solutions drive tangible results for your business</p>
+
+                <div class="benefits-section">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-chart-line"></i>
                         </div>
-                        <p class="impact-text">10x increase in brand visibility across digital channels</p>
+                        <h3 class="benefit-title">Increased Visibility</h3>
+                        <p class="benefit-description">10x increase in brand visibility across digital channels and platforms</p>
                     </div>
-                    <div class="impact-item">
-                        <div class="impact-icon">
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-users"></i>
                         </div>
-                        <p class="impact-text">Improved website traffic and lead conversion rates</p>
+                        <h3 class="benefit-title">Higher Traffic</h3>
+                        <p class="benefit-description">Improved website traffic and lead conversion rates through targeted campaigns</p>
                     </div>
-                    <div class="impact-item">
-                        <div class="impact-icon">
-                            <i class="fas fa-dollar-sign"></i>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fa-solid fa-indian-rupee-sign"></i>
                         </div>
-                        <p class="impact-text">Better ROI through data-driven advertising</p>
+                        <h3 class="benefit-title">Better ROI</h3>
+                        <p class="benefit-description">Measurable returns through data-driven advertising and optimization</p>
                     </div>
-                    <div class="impact-item">
-                        <div class="impact-icon">
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-heart"></i>
                         </div>
-                        <p class="impact-text">Enhanced customer engagement and loyalty</p>
+                        <h3 class="benefit-title">Customer Engagement</h3>
+                        <p class="benefit-description">Enhanced customer engagement and loyalty through personalized marketing</p>
                     </div>
-                    <div class="impact-item">
-                        <div class="impact-icon">
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
                             <i class="fas fa-rocket"></i>
                         </div>
-                        <p class="impact-text">Consistent online growth and brand reputation</p>
+                        <h3 class="benefit-title">Consistent Growth</h3>
+                        <p class="benefit-description">Sustainable online growth and strong brand reputation over time</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div class="cta-container">
-            <h2 class="cta-title">Ready to Transform Your Digital Presence?</h2>
-            <p class="cta-description">Let's discuss how our digital marketing solutions can drive growth and visibility
-                for your business. Our team of experts is ready to help you attract, engage, and convert your target
-                audience.</p>
-            <a href="booking.html?service=digital-marketing" class="cta-button-large">Start Your Digital Marketing
-                Journey</a>
-        </div>
-
+        <!-- CTA Section -->
+        <section>
+            <div class="container">
         <div class="faq-section">
             <h2 class="faq-title">Frequently Asked Questions</h2>
             <div class="faq-container">
@@ -1792,32 +1639,24 @@
                 </div>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const faqItems = document.querySelectorAll('.faq-item');
-                faqItems.forEach(item => {
-                    const question = item.querySelector('.faq-question');
-                    const answer = item.querySelector('.faq-answer');
-                    question.addEventListener('click', () => {
-                        const isActive = item.classList.contains('active');
-                        // Hide all answers
-                        faqItems.forEach(i => {
-                            i.classList.remove('active');
-                            i.querySelector('.faq-answer').style.display = 'none';
-                        });
-                        // Toggle current
-                        if (!isActive) {
-                            item.classList.add('active');
-                            answer.style.display = 'block';
-                        } else {
-                            item.classList.remove('active');
-                            answer.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        </script>
-        </div>
+            </div>
+
+            <br>
+            <br>
+        </section>
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-container">
+            <h2 class="cta-title">Ready to Transform Your Digital Presence?</h2>
+            <p class="cta-description">Let's discuss how our digital marketing solutions can drive growth and visibility
+                for your business. Our team of experts is ready to help you attract, engage, and convert your target
+                audience.</p>
+            <a href="booking.html?service=digital-marketing" class="cta-button-large">Start Your Digital Marketing
+                Journey</a>
+            </div>
+            </div>
+
+
         </section>
     </main>
 
@@ -1942,14 +1781,38 @@
     </footer>
 
     <script>
+        // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
+        // Footer dropdown functionality
         document.querySelectorAll('.footer-dropdown-header').forEach(header => {
             header.addEventListener('click', () => {
                 const parent = header.parentElement;
                 parent.classList.toggle('open');
+            });
+        });
+
+        // FAQ Accordion - Only one open at a time
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    // Hide all answers
+                    faqItems.forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-answer').style.display = 'none';
+                    });
+                    // Toggle current
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.display = 'block';
+                    }
+                });
             });
         });
     </script>
@@ -2147,9 +2010,7 @@
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
-
     <script src="./script/30min-booking.js"></script>
-
     <script src="./script/allabout.js"></script>
 
 

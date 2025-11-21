@@ -51,7 +51,7 @@
         }
         
         .section-padding {
-            padding: 80px 0;
+            padding: 30px 0;
         }
         
         .section-title {
@@ -561,12 +561,14 @@
         
         .newsletter-form {
             display: flex;
+            justify-content: center;
+            align-items: center;
             max-width: 500px;
             margin: 0 auto;
         }
         
         .newsletter-input {
-            flex: 1;
+            /* flex: 1; */
             padding: 10px 25px;
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.1);
@@ -584,7 +586,7 @@
             background: var(--primary);
             color: var(--light);
             border: none;
-            padding: 10px 10px;
+            padding: 13px 13px;
             border-radius: 0 30px 30px 0;
             cursor: pointer;
             transition: background 0.3s ease;
@@ -595,6 +597,12 @@
             background: var(--primary-dark);
         }
         
+        .newsletter-container {
+    display: flex;
+    justify-content: center;  /* centers horizontally */
+    align-items: center;      /* centers vertically (optional) */
+    width: 100%;
+}
         /* Footer */
         .footer {
             /* background: var(--dark-light); */
@@ -741,8 +749,9 @@
             
             .newsletter-input, .newsletter-btn {
                 border-radius: 30px;
-                width: 100%;
+                width: 62%;     
             }
+            
         }
         
         @media (max-width: 576px) {
@@ -1404,13 +1413,6 @@
             </button>
         </form>
     </div>
-</div>
-
-<!-- Success Message Overlay -->
-<div class="success-message" id="bookingSuccess">
-    <i class="fas fa-check-circle"></i> 
-    <strong>Your Call is Booked!</strong>
-    <p>Our team will connect with you as soon as possible. Thank you for choosing Zonixtec!</p>
 </div>
 
 

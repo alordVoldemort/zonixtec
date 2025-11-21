@@ -401,25 +401,36 @@
             margin-bottom: 60px;
         }
 
+        .advantage-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
         .advantage-text p {
             margin-bottom: 20px;
         }
 
         .advantage-list {
             list-style: none;
-            margin-top: 20px;
+            padding: 0;
+            margin-top: 30px;
+            display: inline-block;
+            text-align: left;
         }
 
         .advantage-list li {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             display: flex;
-            align-items: flex-start;
-            gap: 10px;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.1rem;
+            color: var(--light);
         }
 
         .advantage-list i {
             color: var(--secondary);
-            margin-top: 5px;
+            font-size: 1.2rem;
             flex-shrink: 0;
         }
 
@@ -1827,13 +1838,6 @@
                     <span class="hamburger-line"></span>
                 </button>
 
-                
-                <button class="mobile-menu-btn" aria-label="Toggle mobile menu" onclick="toggleMobileMenu()">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-</button>
-
             </nav>
         </div>
     </header>
@@ -2075,68 +2079,36 @@
                             business performance and trends</p>
                     </div>
                 </div>
-
-                    <p class="challenge-text">Manual invoice errors leading to revenue loss</p>
-                </div>
-                
-                <div class="challenge-item">
-                    <div class="challenge-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="challenge-text">Delays in payments and reconciliations</p>
-                </div>
-                
-                <div class="challenge-item">
-                    <div class="challenge-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="challenge-text">Poor visibility into cash flow and finances</p>
-                </div>
-                
-                <div class="challenge-item">
-                    <div class="challenge-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="challenge-text">Difficulty in tax and compliance reporting</p>
-                </div>
-                
-                <div class="challenge-item">
-                    <div class="challenge-icon">
-                        <i class="fas fa-exclamation-circle"></i>
-                    </div>
-                    <p class="challenge-text">Lack of automation in recurring billing cycles</p>
-                </div>
-                
-
             </div>
         </div>
     </section>
 
-    
- <div class="advantage-section">
+    <section class="section-padding">
+        <div class="container">
+            <div class="advantage-section">
                 <h2 class="section-title">What We <span>Bring</span></h2>
+                <p class="section-subtitle">We go beyond just billing—we build intelligent financial ecosystems that optimize your revenue flow.</p>
 
                 <div class="advantage-content">
-                    <div style="text-align: center;">
-    <p>We go beyond just billing—we build intelligent financial ecosystems that optimize your revenue
-flow.</p>
-
-    <ul class="advantage-list" style="list-style: none; padding: 0; display: inline-block; text-align: left;">
-        <li><i class="fas fa-check"></i> Tailor-made invoicing modules for your business model</li>
-        <li><i class="fas fa-check"></i> Cloud-based system accessible from any device</li>
-        <li><i class="fas fa-check"></i> Integration with your existing ERP or CRM tools</li>
-        <li><i class="fas fa-check"></i> Real-time analytics for cash flow tracking</li>
-        <li><i class="fas fa-check"></i> Secure and compliant payment architecture</li>
-    </ul>
-</div>
+                    <ul class="advantage-list">
+                        <li><i class="fas fa-check"></i> Tailor-made invoicing modules for your business model</li>
+                        <li><i class="fas fa-check"></i> Cloud-based system accessible from any device</li>
+                        <li><i class="fas fa-check"></i> Integration with your existing ERP or CRM tools</li>
+                        <li><i class="fas fa-check"></i> Real-time analytics for cash flow tracking</li>
+                        <li><i class="fas fa-check"></i> Secure and compliant payment architecture</li>
+                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
 
     <!-- Process Section -->
-    <div class="process-section">
-        <h2 class="section-title">Our Development <span>Process</span></h2>
-        <p class="section-subtitle">A systematic approach to building your perfect billing and invoice solution</p>
+    <section class="section-padding">
+        <div class="container">
+            <div class="process-section">
+                <h2 class="section-title">Our Development <span>Process</span></h2>
+                <p class="section-subtitle">A systematic approach to building your perfect billing and invoice solution</p>
 
         <div class="process-steps">
             <div class="process-step">
@@ -2174,9 +2146,10 @@ flow.</p>
                 <div class="step-number">6</div>
                 <h3 class="step-title">Support & Updates</h3>
                 <p class="step-description">Provide ongoing maintenance and feature enhancements</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Technology Stack -->
     <section class="section-padding">
@@ -2229,27 +2202,6 @@ flow.</p>
                             <div class="tech-item">Square</div>
                             <div class="tech-item">Authorize.net</div>
                         </div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3>Databases</h3>
-                    <div class="tech-items">
-                        <div class="tech-itemm">PostgreSQL</div>
-                        <div class="tech-item">MySQL</div>
-                        <div class="tech-item">MongoDB</div>
-                        <div class="tech-item">Redis</div>
-                        <div class="tech-item">SQL Server</div>
-                    </div>
-                </div>
-                
-                <div class="tech-category">
-                    <h3>Payment Gateways</h3>
-                    <div class="tech-items">
-                        <div class="tech-itemm">Stripe</div>
-                        <div class="tech-item">Razorpay</div>
-                        <div class="tech-item">PayPal</div>
-                        <div class="tech-item">Square</div>
-                        <div class="tech-item">Authorize.net</div>
                     </div>
 
                     <div class="tech-category">
@@ -2404,9 +2356,6 @@ flow.</p>
     </section>
 
     <!-- CTA Section -->
-
-    <!-- CTA Section -->
-
     <section class="section-padding" id="contact">
         <div class="container">
             <div class="cta-section">
@@ -2414,21 +2363,10 @@ flow.</p>
                 <p class="cta-subtitle">Let's build a billing and invoice solution that automates your financial
                     operations, reduces errors, and improves cash flow. Contact us for a free consultation and discover
                     how our expertise can transform your billing processes.</p>
-                <a href="contact.html" class="cta-button-large" style="cursor: pointer;">Schedule a Free
-                    Consultation</a>
+                <a href="contact.html" class="cta-button-large" style="cursor: pointer;">Schedule a Free Consultation</a>
             </div>
-<section class="section-padding" id="contact">
-    <div class="container">
-        <div class="cta-section">
-            <h2 class="cta-title">Ready to Simplify Your Billing Process?</h2>
-            <p class="cta-subtitle">Let's build a billing and invoice solution that automates your financial
-                operations, reduces errors, and improves cash flow. Contact us for a free consultation and discover
-                how our expertise can transform your billing processes.</p>
-            <a href="contact.html" class="cta-button-large" style="cursor: pointer;">Schedule a Free Consultation</a>
-
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -2700,148 +2638,6 @@ flow.</p>
             });
         });
     </script>
-
-    .dropdown-content {
-        position: static;
-        background: transparent;
-        box-shadow: none;
-        border: none;
-        padding: 10px 0 10px 20px;
-        display: block !important;
-        max-height: none;
-    }
-    
-    .dropdown-content a {
-        margin: 5px 0;
-        padding: 8px 15px;
-        font-size: 0.9rem;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-        background: none;
-        border: none;
-        color: var(--light);
-        font-size: 1.5rem;
-        cursor: pointer;
-        z-index: 1001;
-    }
-}
-
-/* Hamburger menu animation */
-.hamburger-line {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background: var(--light);
-    margin: 5px 0;
-    transition: all 0.3s ease;
-}
-
-.mobile-menu-btn.active .hamburger-line:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.mobile-menu-btn.active .hamburger-line:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-btn.active .hamburger-line:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-    </style>
-
-    <script>
-// Mobile menu toggle function
-// Mobile menu functionality
-function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    
-    navLinks.classList.toggle('active');
-    mobileMenuBtn.classList.toggle('active');
-}
-
-// Make function globally available
-window.toggleMobileMenu = toggleMobileMenu;
-
-// Close mobile menu when clicking on links
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const navLinksContainer = document.querySelector('.nav-links');
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            
-            if (navLinksContainer.classList.contains('active')) {
-                navLinksContainer.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-            }
-        });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const navLinks = document.querySelector('.nav-links');
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const isClickInsideNav = navLinks.contains(event.target);
-        const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
-        
-        if (!isClickInsideNav && !isClickOnMenuBtn && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-        }
-    });
-});
-// Make function globally available
-window.toggleMobileMenu = toggleMobileMenu;
-
-// Close mobile menu when clicking on links
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const navLinksContainer = document.querySelector('.nav-links');
-            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-            
-            if (navLinksContainer.classList.contains('active')) {
-                navLinksContainer.classList.remove('active');
-                mobileMenuBtn.classList.remove('active');
-            }
-        });
-    });
-});
-    // Footer dropdown functionality
-    document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-        header.addEventListener('click', () => {
-            const parent = header.parentElement;
-            parent.classList.toggle('open');
-        });
-    });
-
-    // FAQ Accordion Functionality
-    document.addEventListener('DOMContentLoaded', function() {
-        const faqItems = document.querySelectorAll('.faq-item');
-        
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                
-                // Close all FAQ items first
-                faqItems.forEach(faqItem => {
-                    faqItem.classList.remove('active');
-                });
-                
-                // If the clicked item wasn't active, open it
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-    });
-</script>
 
     <script src="Customscroll.js"></script>
 
