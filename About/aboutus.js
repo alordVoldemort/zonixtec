@@ -1,11 +1,4 @@
-
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('body').classList.toggle('menu-open');
-        });
-
-        // Header scroll effect
+    // Header scroll effect
         window.addEventListener('scroll', function () {
             const header = document.getElementById('header');
             if (window.scrollY > 50) {
@@ -160,5 +153,71 @@
 
         if (impactSection) {
             observer.observe(impactSection);
+        }
+
+        // Intersection Observer for scroll animations
+        const animationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Add animated class with a small delay for smoother effect
+                    setTimeout(() => {
+                        entry.target.classList.add('animated');
+                    }, 100);
+                }
+            });
+        }, {
+            threshold: 0.15, // Trigger when 15% of element is visible
+            rootMargin: '0px 0px -80px 0px' // Trigger slightly before element fully enters viewport
+        });
+
+        // Observe all elements with animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            animatedElements.forEach(element => {
+                // Skip elements inside header or footer
+                if (element.closest('header') || element.closest('#header') || 
+                    element.closest('footer') || element.closest('.footer')) {
+                    element.classList.add('animated');
+                    element.style.opacity = '1';
+                    return;
+                }
+                
+                animationObserver.observe(element);
+            });
+        });
+
+        // Enhanced parallax effect for hero sections (optional)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.slide-bg-image');
+            
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Smooth reveal for timeline items
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateX(0)';
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        // Additional performance optimization
+        // Reduce animations on low-end devices
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        
+        if (prefersReducedMotion.matches) {
+            document.querySelectorAll('.animate-on-scroll').forEach(element => {
+                element.classList.add('animated');
+                element.style.opacity = '1';
+            });
         }
   

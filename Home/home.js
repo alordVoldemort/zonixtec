@@ -279,12 +279,7 @@
         });
 
         // Footer dropdown functionality
-        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const parent = header.parentElement;
-                parent.classList.toggle('open');
-            });
-        });
+      
 
         // Viewport height fix for mobile
         function setVh() {
@@ -314,46 +309,52 @@
         const slides = document.querySelectorAll('.slide');
         const videos = document.querySelectorAll('.hero-bg-video');
         const totalSlides = slides.length;
-        let autoSlideInterval;
+        let autoSlideInterval = null;
+        let isTransitioning = false;
 
         // Function to show specific slide and change video
         function showSlide(index) {
-            // Remove active class from all slides and videos
+            // Prevent multiple transitions at once
+            if (isTransitioning) return;
+            isTransitioning = true;
+
+            // Calculate previous slide index
+            const prevIndex = currentSlideIndex;
+            
+            // Update current slide index
+            if (index < 0) {
+                index = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                index = 0;
+            }
+            
+            currentSlideIndex = index;
+
+            // Remove active and prev classes from all slides
             slides.forEach((slide, i) => {
                 slide.classList.remove('active', 'prev');
-                if (i !== index) {
-                    slide.style.opacity = '0';
-                    slide.style.transform = 'translateX(100%)';
-                }
             });
+
+            // Add prev class to previous slide
+            if (slides[prevIndex]) {
+                slides[prevIndex].classList.add('prev');
+            }
+
+            // Add active class to current slide
+            if (slides[currentSlideIndex]) {
+                slides[currentSlideIndex].classList.add('active');
+            }
+
+            // Change background video with fade effect
             videos.forEach(video => {
                 video.classList.remove('active');
             });
 
-            // Calculate previous slide index
-            const prevIndex = currentSlideIndex;
-            currentSlideIndex = index;
-
-            // Add appropriate classes for slides with smooth animation
-            if (slides[currentSlideIndex]) {
-                slides[currentSlideIndex].classList.add('active');
-                slides[currentSlideIndex].style.opacity = '1';
-                slides[currentSlideIndex].style.transform = 'translateX(0)';
-
-                // Add prev class to previous slide for smooth transition
-                if (slides[prevIndex] && prevIndex !== currentSlideIndex) {
-                    slides[prevIndex].classList.add('prev');
-                    slides[prevIndex].style.transform = 'translateX(-100%)';
-                }
-            }
-
-            // Change background video with fade effect
             if (videos[currentSlideIndex]) {
                 // Pause all other videos
                 videos.forEach((video, i) => {
                     if (i !== currentSlideIndex) {
                         video.pause();
-                        video.currentTime = 0;
                     }
                 });
 
@@ -365,14 +366,10 @@
                 });
             }
 
-            // Add visual feedback for slide change
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                heroSection.style.transform = 'scale(1.005)';
-                setTimeout(() => {
-                    heroSection.style.transform = 'scale(1)';
-                }, 300);
-            }
+            // Reset transition lock after animation completes
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 800);
         }
 
         // Function to go to next slide
@@ -398,7 +395,11 @@
 
         // Auto-play slider
         function startAutoSlide() {
-            return setInterval(() => {
+            // Clear any existing interval first
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+            autoSlideInterval = setInterval(() => {
                 nextSlide();
             }, 5000); // Change slide every 5 seconds
         }
@@ -415,7 +416,7 @@
             });
 
             // Start auto-play
-            let autoSlideInterval = startAutoSlide();
+            startAutoSlide();
 
             // Enhanced pause/resume functionality
             const heroSection = document.querySelector('.hero');
@@ -424,21 +425,27 @@
             if (heroSection) {
                 // Pause on hover
                 heroSection.addEventListener('mouseenter', () => {
-                    clearInterval(autoSlideInterval);
+                    if (autoSlideInterval) {
+                        clearInterval(autoSlideInterval);
+                        autoSlideInterval = null;
+                    }
                 });
 
                 // Resume on mouse leave
                 heroSection.addEventListener('mouseleave', () => {
-                    autoSlideInterval = startAutoSlide();
+                    startAutoSlide();
                 });
 
                 // Pause when user interacts with controls
                 sliderControls.forEach(control => {
                     control.addEventListener('click', () => {
-                        clearInterval(autoSlideInterval);
+                        if (autoSlideInterval) {
+                            clearInterval(autoSlideInterval);
+                            autoSlideInterval = null;
+                        }
                         // Resume after 3 seconds of inactivity
                         setTimeout(() => {
-                            autoSlideInterval = startAutoSlide();
+                            startAutoSlide();
                         }, 3000);
                     });
                 });
@@ -446,10 +453,13 @@
                 // Pause when page is not visible
                 document.addEventListener('visibilitychange', () => {
                     if (document.hidden) {
-                        clearInterval(autoSlideInterval);
+                        if (autoSlideInterval) {
+                            clearInterval(autoSlideInterval);
+                            autoSlideInterval = null;
+                        }
                         videos.forEach(video => video.pause());
                     } else {
-                        autoSlideInterval = startAutoSlide();
+                        startAutoSlide();
                         // Resume current video
                         if (videos[currentSlideIndex]) {
                             videos[currentSlideIndex].play().catch(err => {
@@ -465,20 +475,18 @@
                 if (e.key === 'ArrowLeft') {
                     e.preventDefault();
                     prevSlide();
-                    clearInterval(autoSlideInterval);
-                    autoSlideInterval = startAutoSlide();
+                    startAutoSlide();
                 } else if (e.key === 'ArrowRight') {
                     e.preventDefault();
                     nextSlide();
-                    clearInterval(autoSlideInterval);
-                    autoSlideInterval = startAutoSlide();
+                    startAutoSlide();
                 } else if (e.key === ' ') { // Spacebar to pause/resume
                     e.preventDefault();
                     if (autoSlideInterval) {
                         clearInterval(autoSlideInterval);
                         autoSlideInterval = null;
                     } else {
-                        autoSlideInterval = startAutoSlide();
+                        startAutoSlide();
                     }
                 }
             });
@@ -514,8 +522,7 @@
                         // Swiped right - go to previous slide
                         prevSlide();
                     }
-                    clearInterval(autoSlideInterval);
-                    autoSlideInterval = startAutoSlide();
+                    startAutoSlide();
                 }
             }
         });
@@ -644,83 +651,6 @@
             }
         });
 
-      
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-            // ——— DESKTOP: Hover (mouseenter/leave) ———
-            dropdownToggles.forEach(toggle => {
-                const dropdown = toggle.parentElement;
-
-                // Open on hover (desktop only)
-                toggle.addEventListener('mouseenter', () => {
-                    if (window.innerWidth > 768) {
-                        closeAllDropdownsExcept(dropdown);
-                        dropdown.classList.add('active');
-                    }
-                });
-
-                // Close when leaving dropdown area
-                dropdown.addEventListener('mouseleave', () => {
-                    if (window.innerWidth > 768) {
-                        dropdown.classList.remove('active');
-                    }
-                });
-            });
-
-            // ——— MOBILE: Click to toggle ———
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function (e) {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault(); // Prevent navigation
-                        const dropdown = this.parentElement;
-
-                        const isActive = dropdown.classList.contains('active');
-                        closeAllDropdowns(); // Close others first
-
-                        if (!isActive) {
-                            dropdown.classList.add('active');
-                        }
-                    }
-                });
-            });
-
-            // ——— CLOSE WHEN CLICKING OUTSIDE ———
-            document.addEventListener('click', function (e) {
-                const clickedInsideDropdown = e.target.closest('.dropdown');
-                const clickedMenuBtn = e.target.closest('.mobile-menu-btn');
-
-                if (!clickedInsideDropdown && !clickedMenuBtn) {
-                    closeAllDropdowns();
-                }
-            });
-
-            // ——— HELPER: Close all dropdowns (optionally exclude one) ———
-            function closeAllDropdownsExcept(exclude = null) {
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    if (dropdown !== exclude) {
-                        dropdown.classList.remove('active');
-                    }
-                });
-            }
-
-            function closeAllDropdowns() {
-                closeAllDropdownsExcept();
-            }
-
-            // ——— OPTIONAL: Close on Escape key ———
-            document.addEventListener('keydown', e => {
-                if (e.key === 'Escape') {
-                    closeAllDropdowns();
-                }
-            });
-
-            // ——— OPTIONAL: Close on resize to desktop ———
-            window.addEventListener('resize', () => {
-                if (window.innerWidth > 768) {
-                    closeAllDropdowns();
-                }
-            });
-        });
+        // Dropdown logic removed - handled by navbar.js to avoid conflicts
 
 

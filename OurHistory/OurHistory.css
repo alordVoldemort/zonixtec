@@ -240,51 +240,14 @@
         box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
       }
 
-      /* ===== Dropdown Styles ===== */
-      .dropdown {
-        position: relative;
-        display: inline-block;
-      }
-
-      .dropdown-toggle {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
-
-      .dropdown-toggle i {
-        font-size: 0.8rem;
-        transition: transform 0.3s ease;
-      }
-
-      .dropdown:hover .dropdown-toggle i {
-        transform: rotate(180deg);
-      }
+      /* Dropdown styles handled by allDropdown.css */
 
       .Setcolor {
         background: linear-gradient(135deg, #0f172a, #0f172a);
         padding: 25px;
       }
 
-      .dropdown-content a {
-        display: block;
-        padding: 12px 20px;
-        color: var(--light);
-        text-decoration: none;
-        transition: all 0.3s ease;
-        font-weight: 500;
-        font-size: 0.95rem;
-        border-left: 4px solid transparent;
-        margin: 2px 8px;
-        border-radius: 4px;
-      }
-
-      .dropdown-content a:hover {
-        background: rgba(37, 99, 235, 0.15);
-        color: var(--secondary);
-        border-left: 4px solid var(--secondary);
-        transform: translateX(5px);
-      }
+      /* Dropdown styles handled by allDropdown.css */
 
       @keyframes fadeInUp {
         from {

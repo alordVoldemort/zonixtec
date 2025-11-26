@@ -21,6 +21,8 @@
     <link rel="stylesheet" href="../CEODesk/CEODesk.css">
     <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/allDropdown.css">
+    <link rel="stylesheet" href="../CSS/mobile-menu.css">
+    
 </head>
 
 <body>
@@ -56,7 +58,7 @@
                             </div>
                         </div>
 
-                        <span class="about-close">&times;</span>
+                        <span class="about-close"><i class="fas fa-times"></i></span>
 
                         <div class="about-image">
                             <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
@@ -65,10 +67,10 @@
                     </div>
                 </div>
 
-                <div class="dropdown">
-                    <a href="../Services/Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-scroll">
+                <div class="nav-services-dropdown">
+                    <a href="../Services/Services.html" class="nav-services-toggle">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="nav-services-content">
+                        <div class="nav-services-scroll">
                             <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
                             <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
                             <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
@@ -108,21 +110,21 @@
     <!-- CEO Hero Section -->
     <section class="ceo-hero">
         <div class="container">
-            <h1>From CEO's Desk</h1>
-            <p>Some Journeys Start With Code. Ours Started With A Belief That Technology Can Truly Change Lives.</p>
+            <h1 class="animate-on-scroll">From CEO's Desk</h1>
+            <p class="animate-on-scroll">Some Journeys Start With Code. Ours Started With A Belief That Technology Can Truly Change Lives.</p>
         </div>
     </section>
 
     <!-- The Beginning Section -->
     <div class="container">
         <div class="section-header">
-            <h2 class="beginning-title">The Beginning</h2>
-            <p class="beginning-subtitle">A Journey of Passion & Purpose</p>
+            <h2 class="beginning-title animate-on-scroll">The Beginning</h2>
+            <p class="beginning-subtitle animate-on-scroll">A Journey of Passion & Purpose</p>
         </div>
     </div>
     <section class="beginning-section">
         <div class="beginning-card">
-            <div class="beginning-left">
+            <div class="beginning-left animate-on-scroll">
                 <p class="beginning-desc">
                     When I think back to the early days of Zonixtec IT Services, I remember sitting
                     in a small room with just five passionate developers, all sharing one dream:
@@ -136,7 +138,7 @@
                 </p>
 
                 <div class="highlight-wrapper">
-                    <div class="highlight-box">
+                    <div class="highlight-box animate-on-scroll">
                         <div class="highlight-item">
                             <div class="icon-circle">
                                 <img src="../Assets/Vector.svg" alt="Innovation Icon" />
@@ -148,7 +150,7 @@
                         </div>
                     </div>
 
-                    <div class="highlight-box">
+                    <div class="highlight-box animate-on-scroll">
                         <div class="highlight-item">
                             <div class="icon-circlee">
                                 <img src="../Assets/Vector (1).svg" alt="Collaboration Icon" />
@@ -161,7 +163,7 @@
                     </div>
                 </div>
             </div>
-            <div class="beginning-right">
+            <div class="beginning-right animate-on-scroll">
                 <img src="../Assets/f66bd6d71df987ce9f925f8f235198e943023de5.jpg" alt="Handshake" />
             </div>
         </div>
@@ -253,14 +255,14 @@
     <!-- The Breakthrough Section -->
     <div class="container">
         <div class="section-header">
-            <h1>The Breakthrough</h1>
-            <div class="year">2024: A Milestone Year</div>
+            <h1 class="animate-on-scroll">The Breakthrough</h1>
+            <div class="year animate-on-scroll">2024: A Milestone Year</div>
         </div>
     </div>
     <section class="milestone-section">
         <div class="content-area">
 
-            <p class="description">
+            <p class="description animate-on-scroll">
                 2024 was a milestone year. We secured our first major enterprise client and delivered a custom CRM
                 solution that boosted their sales by 45%. That moment wasn't just a number on a report — it was
                 validation that our vision of AI-powered solutions, High-end technologies, and tailored software
@@ -272,19 +274,19 @@
             </p>
 
             <div class="stats-container">
-                <div class="stat-card">
+                <div class="stat-card animate-on-scroll">
                     <div class="stat-value">45%</div>
                     <div class="stat-label">Sales Boost</div>
                     <div class="stat-desc">for our first enterprise client</div>
                 </div>
 
-                <div class="stat-card">
+                <div class="stat-card animate-on-scroll">
                     <div class="stat-value">1st</div>
                     <div class="stat-label">Major Client</div>
                     <div class="stat-desc">enterprise partnership secured</div>
                 </div>
 
-                <div class="stat-card">
+                <div class="stat-card animate-on-scroll">
                     <div class="stat-value">CRM</div>
                     <div class="stat-label">Custom Solution</div>
                     <div class="stat-desc">AI-powered platform delivered</div>
@@ -298,15 +300,15 @@
 
     <div class="container">
         <div class="section-header">
-            <h2 class="beginning-title">Building Our Home</h2>
-            <p class="beginning-subtitle">2024: A Milestone Year</p>
+            <h2 class="beginning-title animate-on-scroll">Building Our Home</h2>
+            <p class="beginning-subtitle animate-on-scroll">2024: A Milestone Year</p>
         </div>
     </div>
 
     <section class="beginning-section">
         <div class="container">
             <div class="beginning-card">
-                <div class="beginning-left">
+                <div class="beginning-left animate-on-scroll">
                     <p class="beginning-desc">
                         Later that year, we took another bold step: opening our own office. It wasn't just a physical
                         space — it became the heartbeat of our culture.
@@ -320,32 +322,35 @@
                     </p>
 
                     <div class="highlight-wrapper">
-                        <div class="highlight-boxx">
-                            <div class="set">
-                                <div><img class="icon" src="../Assets//recommendations-ai-svgrepo-com 1.png"
-                                        alt="Rocket Icon" /></div>
+                        <div class="service-grid animate-on-scroll">
+                            <div class="service-item">
+                                <img class="icon" src="../Assets//recommendations-ai-svgrepo-com 1.png"
+                                    alt="CRM & ERP Icon" />
                                 <h3>CRM & ERP Solutions</h3>
-
-                                <div><img class="icon" src="../Assets//cloud-generic-svgrepo-com 1.png"
-                                        alt="Handshake Icon" /></div>
-                                <h3>Billing Services</h3>
-
                             </div>
-                            <div class="set">
-                                <div><img class="icon" src="../Assets//cloud-asset-inventory-svgrepo-com 1.png"
-                                        alt="Handshake Icon" /></div>
+                            
+                            <div class="service-item">
+                                <img class="icon" src="../Assets//cloud-generic-svgrepo-com 1.png"
+                                    alt="Billing Icon" />
+                                <h3>Billing Services</h3>
+                            </div>
+                            
+                            <div class="service-item">
+                                <img class="icon" src="../Assets//cloud-asset-inventory-svgrepo-com 1.png"
+                                    alt="Digital Transformation Icon" />
                                 <h3>Digital Transformation</h3>
-
-                                <div><img class="icon" src="../Assets//cloud-shell-svgrepo-com 1.png"
-                                        alt="Handshake Icon" /></div>
+                            </div>
+                            
+                            <div class="service-item">
+                                <img class="icon" src="../Assets//cloud-shell-svgrepo-com 1.png"
+                                    alt="Custom Development Icon" />
                                 <h3>Custom Development</h3>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
-                <div class="beginning-right">
+                <div class="beginning-right animate-on-scroll">
                     <img src="../Assets/cabinet-svgrepo-com 1.png" alt="Handshake" />
                 </div>
             </div>
@@ -354,13 +359,13 @@
 
     <div class="container">
         <div class="section-header">
-            <h1>The Future</h1>
+            <h1 class="animate-on-scroll">The Future</h1>
         </div>
     </div>
     <section class="milestone-section">
         <div class="content-area">
-            <h3 style="text-align: center;">Looking Forward</h3>
-            <div style="text-align: center;">
+            <h3 style="text-align: center;" class="animate-on-scroll">Looking Forward</h3>
+            <div style="text-align: center;" class="animate-on-scroll">
                 <p>
                     Looking forward, I see limitless possibilities. Our mission is clear: to push boundaries, embrace
                     emerging
@@ -374,11 +379,11 @@
                 </p>
             </div>
 
-            <h2 style="text-align: center;">
+            <h2 style="text-align: center;" class="animate-on-scroll">
                 This is more than a company. It's a journey.
             </h2>
 
-            <p style="text-align: center;">
+            <p style="text-align: center;" class="animate-on-scroll">
                 And I'm inviting you — our clients, partners, and team members — to walk it with us.
             </p>
 
@@ -495,43 +500,6 @@
         </div>
     </footer>
 
-
-    <script>
-        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const parent = header.parentElement;
-                parent.classList.toggle('open');
-            });
-        });
-    </script>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
-            document.querySelector('body').classList.toggle('menu-open');
-        });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function () {
-            const header = document.getElementById('header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Newsletter form submission
-        document.querySelector('.newsletter-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const email = this.querySelector('.newsletter-input').value;
-            if (email) {
-                alert('Thank you for subscribing to our newsletter!');
-                this.reset();
-            }
-        });
-    </script>
 
     <script src="Customscroll.js"></script>
 
@@ -721,6 +689,10 @@
     <!-- Booking Modal Script -->
     <script src="../script/30min-booking.js"></script>
     <script src="../script/navbar.js"></script>
+    <script src="../script/footer.js"></script>
+    <script src="../script/allabout.js"></script>
+    <script src="../CEODesk/CEODesk.js"></script>
+     
 
 </body>
 

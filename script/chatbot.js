@@ -6,6 +6,7 @@ class ZonixtecChatbot {
     this.userName = localStorage.getItem("chatbot_user_name") || "";
     this.userEmail = localStorage.getItem("chatbot_user_email") || "";
     this.userPhone = localStorage.getItem("chatbot_user_phone") || "";
+    this.conversationStep = localStorage.getItem("chatbot_step") || "ask_name";
     this.init();
   }
 
@@ -22,13 +23,16 @@ class ZonixtecChatbot {
   init() {
     this.injectHTML();
     this.attachEventListeners();
-    if (this.userName && this.userEmail) {
-      this.showChatInterface();
-      this.addBotMessage(
-        "Welcome back, " + this.userName + "! How can I help you today?"
-      );
+    this.showChatInterface();
+    
+    if (this.conversationStep === "completed") {
+      this.addBotMessage(`Welcome back, ${this.userName}! 👋 How can I help you today?`);
+      this.showQuickReplies();
     } else {
-      this.showWelcomeMessage();
+      this.addBotMessage("👋 Hello! Welcome to Zonixtec! I'm your AI assistant.");
+      setTimeout(() => {
+        this.addBotMessage("May I know your name?");
+      }, 800);
     }
   }
 
@@ -45,20 +49,13 @@ class ZonixtecChatbot {
                                     <i class="fas fa-robot"></i>
                                 </div>
                                 <div class="chatbot-header-text">
-                                    <h3>Zonixtec Assistant</h3>
+                                    <h3>Zonixtec Assistant </h3>
                                     <p>Online • Ready to help</p>
                                 </div>
                             </div>
                             <button class="chatbot-close" id="chatbot-close" aria-label="Close chat">
                                 <i class="fas fa-times"></i>
                             </button>
-                        </div>
-                        
-                        <div class="chatbot-user-info" id="chatbot-user-info" style="display: none;">
-                            <input type="text" id="user-name" placeholder="Your Name *" required>
-                            <input type="email" id="user-email" placeholder="Your Email *" required>
-                            <input type="tel" id="user-phone" placeholder="Your Phone (optional)">
-                            <button id="start-chat-btn">Start Chat</button>
                         </div>
                         
                         <div class="chatbot-messages" id="chatbot-messages"></div>
@@ -86,13 +83,11 @@ class ZonixtecChatbot {
     const toggle = document.getElementById("chatbot-toggle");
     const close = document.getElementById("chatbot-close");
     const form = document.getElementById("chatbot-form");
-    const startChatBtn = document.getElementById("start-chat-btn");
     const input = document.getElementById("chatbot-input");
 
     toggle.addEventListener("click", () => this.toggleChat());
     close.addEventListener("click", () => this.closeChat());
     form.addEventListener("submit", (e) => this.handleSubmit(e));
-    startChatBtn.addEventListener("click", () => this.startChat());
 
     // Fix space key issue - prevent global handlers from interfering
     if (input) {
@@ -125,126 +120,7 @@ class ZonixtecChatbot {
   }
 
   setupInputValidation() {
-    const nameInput = document.getElementById("user-name");
-    const emailInput = document.getElementById("user-email");
-    const phoneInput = document.getElementById("user-phone");
-
-    // Name validation - only letters and spaces
-    if (nameInput) {
-      nameInput.addEventListener("input", (e) => {
-        let value = e.target.value;
-        // Remove any characters that are not letters or spaces
-        value = value.replace(/[^A-Za-z ]/g, "");
-        e.target.value = value;
-      });
-
-      nameInput.addEventListener("keypress", (e) => {
-        // Prevent non-letter and non-space characters
-        const char = String.fromCharCode(e.which);
-        if (!/[A-Za-z ]/.test(char)) {
-          e.preventDefault();
-        }
-      });
-      nameInput.addEventListener(
-        "keydown",
-        (e) => {
-          if (e.key === " " || e.key === "Spacebar") {
-            e.stopPropagation(); // allow space
-          }
-        },
-        true
-      );
-
-      nameInput.addEventListener(
-        "keypress",
-        (e) => {
-          if (e.key === " " || e.keyCode === 32) {
-            e.stopPropagation(); // allow space
-          }
-        },
-        true
-      );
-    }
-
-    // Email validation - valid email format
-    if (emailInput) {
-      emailInput.addEventListener("blur", (e) => {
-        const value = e.target.value.trim();
-        if (value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          e.target.style.borderColor = "#ff4444";
-        } else {
-          e.target.style.borderColor = "";
-        }
-      });
-
-      emailInput.addEventListener("input", (e) => {
-        // Reset border color on input
-        if (e.target.style.borderColor === "rgb(255, 68, 68)") {
-          e.target.style.borderColor = "";
-        }
-      });
-    }
-
-    // Phone validation - only numbers, must start with 6,7,8,9, max 10 digits
-    if (phoneInput) {
-      phoneInput.addEventListener("input", (e) => {
-        let value = e.target.value;
-        // Remove any non-numeric characters
-        value = value.replace(/[^0-9]/g, "");
-
-        // If first digit is not 6,7,8,9, clear it
-        if (value.length > 0 && !/^[6-9]/.test(value)) {
-          value = "";
-        }
-
-        // Limit to 10 digits
-        if (value.length > 10) {
-          value = value.substring(0, 10);
-        }
-
-        e.target.value = value;
-      });
-
-      phoneInput.addEventListener("keypress", (e) => {
-        const char = String.fromCharCode(e.which);
-        // Only allow numbers
-        if (!/[0-9]/.test(char)) {
-          e.preventDefault();
-          return;
-        }
-
-        const currentValue = e.target.value;
-        // If this is the first digit, it must be 6,7,8, or 9
-        if (currentValue.length === 0 && !/[6-9]/.test(char)) {
-          e.preventDefault();
-        }
-
-        // Limit to 10 digits
-        if (currentValue.length >= 10) {
-          e.preventDefault();
-        }
-      });
-
-      phoneInput.addEventListener("paste", (e) => {
-        e.preventDefault();
-        const pastedText = (e.clipboardData || window.clipboardData).getData(
-          "text"
-        );
-        let value = pastedText.replace(/[^0-9]/g, "");
-
-        // If first digit is not 6,7,8,9, clear it
-        if (value.length > 0 && !/^[6-9]/.test(value)) {
-          value = "";
-        }
-
-        // Limit to 10 digits
-        if (value.length > 10) {
-          value = value.substring(0, 10);
-        }
-
-        e.target.value = value;
-      });
-    }
+    // No user info form validation needed anymore
   }
 
   toggleChat() {
@@ -257,63 +133,8 @@ class ZonixtecChatbot {
     window.classList.remove("active");
   }
 
-  showWelcomeMessage() {
-    document.getElementById("chatbot-user-info").style.display = "block";
-    this.addBotMessage(
-      "👋 Welcome to Zonixtec! I'm your AI assistant. Please share your details to get started."
-    );
-  }
-
-  startChat() {
-    const name = document.getElementById("user-name").value.trim();
-    const email = document.getElementById("user-email").value.trim();
-    const phone = document.getElementById("user-phone").value.trim();
-
-    // 🔥 VALIDATION SECTION ---------------------
-
-    // Name validation (letters + spaces only)
-    const nameRegex = /^[A-Za-z ]{2,}$/;
-    if (!nameRegex.test(name)) {
-      alert("Name should contain only letters and spaces (min 2 characters).");
-      return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      alert("Please enter a valid email address.");
-      return;
-    }
-
-    // Phone validation (only if entered)
-    if (phone.trim() !== "") {
-      const phoneRegex = /^[6-9]\d{9}$/;
-      if (!phoneRegex.test(phone)) {
-        alert(
-          "Enter a valid Indian mobile number starting with 6,7,8,9 (10 digits)."
-        );
-        return;
-      }
-    }
-
-    // -------------------------------------------
-
-    this.userName = name;
-    this.userEmail = email;
-    this.userPhone = phone;
-
-    localStorage.setItem("chatbot_user_name", name);
-    localStorage.setItem("chatbot_user_email", email);
-    localStorage.setItem("chatbot_user_phone", phone);
-
-    document.getElementById("chatbot-user-info").style.display = "none";
-    this.showChatInterface();
-    this.addBotMessage(`Hello ${name}! 👋 How can I help you today?`);
-    this.showQuickReplies();
-  }
-
   showChatInterface() {
-    document.getElementById("chatbot-user-info").style.display = "none";
+    // Chat interface is always visible now
   }
 
   showQuickReplies() {
@@ -360,6 +181,83 @@ class ZonixtecChatbot {
 
   async sendMessage(message) {
     this.addUserMessage(message);
+    
+    // Handle conversation flow for collecting user info
+    if (this.conversationStep === "ask_name") {
+      this.userName = message.trim();
+      localStorage.setItem("chatbot_user_name", this.userName);
+      this.conversationStep = "ask_email";
+      localStorage.setItem("chatbot_step", this.conversationStep);
+      
+      this.showTyping();
+      setTimeout(() => {
+        this.hideTyping();
+        this.addBotMessage(`Nice to meet you, ${this.userName}! 😊`);
+        setTimeout(() => {
+          this.addBotMessage("Could you please share your email address?");
+        }, 600);
+      }, 800);
+      return;
+    }
+    
+    if (this.conversationStep === "ask_email") {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(message.trim())) {
+        this.showTyping();
+        setTimeout(() => {
+          this.hideTyping();
+          this.addBotMessage("Please enter a valid email address.");
+        }, 500);
+        return;
+      }
+      
+      this.userEmail = message.trim();
+      localStorage.setItem("chatbot_user_email", this.userEmail);
+      this.conversationStep = "ask_phone";
+      localStorage.setItem("chatbot_step", this.conversationStep);
+      
+      this.showTyping();
+      setTimeout(() => {
+        this.hideTyping();
+        this.addBotMessage("Great! One last thing...");
+        setTimeout(() => {
+          this.addBotMessage("What's your phone number? (Indian mobile number)");
+        }, 600);
+      }, 800);
+      return;
+    }
+    
+    if (this.conversationStep === "ask_phone") {
+      const phoneRegex = /^[6-9]\d{9}$/;
+      const phone = message.trim().replace(/\s+/g, '');
+      
+      if (!phoneRegex.test(phone)) {
+        this.showTyping();
+        setTimeout(() => {
+          this.hideTyping();
+          this.addBotMessage("Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9.");
+        }, 500);
+        return;
+      }
+      
+      this.userPhone = phone;
+      localStorage.setItem("chatbot_user_phone", this.userPhone);
+      this.conversationStep = "completed";
+      localStorage.setItem("chatbot_step", this.conversationStep);
+      
+      this.showTyping();
+      setTimeout(() => {
+        this.hideTyping();
+        this.addBotMessage(`Perfect! Thank you, ${this.userName}! 🎉`);
+        setTimeout(() => {
+          this.addBotMessage("How can I help you today?");
+          this.showQuickReplies();
+        }, 800);
+      }, 800);
+      return;
+    }
+    
+    // Normal chat flow after info collection
     this.showTyping();
 
     try {

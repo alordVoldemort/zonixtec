@@ -110,6 +110,7 @@ function initializeCalendar() {
             if (dates.length > 0) {
                 selectedDate = dates[0];
                 document.getElementById("dateNextBtn").disabled = false;
+                filterTimeSlotsByDate(dates[0]);
             }
         }
     });
@@ -123,6 +124,10 @@ function initializeTimeSlots() {
 
     timeSlots.forEach(slot => {
         slot.addEventListener("click", function () {
+            if (this.classList.contains("disabled")) {
+                return; // Don't allow selection of disabled slots
+            }
+            
             timeSlots.forEach(s => s.classList.remove("selected"));
             this.classList.add("selected");
 
@@ -130,6 +135,51 @@ function initializeTimeSlots() {
             document.getElementById("timeNextBtn").disabled = false;
         });
     });
+}
+
+// =========================
+// FILTER TIME SLOTS BY DATE
+// =========================
+function filterTimeSlotsByDate(selectedDate) {
+    const timeSlots = document.querySelectorAll(".time-slot");
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const selected = new Date(selectedDate);
+    selected.setHours(0, 0, 0, 0);
+    
+    const isToday = selected.getTime() === today.getTime();
+    
+    if (isToday) {
+        const currentHour = new Date().getHours();
+        const currentMinute = new Date().getMinutes();
+        
+        timeSlots.forEach(slot => {
+            const timeString = slot.dataset.time;
+            const [hours, minutes] = timeString.split(':').map(Number);
+            
+            // Disable if the time has already passed
+            if (hours < currentHour || (hours === currentHour && minutes <= currentMinute)) {
+                slot.classList.add("disabled");
+                slot.classList.remove("selected");
+            } else {
+                slot.classList.remove("disabled");
+            }
+        });
+    } else {
+        // Enable all slots for future dates
+        timeSlots.forEach(slot => {
+            slot.classList.remove("disabled");
+        });
+    }
+    
+    // Reset selection if currently selected slot is now disabled
+    const selectedSlot = document.querySelector(".time-slot.selected");
+    if (selectedSlot && selectedSlot.classList.contains("disabled")) {
+        selectedSlot.classList.remove("selected");
+        selectedTime = null;
+        document.getElementById("timeNextBtn").disabled = true;
+    }
 }
 
 // =========================
@@ -207,7 +257,7 @@ document.getElementById("bookingFormPage").addEventListener("submit", async func
 
             // AUTO CLOSE PAGE AFTER 1.5 SECONDS
             setTimeout(() => {
-                window.location.href = "index.html";  // Redirect to home page
+                window.location.href = "../Home/home.html";  // Redirect to home page
             }, 1500);
         } else {
             alert("Error: " + result.message);

@@ -1,0 +1,391 @@
+/* ===================================
+   ORBITAL TECHNOLOGY STACK
+   Reusable component for displaying technologies
+   in a circular orbital animation
+   =================================== */
+
+/* Section Wrapper */
+.tech-stack-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+}
+
+/* Main Orbital Container */
+.orbital-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    height: 800px;
+    margin: 60px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Center Text */
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    text-align: center;
+}
+
+.center-text h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: var(--secondary);
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.5);
+}
+
+/* Orbit Rings */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 2px solid rgba(0, 242, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate 60s linear infinite;
+}
+
+.outer-orbit {
+    width: 700px;
+    height: 700px;
+    animation-duration: 80s;
+}
+
+.middle-orbit {
+    width: 500px;
+    height: 500px;
+    border-color: rgba(0, 102, 255, 0.3);
+    animation-duration: 60s;
+    animation-direction: reverse;
+}
+
+.inner-orbit {
+    width: 300px;
+    height: 300px;
+    border-color: rgba(255, 51, 102, 0.2);
+    animation-duration: 40s;
+}
+
+/* Rotation Animation */
+@keyframes rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Technology Icons */
+.tech-icon {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.9));
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--card-border);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    animation: counter-rotate 60s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+/* Icon Animation Durations */
+.outer-orbit .tech-icon {
+    animation-duration: 80s;
+}
+
+.middle-orbit .tech-icon {
+    animation-duration: 60s;
+    animation-direction: normal;
+}
+
+.inner-orbit .tech-icon {
+    animation-duration: 40s;
+}
+
+/* Counter Rotation Animation */
+@keyframes counter-rotate {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+/* ===================================
+   ICON POSITIONING
+   =================================== */
+
+/* Outer Orbit Icons (6 icons - evenly distributed) */
+.outer-orbit .tech-icon:nth-child(1) {
+    top: 0%;
+    left: 50%;
+}
+
+.outer-orbit .tech-icon:nth-child(2) {
+    top: 25%;
+    left: 93%;
+}
+
+.outer-orbit .tech-icon:nth-child(3) {
+    top: 75%;
+    left: 93%;
+}
+
+.outer-orbit .tech-icon:nth-child(4) {
+    top: 100%;
+    left: 50%;
+}
+
+.outer-orbit .tech-icon:nth-child(5) {
+    top: 75%;
+    left: 7%;
+}
+
+.outer-orbit .tech-icon:nth-child(6) {
+    top: 25%;
+    left: 7%;
+}
+
+/* Middle Orbit Icons (6 icons - evenly distributed) */
+.middle-orbit .tech-icon:nth-child(1) {
+    top: 0%;
+    left: 50%;
+}
+
+.middle-orbit .tech-icon:nth-child(2) {
+    top: 25%;
+    left: 93%;
+}
+
+.middle-orbit .tech-icon:nth-child(3) {
+    top: 75%;
+    left: 93%;
+}
+
+.middle-orbit .tech-icon:nth-child(4) {
+    top: 100%;
+    left: 50%;
+}
+
+.middle-orbit .tech-icon:nth-child(5) {
+    top: 75%;
+    left: 7%;
+}
+
+.middle-orbit .tech-icon:nth-child(6) {
+    top: 25%;
+    left: 7%;
+}
+
+/* Inner Orbit Icons (6 icons - evenly distributed) */
+.inner-orbit .tech-icon:nth-child(1) {
+    top: 0%;
+    left: 50%;
+}
+
+.inner-orbit .tech-icon:nth-child(2) {
+    top: 25%;
+    left: 93%;
+}
+
+.inner-orbit .tech-icon:nth-child(3) {
+    top: 75%;
+    left: 93%;
+}
+
+.inner-orbit .tech-icon:nth-child(4) {
+    top: 100%;
+    left: 50%;
+}
+
+.inner-orbit .tech-icon:nth-child(5) {
+    top: 75%;
+    left: 7%;
+}
+
+.inner-orbit .tech-icon:nth-child(6) {
+    top: 25%;
+    left: 7%;
+}
+
+/* Icon Content */
+.tech-icon i {
+    font-size: 2rem;
+    color: var(--secondary);
+    margin-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.tech-label {
+    font-size: 0.75rem;
+    color: var(--light);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    bottom: -25px;
+    white-space: nowrap;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid var(--card-border);
+}
+
+/* Hover Effects */
+.tech-icon:hover {
+    transform: translate(-50%, -50%) scale(1.3) !important;
+    border-color: var(--secondary);
+    box-shadow: 0 8px 30px rgba(0, 242, 255, 0.4);
+    z-index: 100;
+}
+
+.tech-icon:hover i {
+    color: var(--primary);
+    transform: scale(1.1);
+}
+
+.tech-icon:hover .tech-label {
+    opacity: 1;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablet Large (992px and below) */
+@media (max-width: 992px) {
+    .orbital-container {
+        max-width: 600px;
+        height: 600px;
+    }
+
+    .outer-orbit {
+        width: 550px;
+        height: 550px;
+    }
+
+    .middle-orbit {
+        width: 400px;
+        height: 400px;
+    }
+
+    .inner-orbit {
+        width: 250px;
+        height: 250px;
+    }
+
+    .tech-icon {
+        width: 55px;
+        height: 55px;
+    }
+
+    .tech-icon i {
+        font-size: 1.4rem;
+    }
+
+    .center-text h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .orbital-container {
+        max-width: 450px;
+        height: 450px;
+    }
+
+    .outer-orbit {
+        width: 400px;
+        height: 400px;
+    }
+
+    .middle-orbit {
+        width: 280px;
+        height: 280px;
+    }
+
+    .inner-orbit {
+        width: 180px;
+        height: 180px;
+    }
+
+    .tech-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .tech-icon i {
+        font-size: 1.2rem;
+    }
+
+    .center-text h3 {
+        font-size: 1.1rem;
+    }
+
+    .tech-label {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+}
+
+/* Mobile (576px and below) */
+@media (max-width: 576px) {
+    .tech-stack-section {
+        padding: 60px 0;
+    }
+
+    .orbital-container {
+        max-width: 350px;
+        height: 350px;
+        margin: 40px auto;
+    }
+
+    .outer-orbit {
+        width: 320px;
+        height: 320px;
+    }
+
+    .middle-orbit {
+        width: 220px;
+        height: 220px;
+    }
+
+    .inner-orbit {
+        width: 140px;
+        height: 140px;
+    }
+
+    .tech-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .tech-icon i {
+        font-size: 1rem;
+    }
+
+    .center-text h3 {
+        font-size: 0.9rem;
+    }
+
+    .tech-label {
+        font-size: 0.65rem;
+        padding: 3px 6px;
+        bottom: -20px;
+    }
+}

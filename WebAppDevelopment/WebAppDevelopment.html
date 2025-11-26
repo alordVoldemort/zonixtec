@@ -18,104 +18,98 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <link rel="stylesheet" href="../CSS/30min-model.css">
+    <link rel="stylesheet" href="../CSS/orbital-tech-stack.css">
 
-    <link rel="stylesheet" href="WebAppDevelopment.css">
-    <!-- Responsive Fixes CSS -->
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./WebAppDevelopment.css">
 
-
-    <!-- Navbar CSS -->
+    <!-- Additional CSS -->
     <link rel="stylesheet" href="../CSS/navbar.css">
-    <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/booking-modal.css">
+    <link rel="stylesheet" href="../CSS/mobile-menu.css">
 </head>
 
 <body>
     <!-- Header -->
-    <!-- Header -->
-<header id="header">
-    <div class="container">
-        <nav>
-            <a href="home.html" class="logo">
-                <img src="../Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
-            </a>
-            <div class="nav-links">
-
-                <!-- ABOUT DROPDOWN TRIGGER -->
-                <a href="#" class="about-toggle">About Us</a>
-                <!-- ABOUT DROPDOWN PANEL -->
-                <div class="about-dropdown">
-                    <div>
-                        <h2>About Us</h2>
-                    </div>
-
-                    <div class="about-container">
-
-                        <div class="about-links">
-                            <div>
-                                <a href="../About/aboutus.html">About Zonixtec</a>
-                                <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
-                                <a href="../OurHistory/OurHistory.html">Our Journey</a>
-                            </div>
-                            <div>
-                                <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
-                                <a href="../Leadership/Leadership.html">Leadership</a>
-                                <a href="../CaseStudies/CaseStudies.html">Case Study</a>
-                            </div>
-                        </div>
-
-                        <span class="about-close">&times;</span>
-
-                        <div class="about-image">
-                            <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <a href="../Services/Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-scroll">
-                            <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
-                            <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
-                            <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
-                            <a href="../CRMSolutions/CRMSolutions.html">Custom CRM Solutions</a>
-                            <a href="../ERPSolutions/ERPSolutions.html">Custom ERP Solutions</a>
-                            <a href="../BillingInvoice/BillingInvoice.html">Billing-Invoice Solutions</a>
-                            <a href="../AIStrategy/AIStrategy.html">AI Strategy & Consulting</a>
-                            <a href="../DigitalMarketing/DigitalMarketing.html">Digital Marketing Services</a>
-                            <a href="../MobileDevelopment/MobileDevelopment.html">Mobile App Development</a>
-                            <a href="../ui.html">UI/UX Design Services</a>
-                            <a href="../CloudSolutions/CloudSolutions.html">Cloud Solutions</a>
-                            <a href="../HRMSSolutions/HRMSSolutions.html">HRMS Solutions</a>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="../Career/Career.html">Career</a>
-                <a href="../Contact/contact.html">Contact</a>
-                <a href="javascript:void(0);" class="cta-buttons" onclick="openBookingModal()">
-                    <i class="fas fa-phone-alt"></i> Book A 30 Min Call
+      <header id="header">
+        <div class="container">
+            <nav>
+                <a href="../Home/home.html" class="logo">
+                    <img src="../Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
                 </a>
+                <div class="nav-links">
 
-            </div>
+                    <!-- ABOUT DROPDOWN TRIGGER -->
+                    <a href="#" class="about-toggle">About Us</a>
+                    <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div>
+                            <h2>About Us</h2>
+                        </div>
 
-            <!-- BOOKING MODAL For Each Page -->
+                        <div class="about-container">
 
-            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </nav>
-    </div>
-</header>
+                            <div class="about-links">
+                                <div>
+                                    <a href="../About/aboutus.html">About Zonixtec</a>
+                                    <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
+                                    <a href="../OurHistory/OurHistory.html">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
+                                    <a href="../Leadership/Leadership.html">Leadership</a>
+                                    <a href="../CaseStudies/CaseStudies.html">Case Study</a>
+                                </div>
+                            </div>
 
-<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+                            <span class="about-close"><i class="fas fa-times"></i></span>
 
+                            <div class="about-image">
+                                <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="nav-services-dropdown">
+                        <a href="../Services/Services.html" class="nav-services-toggle">Services <i
+                                class="fas fa-chevron-down"></i></a>
+                        <div class="nav-services-content">
+                            <div class="nav-services-scroll">
+                                <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
+                                <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
+                                <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
+                                <a href="../CRMSolutions/CRMSolutions.html">Custom CRM Solutions</a>
+                                <a href="../ERPSolutions/ERPSolutions.html">Custom ERP Solutions</a>
+                                <a href="../BillingInvoice/BillingInvoice.html">Billing-Invoice Solutions</a>
+                                <a href="../AIStrategy/AIStrategy.html">AI Strategy & Consulting</a>
+                                <a href="../DigitalMarketing/DigitalMarketing.html">Digital Marketing Services</a>
+                                <a href="../MobileDevelopment/MobileDevelopment.html">Mobile App Development</a>
+                                <a href="../ui.html">UI/UX Design Services</a>
+                                <a href="../CloudSolutions/CloudSolutions.html">Cloud Solutions</a>
+                                <a href="../HRMSSolutions/HRMSSolutions.html">HRMS Solutions</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <a href="../Career/Career.html">Career</a>
+                    <a href="../Contact/contact.html">Contact</a>
+                    <a href="javascript:void(0);" class="cta-buttons" onclick="openBookingModal()">
+                        <i class="fas fa-phone-alt"></i> Book A 30 Min Call
+                    </a>
 
+                </div>
+
+                <!-- BOOKING MODAL For Each Page -->
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
     <!-- Web App Development Hero Section -->
     <section class="services-hero">
@@ -124,11 +118,8 @@
                 <h1 class="services-hero-title">Web App Development Services</h1>
                 <p class="hero-subtitle">Our Web App Development services focus on creating interactive,
                     secure, and high-performing applications that deliver exceptional user experiences.</p>
-                <!-- <p class="hero-description">At Zonixtec, we transform ideas into powerful web applications that empower
-                    businesses to scale seamlessly. Our Web App Development services focus on creating interactive,
-                    secure, and high-performing applications that deliver exceptional user experiences—whether it's a
-                    business automation tool, enterprise platform, or customer-facing app.</p> -->
-                <a href="booking.html?service=web-app-development" class="cta-button">Let's Build Your Web App →</a>
+                <a href="../Booking/Booking.html?service=web-app-development" class="cta-button">Let's Build Your Web
+                    App →</a>
             </div>
         </div>
     </section>
@@ -143,21 +134,17 @@
                     <p>At Zonixtec, we transform ideas into powerful web applications that empower businesses to
                         scale seamlessly.
                     <p>Our Web App Development services focus on creating interactive, secure,
-                        and high-performing applications that deliver exceptional user experiences—whether it’s a
+                        and high-performing applications that deliver exceptional user experiences—whether it's a
                         business automation tool, enterprise platform, or customer-facing app.</p>
                     </p>
 
                 </div>
                 <div class="overview-highlight-container">
-                    <img src="./uploads/wdd1.jpg" alt="Web App Development" -->
+                    <img src="../uploads/wdd1.jpg" alt="Web App Development">
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 
     <!-- Key Offerings Section -->
     <section class="section-padding flashcards-section">
@@ -178,7 +165,7 @@
                             <p class="service-desc">Build secure, scalable, and feature-rich e-commerce platforms with
                                 integrated payment gateways, inventory management, and personalized shopping
                                 experiences.</p>
-                            <a href="../Contact/contact.html" class="service-cta">Get Started</a>
+                            <a href="../contact.html" class="service-cta">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +183,7 @@
                             <h3 class="service-title">Business Intelligence Dashboards</h3>
                             <p class="service-desc">Transform raw data into actionable insights with interactive
                                 dashboards that help you make informed business decisions in real-time.</p>
-                            <a href="../Contact/contact.html" class="service-cta">Get Started</a>
+                            <a href="../contact.html" class="service-cta">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -214,7 +201,7 @@
                             <h3 class="service-title">Workflow Automation Apps</h3>
                             <p class="service-desc">Streamline business processes with custom workflow automation
                                 applications that reduce manual tasks and improve operational efficiency.</p>
-                            <a href="../Contact/contact.html" class="service-cta">Get Started</a>
+                            <a href="../contact.html" class="service-cta">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -232,7 +219,7 @@
                             <h3 class="service-title">CRM & ERP Solutions</h3>
                             <p class="service-desc">Develop custom CRM and ERP systems that centralize customer data,
                                 automate sales processes, and optimize resource planning.</p>
-                            <a href="../Contact/contact.html" class="service-cta">Get Started</a>
+                            <a href="../contact.html" class="service-cta">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -250,7 +237,7 @@
                             <h3 class="service-title">Cloud-Based Applications</h3>
                             <p class="service-desc">Build scalable cloud-native applications that offer flexibility,
                                 security, and high availability across multiple platforms and devices.</p>
-                            <a href="../Contact/contact.html" class="service-cta">Get Started</a>
+                            <a href="../contact.html" class="service-cta">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -268,7 +255,7 @@
                             <h3 class="service-title">Progressive Web Apps (PWA)</h3>
                             <p class="service-desc">Create fast, reliable, and engaging Progressive Web Apps that work
                                 offline and provide a native app-like experience.</p>
-                            <a href="../Contact/contact.html" class="service-cta">Get Started</a>
+                            <a href="../contact.html" class="service-cta">Get Started</a>
                         </div>
                     </div>
                 </div>
@@ -277,7 +264,6 @@
     </section>
 
     <!-- Key Features Section -->
-    <!-- Features Section -->
     <section class="features-section section-padding">
         <div class="container">
             <h2 class="section-title">Features of Our <span>Solutions</span></h2>
@@ -391,33 +377,25 @@
                 </div>
             </div>
         </div>
-        </div>
     </section>
 
-
-    <!-- Advantages Section -->
-    <section class="section-padding advantage-section">
-        <div class="advantage-section">
+    <!-- What We Bring Section -->
+    <section class="section-padding">
+        <div class="container">
             <h2 class="section-title">What We <span>Bring</span></h2>
+            <p class="section-subtitle">We don't just build web apps—we build digital solutions that transform operations and drive business growth.</p>
 
             <div class="advantage-content">
-                <div style="text-align: center;">
-                    <p>We don’t just build web apps—we build digital solutions that transform operations.</p>
-
-                    <ul class="advantage-list"
-                        style="list-style: none; padding: 0; display: inline-block; text-align: left;">
-                        <li><i class="fas fa-check"></i> Agile development for faster time-to-market</li>
-                        <li><i class="fas fa-check"></i> Cloud-native and microservices-ready architecture</li>
-                        <li><i class="fas fa-check"></i> Tailored user experience and design flow</li>
-                        <li><i class="fas fa-check"></i> Enterprise-grade security and compliance</li>
-                        <li><i class="fas fa-check"></i> Continuous improvement with performance monitoring</li>
-                    </ul>
-                </div>
+                <ul class="advantage-list">
+                    <li><i class="fas fa-check"></i> Agile development for faster time-to-market</li>
+                    <li><i class="fas fa-check"></i> Cloud-native and microservices-ready architecture</li>
+                    <li><i class="fas fa-check"></i> Tailored user experience and design flow</li>
+                    <li><i class="fas fa-check"></i> Enterprise-grade security and compliance</li>
+                    <li><i class="fas fa-check"></i> Continuous improvement with performance monitoring</li>
+                </ul>
             </div>
         </div>
     </section>
-
-
 
     <!-- Development Process Section -->
     <section class="section-padding process-section">
@@ -462,77 +440,63 @@
             </div>
         </div>
     </section>
-
-
     <!-- Technology Stack Section -->
-    <section class="section-padding">
+
+    <section class="section-padding tech-stack-section">
         <div class="container">
-            <div class="tech-section">
-                <h2>Our Technology Stack</h2>
+            <h2 class="section-title">Our Technology <span>Stack</span></h2>
 
-                <div class="tech-grid">
-                    <div class="tech-category">
-                        <h3>Frontend Technologies</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">React</div>
-                            <div class="tech-item">Angular</div>
-                            <div class="tech-item">Vue.js</div>
-                            <div class="tech-item">TypeScript</div>
-                            <div class="tech-item">HTML5/CSS3</div>
-                        </div>
-                    </div>
-
-                    <div class="tech-category">
-                        <h3>Backend Technologies</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">Node.js</div>
-                            <div class="tech-item">Python</div>
-                            <div class="tech-item">PHP</div>
-                            <div class="tech-item">Java</div>
-                            <div class="tech-item">.NET</div>
-                        </div>
-                    </div>
-
-                    <div class="tech-category">
-                        <h3>Databases</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">MySQL</div>
-                            <div class="tech-item">PostgreSQL</div>
-                            <div class="tech-item">MongoDB</div>
-                            <div class="tech-item">Redis</div>
-                            <div class="tech-item">Firebase</div>
-                        </div>
-                    </div>
-
-                    <div class="tech-category">
-                        <h3>Cloud & DevOps</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">AWS</div>
-                            <div class="tech-item">Azure</div>
-                            <div class="tech-item">Google Cloud</div>
-                            <div class="tech-item">Docker</div>
-                            <div class="tech-item">Kubernetes</div>
-                        </div>
-                    </div>
-
-                    <div class="tech-category">
-                        <h3>Mobile & PWA</h3>
-                        <div class="tech-items">
-                            <div class="tech-item">React Native</div>
-                            <div class="tech-item">Flutter</div>
-                            <div class="tech-item">Ionic</div>
-                            <div class="tech-item">PWA</div>
-                            <div class="tech-item">Capacitor</div>
-                        </div>
-                    </div>
+            <div class="orbital-container">
+                <div class="center-text">
+                    <h3>Our Technology Stack</h3>
                 </div>
-            </div>
-        </div>
+
+                <!-- Outer Orbit -->
+                <div class="orbit outer-orbit">
+                    <div class="tech-icon">
+                        <i class="fab fa-react"></i>
+                        <span class="tech-label">React</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-angular"></i>
+                        <span class="tech-label">Angular</span>
+                    </div>
+                    <!-- Add more icons -->
+                </div>
+
+                <!-- Middle Orbit -->
+                <div class="orbit middle-orbit">
+                    <!-- Add icons -->
+                    <div class="tech-icon">
+                        <i class="fab fa-node-js"></i>
+                        <span class="tech-label">Nodejs</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-python"></i>
+                        <span class="tech-label">Python</span>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="fab fa-java"></i>
+                        <span class="tech-label">Java</span>    
+                    </div>
+
+                    <!-- Inner Orbit -->
+                    <div class="orbit inner-orbit">
+                        <!-- Add icons -->
+                        <div class="tech-icon">
+                            <i class="fas fa-database"></i>
+                            <span class="tech-label">Database</span>
+                        </div>
+                        <div class="tech-icon">
+                            <i class="fab fa-aws"></i>
+                            <span class="tech-label ">AWS</span>
+                        </div>
+
+                    </div>
     </section>
 
-
     <!-- Impact Section -->
-     <section class="section-padding">
+    <section class="section-padding">
         <div class="container">
             <div class="impact-section">
                 <h2 class="section-title">Impact on Your <span>Business</span></h2>
@@ -601,18 +565,18 @@
                     </div>
                     <div class="faq-answer">
                         All industries—from logistics and healthcare to fintech and education—benefit from secure and
-scalable web applications.
+                        scalable web applications.
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        What’s the difference between a website and a web app?
+                        What's the difference between a website and a web app?
                         <i class="fas fa-chevron-down faq-toggle"></i>
                     </div>
                     <div class="faq-answer">
                         A website shares information, while a web app allows users to interact, perform actions, and
-process data in real time.
+                        process data in real time.
                     </div>
                 </div>
 
@@ -632,7 +596,7 @@ process data in real time.
                         <i class="fas fa-chevron-down faq-toggle"></i>
                     </div>
                     <div class="faq-answer">
-                       Absolutely. We deploy apps on secure cloud platforms like AWS, Azure, or Google Cloud.
+                        Absolutely. We deploy apps on secure cloud platforms like AWS, Azure, or Google Cloud.
                     </div>
                 </div>
 
@@ -650,209 +614,134 @@ process data in real time.
     </section>
 
     <!-- CTA Section -->
-        <div class="container">
-            <div class="cta-section">
-                <h2 class="cta-title">Ready to Build Your Next Web Application?</h2>
-                <p class="cta-subtitle">Let's discuss your project requirements and create a custom web application that
-                    drives your business forward. Our team is ready to bring your vision to life with cutting-edge
-                    technology and innovative solutions.</p>
-                <button class="cta-button-large"
-                    onclick="window.location.href='booking.html?service=web-app-development'">Start Your Project
-                    Today</button>
-            </div>
-        </div>
-
-    <footer class="footer">
     <div class="container">
-        <div class="footer-container">
-            <!-- Solutions Section with Dropdowns -->
-            <div class="footer-col">
-                <h3>Solutions</h3>
-                <div class="footer-links">
-                    <!-- AI Services Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <a href="../AIServices/AIServices.html"><i class="fas fa-chevron-right"></i> AI Services</a>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../AIStrategy/AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
-                            <a href="../MachineLearning/MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
-                            <a href="../NLP/NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing</a>
-                            <a href="../ComputerVision/ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
-                            <a href="../PredictiveAnalytics/PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
-                            <a href="../ProcessAutomation/ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Core Development Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Core Development</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../CustomSoftware/CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
-                            <a href="../MobileDevelopment/MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
-                            <a href="../CloudSolutions/CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Design & Experience Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Insights Section -->
-            <div class="footer-col">
-                <h3>Insights</h3>
-                <div class="footer-links">
-                    <a href="../CaseStudies/CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
-                    <a href="../Blogs/Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-                    <a href="../CEODesk/CEODesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-                    <a href="../FAQs/FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
-                    <a href="../Guides/Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
-                    <a href="../HowTos/HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
-                </div>
-            </div>
-
-            <!-- Company Section -->
-            <div class="footer-col">
-                <h3>Company</h3>
-                <div class="footer-links">
-                    <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                    <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-                    <a href="../About/aboutus.html" id="aboutLink"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
-                    <a href="../About/aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
-                    <a href="../About/aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
-                    <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="../Leadership/Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
-                </div>
-            </div>
-
-            <!-- Quick Links Section -->
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <div class="footer-links">
-                    <a href="../Home/home.html"><i class="fas fa-chevron-right"></i> Home</a>
-                    <a href="../Testimonials/Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
-                    <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-                </div>
-            </div>
-
-            <!-- Newsletter Section -->
-            <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
-                <div class="form-group" id="newsletter-group">
-                    <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
-                    <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
-                </div>
-                <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
-                    Thank you for subscribing!
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Zonixtec Software Solutions. All Rights Reserved. | Designed with ❤️ by Zonixtec Team</p>
+        <div class="cta-section">
+            <h2 class="cta-title">Ready to Build Your Next Web Application?</h2>
+            <p class="cta-subtitle">Let's discuss your project requirements and create a custom web application that
+                drives your business forward. Our team is ready to bring your vision to life with cutting-edge
+                technology and innovative solutions.</p>
+            <button class="cta-button-large"
+                onclick="window.location.href='../Booking/Booking.html?service=web-app-development'">Start Your Project
+                Today</button>
         </div>
     </div>
-</footer>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdowns -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <a href="../AIServices/AIServices.html"><i class="fas fa-chevron-right"></i> AI
+                                    Services</a>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../AIStrategy/AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy
+                                    & Consulting</a>
+                                <a href="../MachineLearning/MachineLearning.html"><i class="fas fa-chevron-right"></i>
+                                    Machine Learning</a>
+                                <a href="../NLP/NLP.html"><i class="fas fa-chevron-right"></i> Natural Language
+                                    Processing</a>
+                                <a href="../ComputerVision/ComputerVision.html"><i class="fas fa-chevron-right"></i>
+                                    Computer Vision</a>
+                                <a href="../PredictiveAnalytics/PredictiveAnalytics.html"><i
+                                        class="fas fa-chevron-right"></i> Predictive Analysis</a>
+                                <a href="../ProcessAutomation/ProcessAutomation.html"><i
+                                        class="fas fa-chevron-right"></i> Process Automation</a>
+                            </div>
+                        </div>
+
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../CustomSoftware/CustomSoftware.html"><i class="fas fa-chevron-right"></i>
+                                    Custom Software Development</a>
+                                <a href="../MobileDevelopment/MobileDevelopment.html"><i
+                                        class="fas fa-chevron-right"></i> Mobile App Development</a>
+                                <a href="../CloudSolutions/CloudSolutions.html"><i class="fas fa-chevron-right"></i>
+                                    Cloud Solutions</a>
+                            </div>
+                        </div>
+
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="../CaseStudies/CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="../Blogs/Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="../CEODesk/CEODesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <a href="../FAQs/FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="../Guides/Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="../HowTos/HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
+                    </div>
+                </div>
+
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="../About/aboutus.html" id="aboutLink"><i class="fas fa-chevron-right"></i> Mission &
+                            Vision</a>
+                        <a href="../About/aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="../About/aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core
+                            Values</a>
+                        <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="../Leadership/Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="../Home/home.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="../Testimonials/Testimonials.html"><i class="fas fa-chevron-right"></i>
+                            Testimonials</a>
+                        <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                    </div>
+                </div>
 
 
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec Software Solutions. All Rights Reserved. | Designed with by Zonixtec Team</p>
+            </div>
+        </div>
+    </footer>
 
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Mobile dropdown functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
-
-            dropdownToggles.forEach(toggle => {
-                toggle.addEventListener('click', function (e) {
-                    if (window.innerWidth <= 768) {
-                        e.preventDefault();
-                        const dropdown = this.parentElement;
-                        dropdown.classList.toggle('active');
-
-                        // Close other dropdowns
-                        document.querySelectorAll('.dropdown').forEach(otherDropdown => {
-                            if (otherDropdown !== dropdown) {
-                                otherDropdown.classList.remove('active');
-                            }
-                        });
-                    }
-                });
-            });
-
-            // Close dropdowns when clicking outside
-            document.addEventListener('click', function (e) {
-                if (!e.target.closest('.dropdown') && !e.target.closest('.mobile-menu-btn')) {
-                    document.querySelectorAll('.dropdown').forEach(dropdown => {
-                        dropdown.classList.remove('active');
-                    });
-                }
-            });
-
-            // FAQ functionality
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-
-                question.addEventListener('click', () => {
-                    // Close other FAQ items
-                    faqItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                        }
-                    });
-
-                    // Toggle current FAQ item
-                    item.classList.toggle('active');
-                });
-            });
-
-            // Footer dropdown functionality
-            document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-                header.addEventListener('click', () => {
-                    const parent = header.parentElement;
-                    parent.classList.toggle('open');
-                });
-            });
-
-            // Show image placeholder if image fails to load
-            const image = document.querySelector('.services-image img');
-            const placeholder = document.getElementById('image-placeholder');
-
-            if (image && image.naturalWidth === 0) {
-                image.style.display = 'none';
-                placeholder.style.display = 'flex';
-            }
-        });
-    </script>
-    <script src="Customscroll.js"></script>
 
     <!-- Chatbot -->
     <link rel="stylesheet" href="../CSS/chatbot.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
     <script src="../script/chatbot.js"></script>
 
 
     <!--open booking 30 min call modal -->
-
     <div id="bookingModal" class="booking-modal">
         <div class="booking-modal-content">
 
@@ -1017,9 +906,6 @@ process data in real time.
                     </div>
 
                 </form>
-
-
-
             </div>
 
             <!-- SUCCESS -->
@@ -1032,24 +918,14 @@ process data in real time.
         </div>
     </div>
 
-
-    <!-- Booking Modal Script -->
+    <!-- JavaScript Files -->
+    <script src="WebAppDevelopment.js"></script>
     <script src="../script/booking-modal.js"></script>
     <script src="../script/navbar.js"></script>
-    <script src="../script/footer.js"></script>
-
     <script src="../script/30min-booking.js"></script>
-
     <script src="../script/allabout.js"></script>
+
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-

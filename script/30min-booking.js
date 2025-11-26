@@ -20,8 +20,6 @@ function resetBookingModal() {
     document.getElementById("step1").classList.add("booking-active");
     document.getElementById("step1").style.display = "block";
 
-    document.getElementById("bookingSuccessPage").style.display = "none";
-
     document.getElementById("bookingFormPage").reset();
 
     document.getElementById("dateInput").value = "";
@@ -52,11 +50,17 @@ function updateProgress(step) {
 }
 
 // ================= FLATPICKR =================
+let selectedDate = null;
+
 flatpickr("#dateInput", {
     minDate: "today",
     dateFormat: "F j, Y",
-    onChange: () => {
-        document.getElementById("dateNextBtn").disabled = false;
+    onChange: (dates) => {
+        if (dates.length > 0) {
+            selectedDate = dates[0];
+            document.getElementById("dateNextBtn").disabled = false;
+            filterTimeSlotsByDate(dates[0]);
+        }
     }
 });
 
@@ -80,11 +84,57 @@ function previousStep(step) {
 function initializeTimeSlots() {
     document.querySelectorAll(".booking-time-slot").forEach(slot => {
         slot.addEventListener("click", () => {
+            if (slot.classList.contains("disabled")) {
+                return; // Don't allow selection of disabled slots
+            }
+            
             document.querySelectorAll(".booking-time-slot").forEach(s => s.classList.remove("booking-selected"));
             slot.classList.add("booking-selected");
             document.getElementById("timeNextBtn").disabled = false;
         });
     });
+}
+
+// ================= FILTER TIME SLOTS BY DATE =================
+function filterTimeSlotsByDate(selectedDate) {
+    const timeSlots = document.querySelectorAll(".booking-time-slot");
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    const selected = new Date(selectedDate);
+    selected.setHours(0, 0, 0, 0);
+    
+    const isToday = selected.getTime() === today.getTime();
+    
+    if (isToday) {
+        const currentHour = new Date().getHours();
+        const currentMinute = new Date().getMinutes();
+        
+        timeSlots.forEach(slot => {
+            const timeString = slot.dataset.time;
+            const [hours, minutes] = timeString.split(':').map(Number);
+            
+            // Disable if the time has already passed
+            if (hours < currentHour || (hours === currentHour && minutes <= currentMinute)) {
+                slot.classList.add("disabled");
+                slot.classList.remove("booking-selected");
+            } else {
+                slot.classList.remove("disabled");
+            }
+        });
+    } else {
+        // Enable all slots for future dates
+        timeSlots.forEach(slot => {
+            slot.classList.remove("disabled");
+        });
+    }
+    
+    // Reset selection if currently selected slot is now disabled
+    const selectedSlot = document.querySelector(".booking-time-slot.booking-selected");
+    if (selectedSlot && selectedSlot.classList.contains("disabled")) {
+        selectedSlot.classList.remove("booking-selected");
+        document.getElementById("timeNextBtn").disabled = true;
+    }
 }
 
 // ================= LIVE VALIDATION =================
@@ -137,6 +187,24 @@ document.getElementById("bookingFormPage").addEventListener("submit", async func
 
     if (!isValid) return;
 
+    // ----------- VALIDATE DATE & TIME ------------
+    if (!selectedDate) {
+        alert("Please select a date");
+        return;
+    }
+
+    const selectedTimeSlot = document.querySelector(".booking-time-slot.booking-selected");
+    if (!selectedTimeSlot) {
+        alert("Please select a time slot");
+        return;
+    }
+
+    // Format date as YYYY-MM-DD for backend
+    const year = selectedDate.getFullYear();
+    const month = String(selectedDate.getMonth() + 1).padStart(2, '0');
+    const day = String(selectedDate.getDate()).padStart(2, '0');
+    const formattedDate = `${year}-${month}-${day}`;
+
     // ----------- PREPARE PAYLOAD ------------
     const payload = {
         name: nameField.value.trim(),
@@ -144,15 +212,10 @@ document.getElementById("bookingFormPage").addEventListener("submit", async func
         phone: phoneField.value.trim(),
         company: document.getElementById("bookingCompany").value.trim(),
         message: document.getElementById("bookingMessage").value.trim(),
-        bookingDate: new Date(document.getElementById("dateInput").value).toISOString().split("T")[0],
-        bookingTime: document.querySelector(".booking-time-slot.booking-selected")?.dataset.time,
+        bookingDate: formattedDate,
+        bookingTime: selectedTimeSlot.dataset.time,
         service: "Consultation Call"
     };
-
-    if (!payload.bookingTime) {
-        alert("Please select a time slot");
-        return;
-    }
 
     // ----------- SEND TO PHP ------------
     try {
@@ -166,13 +229,17 @@ document.getElementById("bookingFormPage").addEventListener("submit", async func
         console.log("Response:", result);
 
         if (result.success) {
+            // Hide step 4 and show success message
             document.getElementById("step4").style.display = "none";
-            document.getElementById("bookingSuccessPage").style.display = "block";
+            
+            // Show success alert
+            alert("Booking Successful! Our team will connect with you soon. Thank you for choosing Zonixtec!");
 
+            // Close modal after success
             setTimeout(() => {
                 closeBookingModal();
                 resetBookingModal();
-            }, 3000);
+            }, 500);
         } else {
             alert("Error: " + result.message);
         }

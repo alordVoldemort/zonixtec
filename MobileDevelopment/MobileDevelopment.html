@@ -7,106 +7,1289 @@
     <meta name="description" content="Unlock business growth with Zonixtec's mobile app development services. We design, develop, and optimize high-performing iOS & Android apps tailored to your goals.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" href="../Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
+    <link rel="icon" href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="../CSS/orbital-tech-stack.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
-    <link rel="stylesheet" href="MobileDevelopment.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #00f2ff;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --accent: #8b5cf6;
+            --tech-gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --success: #10b981;
+            --warning: #f59e0b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 20%);
+            z-index: -1;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--tech-gradient);
+            border-radius: 2px;
+        }
+
+        /* ===== Header Styles ===== */
+        header {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            border-bottom: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;    
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo .tech {
+            color: var(--secondary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--light);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:not(.cta-button):hover {
+            color: var(--secondary);
+        }
+
+        /* .nav-links a:not(.cta-button)::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:not(.cta-button):hover::after {
+            width: 100%;
+        } */
+
+        .cta-button {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            color: var(--light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+       
+        /* Mobile Development Section */
+        .mobile-section {
+            padding: 150px 0 100px;
+            position: relative;
+        }
+       
+        .mobile-hero {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+       
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            background: var(--tech-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+       
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary);
+            margin-bottom: 30px;
+        }
+       
+        .hero-description {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+       
+        .mobile-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+       
+        .mobile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+       
+        .mobile-phone-container {
+            flex: 1;
+            min-width: 300px;
+            height: 500px;
+            position: relative;
+            perspective: 1000px;
+            background: transparent;
+        }
+       
+        .phone-controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            display: flex;
+            gap: 10px;
+        }
+       
+        .phone-btn {
+            background: rgba(199, 206, 223, 0.7);
+            border: 1px solid var(--secondary);
+            color: var(--light);
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+       
+        .phone-btn:hover {
+            background: var(--tech-gradient);
+        }
+       
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+       
+        .feature-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+       
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--tech-gradient);
+        }
+       
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+       
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+       
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+       
+        .feature-text {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+       
+        .info-display {
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+       
+        .info-title {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--secondary);
+        }
+       
+        .info-description {
+            color: #cbd5e1;
+            line-height: 1.7;
+            max-width: 600px;
+        }
+       
+        /* Technology Stack Section */
+        .tech-section {
+            background: rgba(10, 10, 26, 0.7);
+            border-radius: 10px;
+            padding: 60px;
+            margin-bottom: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+       
+        .tech-section h2 {
+            text-align: center;
+            color: var(--secondary);
+            margin-bottom: 40px;
+            font-family: 'Orbitron', sans-serif;
+        }
+       
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+       
+        .tech-category {
+            text-align: center;
+        }
+       
+        .tech-category h3 {
+            color: var(--light);
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            font-family: 'Orbitron', sans-serif;
+        }
+       
+        .tech-items {
+            display: flex;
+            flex-direction: column;
+        }
+       
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-top: 33px;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .tech-itemm {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 15px;
+            border-radius: 8px;
+            color: var(--gray);
+            transition: all 0.3s ease;
+        }
+       
+       
+        .tech-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--light);
+            transform: translateY(-3px);
+        }
+
+
+          /* ===== Dropdown Styles ===== */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .dropdown-toggle i {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
+            min-width: 280px;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            z-index: 1000;
+            padding: 8px 0;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeInUp 0.3s ease;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 20px;
+            color: var(--light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-left: 4px solid transparent;
+            margin: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(37, 99, 235, 0.15);
+            color: var(--secondary);
+            border-left: 4px solid var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .dropdown-scroll {
+    max-height: 300px; /* Slightly less than parent to account for padding */
+    overflow-y: auto; /* Enable vertical scrolling */
+    padding: 8px 0; /* Add padding to scroll container */
+}
+
+/* Custom scrollbar styling */
+.dropdown-scroll::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 3px;
+}
+
+.dropdown-scroll::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+       
+        .cta-container {
+            background: var(--tech-gradient);
+            border-radius: 20px;
+            padding: 60px 40px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+       
+        .cta-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+       
+        .cta-description {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+       
+        .cta-button-large {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            display: inline-block;
+        }
+       
+        .cta-button-large:hover {
+            transform: translateY(-3px);
+            background: rgba(15, 23, 42, 0.9);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+       
+        /* Service Types Section */
+        .service-types {
+            margin-bottom: 80px;
+        }
+       
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+       
+        .service-card {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+       
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--tech-gradient);
+        }
+       
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+       
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+       
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+       
+        .service-description {
+            color: #94a3b8;
+            line-height: 1.7;
+        }
+       
+        /* Process Section */
+        /* Process Section */
+        .process-section {
+            margin-bottom: 60px;
+        }
+       
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+       
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            z-index: 1;
+        }
+       
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+       
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            position: relative;
+        }
+       
+        .step-title {
+            font-size: 1.2rem;
+            color: var(--light);
+            margin-bottom: 10px;
+        }
+       
+        .step-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        /* Challenges Section */
+        .challenges-section {
+            margin-bottom: 80px;
+        }
+       
+        .challenges-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+       
+        .challenge-item {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--primary);
+            display: flex;
+            align-items: center;
+        }
+       
+        .challenge-icon {
+            color: #ef4444;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+       
+        /* Impact Section */
+        .impact-section {
+    margin-bottom: 80px;
+}
+
+.impact-container {
+    background: rgba(15, 23, 42, 0.5);
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid rgba(100, 116, 139, 0.2);
+}
+
+.impact-title {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    background: var(--tech-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.impact-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.impact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.impact-icon {
+    color: var(--success);
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 3px;
+}
+
+.impact-text {
+    color: #94a3b8;
+    line-height: 1.7;
+}
+       
+        /* FAQ Section */
+        .faq-section {
+            margin-bottom: 80px;
+        }
+       
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+       
+        .faq-item {
+            background: rgba(15, 23, 42, 0.6);
+            border-radius: 10px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(100, 116, 139, 0.2);
+        }
+       
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+        }
+       
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+       
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #94a3b8;
+        }
+       
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+       
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+       
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .mobile-content {
+                flex-direction: column;
+            }
+           
+            .mobile-phone-container {
+                height: 400px;
+            }
+           
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+           
+            .mobile-phone-container {
+                height: 350px;
+            }
+           
+            .nav-links {
+                display: none;
+            }
+           
+            .mobile-menu-btn {
+                display: block;
+            }
+        }
+       
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+           
+            .mobile-section {
+                padding-top: 120px;
+            }
+           
+            .mobile-phone-container {
+                height: 300px;
+            }
+           
+            .mobile-phone-container {
+                height: 280px;
+            }
+           
+            .phone-controls {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+       
+        /* Fallback for mobile when WebGL isn't supported */
+        .phone-fallback {
+    display: flex !important; /* Force display */
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1e293b, #0f172a);
+    border-radius: 20px;
+    border: 2px solid var(--secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-fallback-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 20px;
+    width: 90%;
+}
+
+.phone-image-container {
+    width: 100%;
+    height: 200px; /* Adjust height as needed */
+    margin: 15px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid rgba(6, 182, 212, 0.3);
+}
+
+.phone-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.fallback-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+.phone-fallback-content h3 {
+    color: var(--secondary);
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.phone-fallback-content p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+       
+       
+        .fallback-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+       
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.7; }
+        }
+       
+        /* WebGL warning */
+        #webgl-warning {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            z-index: 20;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+       
+        .footer {
+            /* background: rgba(2, 6, 23, 0.9); */
+            padding: 70px 0 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            padding: 20px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        /* .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--tech-gradient);
+            border-radius: 3px;
+        } */
+
+        .footer-col p {
+            color: #cbd5e1;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .footer-links a {
+            display: flex;
+            align-items: center;
+            color: var(--gray);
+            text-decoration: none;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+
+        .footer-links i {
+            margin-right: 10px;
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.2);
+            border-radius: 50%;
+            color: var(--light);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--tech-gradient);
+            transform: translateY(-5px);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .form-control {
+            padding: 12px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(100, 116, 139, 0.3);
+            background: rgba(15, 23, 42, 0.5);
+            color: var(--light);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .form-control::placeholder {
+            color: #94a3b8;
+        }
+
+        .submit-btn {
+            background: var(--tech-gradient);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom i {
+            color: #ef4444;
+            margin: 0 5px;
+        }
+       
+        @media (max-width: 768px) {
+            .services-hero-title {
+                font-size: 2.5rem;
+            }
+           
+            .section-title {
+                font-size: 2rem;
+            }
+           
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+           
+            .cta-section {
+                padding: 40px 20px;
+            }
+           
+            .detailed-services {
+                padding: 30px;
+            }
+           
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+           
+            .hero-title {
+                font-size: 2.8rem;
+            }
+           
+            .cta-container {
+                padding: 40px 20px;
+            }
+           
+            .cta-title {
+                font-size: 2rem;
+            }
+           
+            .process-container, .faq-section {
+                padding: 30px 20px;
+            }
+           
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 300px;
+                height: 100vh;
+                background: rgba(15, 23, 42, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+                transition: right 0.4s ease;
+                z-index: 1000;
+                display: flex;
+                padding: 20px;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            }
+           
+            .nav-links.active {
+                right: 0;
+            }
+           
+            .mobile-menu-btn {
+                display: block;
+                z-index: 1001;
+            }
+           
+            .tech-cube-container {
+                height: 300px;
+            }
+        }
+       
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+           
+            .process-step {
+                min-width: 100%;
+            }
+           
+            .cta-title {
+                font-size: 1.8rem;
+            }
+           
+            .software-section {
+                padding-top: 120px;
+            }
+           
+            .tech-cube-container {
+                height: 250px;
+            }
+           
+            .nav-links {
+                width: 85%;
+            }
+        }
+       
+        /*  Get Start Button    */
+        .cta-buttons {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: all 0.35s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(108, 99, 255, 0.3);
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-buttons:hover {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
+            color: #fff !important;
+        }
+
+        .cta-buttons:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(100, 149, 255, 0.4);
+        }
+       
+        @media (min-width: 768px) {
+            .footer-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .footer-col {
+                padding: 18px 1px;
+            }
+            .footer-col h3 {
+                font-family: 'Orbitron', sans-serif;
+                font-size: 1.3rem;
+                margin-bottom: 20px;
+                color: var(--secondary);
+                position: relative;
+                padding-bottom: 10px;
+            }
+        }
+    </style>
     <!-- Responsive Fixes CSS -->
 
 
     <!-- Navbar CSS -->
     <link rel="stylesheet" href="../CSS/navbar.css">
-    <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/30min-model.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
+    <link rel="stylesheet" href="../CSS/allDropdown.css">
 </head>
 <body>
-    <!-- Header -->
-    <!-- Header -->
-<header id="header">
-    <div class="container">
-        <nav>
-            <a href="home.html" class="logo">
-                <img src="../Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
-            </a>
-            <div class="nav-links">
-
-                <!-- ABOUT DROPDOWN TRIGGER -->
-                <a href="#" class="about-toggle">About Us</a>
-                <!-- ABOUT DROPDOWN PANEL -->
-                <div class="about-dropdown">
-                    <div>
-                        <h2>About Us</h2>
-                    </div>
-
-                    <div class="about-container">
-
-                        <div class="about-links">
-                            <div>
-                                <a href="../About/aboutus.html">About Zonixtec</a>
-                                <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
-                                <a href="../OurHistory/OurHistory.html">Our Journey</a>
-                            </div>
-                            <div>
-                                <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
-                                <a href="../Leadership/Leadership.html">Leadership</a>
-                                <a href="../CaseStudies/CaseStudies.html">Case Study</a>
-                            </div>
-                        </div>
-
-                        <span class="about-close">&times;</span>
-
-                        <div class="about-image">
-                            <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <a href="../Services/Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-scroll">
-                            <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
-                            <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
-                            <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
-                            <a href="../CRMSolutions/CRMSolutions.html">Custom CRM Solutions</a>
-                            <a href="../ERPSolutions/ERPSolutions.html">Custom ERP Solutions</a>
-                            <a href="../BillingInvoice/BillingInvoice.html">Billing-Invoice Solutions</a>
-                            <a href="../AIStrategy/AIStrategy.html">AI Strategy & Consulting</a>
-                            <a href="../DigitalMarketing/DigitalMarketing.html">Digital Marketing Services</a>
-                            <a href="../MobileDevelopment/MobileDevelopment.html">Mobile App Development</a>
-                            <a href="../ui.html">UI/UX Design Services</a>
-                            <a href="../CloudSolutions/CloudSolutions.html">Cloud Solutions</a>
-                            <a href="../HRMSSolutions/HRMSSolutions.html">HRMS Solutions</a>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="../Career/Career.html">Career</a>
-                <a href="../Contact/contact.html">Contact</a>
-                <a href="javascript:void(0);" class="cta-buttons" onclick="openBookingModal()">
-                    <i class="fas fa-phone-alt"></i> Book A 30 Min Call
-                </a>
-
-            </div>
-
-            <!-- BOOKING MODAL For Each Page -->
-
-            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </nav>
-    </div>
-</header>
-
-<div class="mobile-menu-overlay" id="mobileOverlay"></div>
-
-
-
-
     
+    <!-- Header -->
+ <header id="header">
+        <div class="container">
+            <nav>
+                <a href="../Home/home.html" class="logo">
+                    <img src="../Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
+                </a>
+                <div class="nav-links">
+
+                    <!-- ABOUT DROPDOWN TRIGGER -->
+                    <a href="#" class="about-toggle">About Us</a>
+                    <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div>
+                            <h2>About Us</h2>
+                        </div>
+
+                        <div class="about-container">
+
+                            <div class="about-links">
+                                <div>
+                                    <a href="../About/aboutus.html">About Zonixtec</a>
+                                    <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
+                                    <a href="../OurHistory/OurHistory.html">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
+                                    <a href="../Leadership/Leadership.html">Leadership</a>
+                                    <a href="../CaseStudies/CaseStudies.html">Case Study</a>
+                                </div>
+                            </div>
+
+                            <span class="about-close"><i class="fas fa-times"></i></span>
+
+                            <div class="about-image">
+                                <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-services-dropdown">
+                        <a href="../Services/Services.html" class="nav-services-toggle">Services <i
+                                class="fas fa-chevron-down"></i></a>
+                        <div class="nav-services-content">
+                            <div class="nav-services-scroll">
+                                <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
+                                <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
+                                <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
+                                <a href="../CRMSolutions/CRMSolutions.html">Custom CRM Solutions</a>
+                                <a href="../ERPSolutions/ERPSolutions.html">Custom ERP Solutions</a>
+                                <a href="../BillingInvoice/BillingInvoice.html">Billing-Invoice Solutions</a>
+                                <a href="../AIStrategy/AIStrategy.html">AI Strategy & Consulting</a>
+                                <a href="../DigitalMarketing/DigitalMarketing.html">Digital Marketing Services</a>
+                                <a href="../MobileDevelopment/MobileDevelopment.html">Mobile App Development</a>
+                                <a href="../ui.html">UI/UX Design Services</a>
+                                <a href="../CloudSolutions/CloudSolutions.html">Cloud Solutions</a>
+                                <a href="../HRMSSolutions/HRMSSolutions.html">HRMS Solutions</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="../Career/Career.html">Career</a>
+                    <a href="../Contact/contact.html">Contact</a>
+                    <a href="javascript:void(0);" class="cta-buttons" onclick="openBookingModal()">
+                        <i class="fas fa-phone-alt"></i> Book A 30 Min Call
+                    </a>
+
+                </div>
+
+                <!-- BOOKING MODAL For Each Page -->
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
+   
     <section class="mobile-section">
         <div class="container">
             <div class="mobile-hero">
@@ -115,16 +1298,16 @@
                 <p class="hero-description">
                     At Zonixtec, we craft innovative mobile applications that transform user experiences. Our mobile development expertise spans iOS, Android, and cross-platform solutions designed to elevate your business to new heights.
                 </p>
-                <a href="booking.html?service=mobile-development" class="cta-button-large">Start Your App Journey Today</a>
+                <a href="../Booking/booking.html?service=mobile-development" class="cta-button-large">Start Your App Journey Today</a>
             </div>
-            
+           
             <div class="mobile-content">
                 <div class="mobile-info">
                     <h2 class="section-title">Mobile Development Excellence</h2>
                     <p class="hero-description">
                         We specialize in creating high-performance mobile applications that deliver exceptional user experiences. Our mobile solutions are built with cutting-edge technologies and designed for scalability, security, and seamless integration.
                     </p>
-                    
+                   
                     <div class="features-grid">
                         <div class="feature-card">
                             <div class="feature-icon">
@@ -133,7 +1316,7 @@
                             <h3 class="feature-title">Intuitive UI/UX Design</h3>
                             <p class="feature-text">Create engaging user experiences with intuitive interfaces that keep users coming back.</p>
                         </div>
-                        
+                       
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-sync-alt"></i>
@@ -141,7 +1324,7 @@
                             <h3 class="feature-title">Native & Cross-Platform Expertise</h3>
                             <p class="feature-text">Build apps for any platform with our expertise in native and cross-platform development.</p>
                         </div>
-                        
+                       
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-bolt"></i>
@@ -149,7 +1332,7 @@
                             <h3 class="feature-title">Fast & Secure Performance</h3>
                             <p class="feature-text">Deliver lightning-fast performance with enterprise-grade security measures.</p>
                         </div>
-                        
+                       
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-plug"></i>
@@ -157,7 +1340,7 @@
                             <h3 class="feature-title">API & Third-Party Integrations</h3>
                             <p class="feature-text">Seamlessly integrate with existing systems and third-party services.</p>
                         </div>
-                        
+                       
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-cloud"></i>
@@ -165,7 +1348,7 @@
                             <h3 class="feature-title">Cloud-Ready Architecture</h3>
                             <p class="feature-text">Build scalable applications with cloud-native architecture for future growth.</p>
                         </div>
-                        
+                       
                         <div class="feature-card">
                             <div class="feature-icon">
                                 <i class="fas fa-expand-arrows-alt"></i>
@@ -175,7 +1358,7 @@
                         </div>
                     </div>
                 </div>
-                
+               
                 <div class="mobile-phone-container">
                     <div id="webgl-warning">
                         <div class="phone-fallback">
@@ -184,7 +1367,7 @@
                                     <i class="fas fa-mobile-alt"></i>
                                 </div>
                                 <div style="width:100%; height:100%; overflow:hidden;">
-  <img src="./uploads/Mobile App Development.jpg" alt="Not Found"
+  <img src="../uploads/Mobile App Development.jpg" alt="Not Found"
        style="width:100%; height:100%; object-fit:cover; object-position:center; display:block;">
 </div>
                                 <h3>Mobile App Development</h3>
@@ -194,7 +1377,7 @@
                     </div>
                 </div>
             </div>
-            
+           
             <!-- Service Types Section -->
             <div class="service-types">
                 <h2 class="section-title">Our Mobile Development Services</h2>
@@ -206,7 +1389,7 @@
                         <h3 class="service-title">iOS App Development</h3>
                         <p class="service-description">Native iOS applications built with Swift and SwiftUI, optimized for all Apple devices and following Apple's design guidelines.</p>
                     </div>
-                    
+                   
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fab fa-android"></i>
@@ -214,7 +1397,7 @@
                         <h3 class="service-title">Android App Development</h3>
                         <p class="service-description">Native Android applications using Kotlin and Java, designed for diverse device compatibility and optimal performance.</p>
                     </div>
-                    
+                   
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-code"></i>
@@ -222,7 +1405,7 @@
                         <h3 class="service-title">Cross-Platform Development</h3>
                         <p class="service-description">Efficient cross-platform solutions using React Native and Flutter for consistent experiences across iOS and Android.</p>
                     </div>
-                    
+                   
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-shopping-cart"></i>
@@ -230,7 +1413,7 @@
                         <h3 class="service-title">E-commerce Mobile Apps</h3>
                         <p class="service-description">Feature-rich e-commerce applications with secure payment gateways, product catalogs, and seamless shopping experiences.</p>
                     </div>
-                    
+                   
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-building"></i>
@@ -238,7 +1421,7 @@
                         <h3 class="service-title">Enterprise Mobile Solutions</h3>
                         <p class="service-description">Secure enterprise applications with features like encryption, biometric authentication, and compliance with industry standards.</p>
                     </div>
-                    
+                   
                     <div class="service-card">
                         <div class="service-icon">
                             <i class="fas fa-gamepad"></i>
@@ -248,36 +1431,36 @@
                     </div>
                 </div>
             </div>
-            
+           
             <!-- Process Section -->
            <div class="process-section">
     <h2 class="section-title">Our Development <span>Process</span></h2>
-    
+   
     <div class="process-steps">
         <div class="process-step">
             <div class="step-number">1</div>
             <h3 class="step-title">Discovery & Research</h3>
             <p class="step-description">Understand business goals, audience, and design preferences</p>
         </div>
-        
+       
         <div class="process-step">
             <div class="step-number">2</div>
             <h3 class="step-title">Wireframing & UI Design</h3>
             <p class="step-description">Create visual layouts and design prototypes</p>
         </div>
-        
+       
         <div class="process-step">
             <div class="step-number">3</div>
             <h3 class="step-title">Development</h3>
             <p class="step-description">Convert designs into high-performing, responsive websites</p>
         </div>
-        
+       
         <div class="process-step">
             <div class="step-number">4</div>
             <h3 class="step-title">Testing & QA</h3>
             <p class="step-description">Ensure flawless performance and cross-browser compatibility</p>
         </div>
-        
+       
         <div class="process-step">
             <div class="step-number">5</div>
             <h3 class="step-title">Deployment & Maintenance</h3>
@@ -285,80 +1468,102 @@
         </div>
     </div>
 </div>
-            
+           
             <!-- Technology Stack Section -->
-            <!-- Technology Stack -->
-<div class="tech-section">
-    <h2>Our Technology Stack</h2>
-    <div class="tech-grid">
-        <div class="tech-category">
-            <h3>Native Development</h3>
-            <div class="tech-items">
-                <div class="tech-item">iOS (Swift)</div>
-                <div class="tech-item">Android (Kotlin)</div>
-                <div class="tech-item">Java</div>
-                <div class="tech-item">Objective-C</div>
-                <div class="tech-item">Xcode</div>
-            </div>
-        </div>
+
+
+<section class="section-padding tech-stack-section">
+    <div class="container">
+        <h2 class="section-title">Our Technology <span>Stack</span></h2>
         
-        <div class="tech-category">
-            <h3>Cross-Platform</h3>
-            <div class="tech-items">
-                <div class="tech-item">React Native</div>
-                <div class="tech-item">Flutter</div>
-                <div class="tech-item">Ionic</div>
-                <div class="tech-item">Xamarin</div>
-                <div class="tech-item">PhoneGap</div>
+        <div class="orbital-container">
+            <div class="center-text">
+                <h3>Our Technology Stack</h3>
             </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Programming Languages</h3>
-            <div class="tech-items">
-                <div class="tech-itemm">JavaScript</div>
-                <div class="tech-item">TypeScript</div>
-                <div class="tech-item">Dart</div>
-                <div class="tech-item">Kotlin</div>
-                <div class="tech-item">Swift</div>
+
+            <!-- Outer Orbit - Native & Cross-Platform -->
+            <div class="orbit outer-orbit">
+                <div class="tech-icon">
+                    <i class="fab fa-apple"></i>
+                    <span class="tech-label">iOS (Swift)</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-android"></i>
+                    <span class="tech-label">Android (Kotlin)</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-react"></i>
+                    <span class="tech-label">React Native</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span class="tech-label">Flutter</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-code"></i>
+                    <span class="tech-label">Xamarin</span>
+                </div>
             </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Backend & APIs</h3>
-            <div class="tech-items">
-                <div class="tech-item">Node.js</div>
-                <div class="tech-item">Python</div>
-                <div class="tech-item">REST APIs</div>
-                <div class="tech-item">GraphQL</div>
-                <div class="tech-item">WebSocket</div>
+
+            <!-- Middle Orbit - Programming & Backend -->
+            <div class="orbit middle-orbit">
+                <div class="tech-icon">
+                    <i class="fab fa-js"></i>
+                    <span class="tech-label">JavaScript</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-java"></i>
+                    <span class="tech-label">Kotlin</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-swift"></i>
+                    <span class="tech-label">Swift</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-node-js"></i>
+                    <span class="tech-label">Node.js</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-python"></i>
+                    <span class="tech-label">Python</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-plug"></i>
+                    <span class="tech-label">REST APIs</span>
+                </div>
             </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>Cloud & Databases</h3>
-            <div class="tech-items">
-                <div class="tech-item">Firebase</div>
-                <div class="tech-item">AWS Amplify</div>
-                <div class="tech-item">MongoDB</div>
-                <div class="tech-item">PostgreSQL</div>
-                <div class="tech-item">SQLite</div>
-            </div>
-        </div>
-        
-        <div class="tech-category">
-            <h3>DevOps & Tools</h3>
-            <div class="tech-items">
-                <div class="tech-item">Docker</div>
-                <div class="tech-item">Jenkins</div>
-                <div class="tech-item">Fastlane</div>
-                <div class="tech-item">Git</div>
-                <div class="tech-item">App Store Connect</div>
+
+            <!-- Inner Orbit - Cloud & DevOps -->
+            <div class="orbit inner-orbit">
+                <div class="tech-icon">
+                    <i class="fas fa-fire"></i>
+                    <span class="tech-label">Firebase</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-aws"></i>
+                    <span class="tech-label">AWS Amplify</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-database"></i>
+                    <span class="tech-label">MongoDB</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-docker"></i>
+                    <span class="tech-label">Docker</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fab fa-git-alt"></i>
+                    <span class="tech-label">Git</span>
+                </div>
+                <div class="tech-icon">
+                    <i class="fas fa-rocket"></i>
+                    <span class="tech-label">Fastlane</span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-            
+</section>
+           
             <!-- Challenges Section -->
             <div class="challenges-section">
                 <h2 class="section-title">Overcoming Mobile Development Challenges</h2>
@@ -372,7 +1577,7 @@
                             <p>Ensuring consistent performance across thousands of different device models and screen sizes.</p>
                         </div>
                     </div>
-                    
+                   
                     <div class="challenge-item">
                         <div class="challenge-icon">
                             <i class="fas fa-exclamation-triangle"></i>
@@ -382,7 +1587,7 @@
                             <p>Balancing feature-rich applications with optimal performance and battery efficiency.</p>
                         </div>
                     </div>
-                    
+                   
                     <div class="challenge-item">
                         <div class="challenge-icon">
                             <i class="fas fa-exclamation-triangle"></i>
@@ -392,7 +1597,7 @@
                             <p>Protecting user data and preventing vulnerabilities in an increasingly connected world.</p>
                         </div>
                     </div>
-                    
+                   
                     <div class="challenge-item">
                         <div class="challenge-icon">
                             <i class="fas fa-exclamation-triangle"></i>
@@ -404,7 +1609,7 @@
                     </div>
                 </div>
             </div>
-            
+           
             <!-- Impact Section -->
             <!-- Impact Section -->
 <section class="section-padding impact-section">
@@ -418,21 +1623,21 @@
                     </div>
                     <p class="impact-text">Increased Revenue - Mobile apps can increase customer engagement and drive direct sales through in-app purchases and mobile commerce.</p>
                 </div>
-                
+               
                 <div class="impact-item">
                     <div class="impact-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <p class="impact-text">Enhanced Customer Engagement - Stay connected with your customers through push notifications, personalized content, and seamless experiences.</p>
                 </div>
-                
+               
                 <div class="impact-item">
                     <div class="impact-icon">
                         <i class="fas fa-check-circle"></i>
                     </div>
                     <p class="impact-text">Brand Visibility - A presence on users' home screens increases brand recall and creates ongoing touchpoints with your audience.</p>
                 </div>
-                
+               
                 <div class="impact-item">
                     <div class="impact-icon">
                         <i class="fas fa-check-circle"></i>
@@ -443,7 +1648,7 @@
         </div>
     </div>
 </section>
-            
+           
             <!-- FAQ Section -->
             <div class="faq-section">
                 <h2 class="section-title">Frequently Asked Questions</h2>
@@ -457,7 +1662,7 @@
                             <p>The timeline varies based on complexity, features, and platform. A basic app can take 2-4 months, while more complex applications may require 6+ months. We provide detailed timelines after understanding your specific requirements.</p>
                         </div>
                     </div>
-                    
+                   
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>Should I choose native or cross-platform development?</span>
@@ -467,7 +1672,7 @@
                             <p>Native development offers optimal performance and platform-specific features, while cross-platform solutions are more cost-effective and faster to develop. We'll help you choose the right approach based on your budget, timeline, and performance requirements.</p>
                         </div>
                     </div>
-                    
+                   
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>How much does mobile app development cost?</span>
@@ -477,7 +1682,7 @@
                             <p>Costs vary significantly based on features, complexity, and platforms. Basic apps start around $15,000, while enterprise solutions can range from $50,000 to $200,000+. We provide transparent pricing after a detailed requirements analysis.</p>
                         </div>
                     </div>
-                    
+                   
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>Do you provide post-launch support?</span>
@@ -487,7 +1692,7 @@
                             <p>Yes, we offer comprehensive post-launch support including bug fixes, updates for new OS versions, feature enhancements, and performance monitoring. We provide flexible support packages to meet your ongoing needs.</p>
                         </div>
                     </div>
-                    
+                   
                     <div class="faq-item">
                         <div class="faq-question">
                             <span>How do you ensure app security?</span>
@@ -499,128 +1704,147 @@
                     </div>
                 </div>
             </div>
-            
+           
             <div class="cta-container">
                 <h2 class="cta-title">Ready for Mobile Transformation?</h2>
                 <p class="cta-description">
                     Let's create a mobile experience that engages your users and drives business growth. Our team of mobile experts is ready to bring your vision to life.
                 </p>
-                <a href="booking.html?service=mobile-development" class="cta-button-large">Start Your Mobile Project</a>
+                <a href="../Booking/booking.html?service=mobile-development" class="cta-button-large">Start Your Mobile Project</a>
             </div>
         </div>
     </section>
-    
-    <footer class="footer">
-    <div class="container">
-        <div class="footer-container">
-            <!-- Solutions Section with Dropdowns -->
-            <div class="footer-col">
-                <h3>Solutions</h3>
-                <div class="footer-links">
-                    <!-- AI Services Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <a href="../AIServices/AIServices.html"><i class="fas fa-chevron-right"></i> AI Services</a>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+   
+   <!-- Footer -->
+      <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdowns -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <a href="../AIServices/AIServices.html"><i class="fas fa-chevron-right"></i> AI
+                                    Services</a>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../AIStrategy/AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy
+                                    & Consulting</a>
+                                <a href="../MachineLearning/MachineLearning.html"><i class="fas fa-chevron-right"></i>
+                                    Machine Learning</a>
+                                <a href="../NLP/NLP.html"><i class="fas fa-chevron-right"></i> Natural Language
+                                    Processing</a>
+                                <a href="../ComputerVision/ComputerVision.html"><i class="fas fa-chevron-right"></i>
+                                    Computer Vision</a>
+                                <a href="../PredictiveAnalytics/PredictiveAnalytics.html"><i
+                                        class="fas fa-chevron-right"></i> Predictive Analysis</a>
+                                <a href="../ProcessAutomation/ProcessAutomation.html"><i
+                                        class="fas fa-chevron-right"></i> Process Automation</a>
+                            </div>
                         </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../AIStrategy/AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
-                            <a href="../MachineLearning/MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
-                            <a href="../NLP/NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing</a>
-                            <a href="../ComputerVision/ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
-                            <a href="../PredictiveAnalytics/PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
-                            <a href="../ProcessAutomation/ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
+
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../CustomSoftware/CustomSoftware.html"><i class="fas fa-chevron-right"></i>
+                                    Custom Software Development</a>
+                                <a href="../MobileDevelopment/MobileDevelopment.html"><i
+                                        class="fas fa-chevron-right"></i> Mobile App Development</a>
+                                <a href="../CloudSolutions/CloudSolutions.html"><i class="fas fa-chevron-right"></i>
+                                    Cloud Solutions</a>
+                            </div>
+                        </div>
+
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Core Development Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Core Development</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../CustomSoftware/CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
-                            <a href="../MobileDevelopment/MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
-                            <a href="../CloudSolutions/CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Design & Experience Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
-                        </div>
+                </div>
+
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="../CaseStudies/CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="../Blogs/Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="../CEODesk/CEODesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <a href="../FAQs/FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="../Guides/Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="../HowTos/HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Insights Section -->
-            <div class="footer-col">
-                <h3>Insights</h3>
-                <div class="footer-links">
-                    <a href="../CaseStudies/CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
-                    <a href="../Blogs/Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-                    <a href="../CEODesk/CEODesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-                    <a href="../FAQs/FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
-                    <a href="../Guides/Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
-                    <a href="../HowTos/HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="../About/aboutus.html" id="aboutLink"><i class="fas fa-chevron-right"></i> Mission &
+                            Vision</a>
+                        <a href="../About/aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="../About/aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core
+                            Values</a>
+                        <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="../Leadership/Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Company Section -->
-            <div class="footer-col">
-                <h3>Company</h3>
-                <div class="footer-links">
-                    <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                    <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-                    <a href="../About/aboutus.html" id="aboutLink"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
-                    <a href="../About/aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
-                    <a href="../About/aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
-                    <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="../Leadership/Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="../Home/home.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="../Testimonials/Testimonials.html"><i class="fas fa-chevron-right"></i>
+                            Testimonials</a>
+                        <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Quick Links Section -->
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <div class="footer-links">
-                    <a href="../Home/home.html"><i class="fas fa-chevron-right"></i> Home</a>
-                    <a href="../Testimonials/Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
-                    <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-                </div>
-            </div>
 
-            <!-- Newsletter Section -->
-            <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
-                <div class="form-group" id="newsletter-group">
-                    <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
-                    <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
-                </div>
-                <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
-                    Thank you for subscribing!
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec Software Solutions. All Rights Reserved. | Designed with by Zonixtec Team</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Zonixtec Software Solutions. All Rights Reserved. | Designed with ❤️ by Zonixtec Team</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 
-
-
-
-<link rel="stylesheet" href="MobileDevelopment.css">
+<style>
+.footer-dropdown-content {
+  display: none;
+  margin-left: 15px;
+}
+.footer-dropdown.open .footer-dropdown-content {
+  display: block;
+}
+.footer-dropdown-header {
+  display: flex;
+  color: var(--gray);
+  /* transform: ; */
+  justify-content: space-between;
+  cursor: pointer;
+  margin: 5px 0;
+}
+.footer-dropdown-header:hover {
+  color: var(--secondary);
+}
+</style>
 
 <script>
 document.querySelectorAll('.footer-dropdown-header').forEach(header => {
@@ -631,16 +1855,16 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
 });
 </script>
 
-    
+   
     <script>
         // Mobile menu functionality
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const navLinks = document.querySelector('.nav-links');
         const menuIcon = mobileMenuBtn.querySelector('i');
-        
+       
         mobileMenuBtn.addEventListener('click', function() {
             navLinks.classList.toggle('active');
-            
+           
             // Toggle menu icon between bars and times
             if (navLinks.classList.contains('active')) {
                 menuIcon.classList.remove('fa-bars');
@@ -650,19 +1874,19 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
                 menuIcon.classList.add('fa-bars');
             }
         });
-        
+       
         // Close menu when clicking outside of it
         document.addEventListener('click', function(event) {
             const isClickInsideNav = navLinks.contains(event.target);
             const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
-            
+           
             if (navLinks.classList.contains('active') && !isClickInsideNav && !isClickOnMenuBtn) {
                 navLinks.classList.remove('active');
                 menuIcon.classList.remove('fa-times');
                 menuIcon.classList.add('fa-bars');
             }
         });
-        
+       
         // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
@@ -671,7 +1895,7 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
                 menuIcon.classList.add('fa-bars');
             });
         });
-        
+       
         // FAQ functionality
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', () => {
@@ -679,7 +1903,7 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
                 item.classList.toggle('active');
             });
         });
-        
+       
         // Newsletter functionality
         document.addEventListener('DOMContentLoaded', function() {
             const btn = document.getElementById('newsletter-btn');
@@ -697,12 +1921,12 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
                 }
             });
         });
-    
+   
         // WebGL support detection
         function isWebGLAvailable() {
             try {
                 const canvas = document.createElement('canvas');
-                return !!(window.WebGLRenderingContext && 
+                return !!(window.WebGLRenderingContext &&
                     (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
             } catch (e) {
                 return false;
@@ -900,11 +2124,3 @@ document.querySelectorAll('.footer-dropdown-header').forEach(header => {
 
 </body>
 </html>
-
-
-
-
-
-
-
-

@@ -15,10 +15,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
-    <link rel="stylesheet" href="CustomDrop.css" />
+    <!-- Removed CustomDrop.css - using allDropdown.css instead -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="../CSS/allDropdown.css" />
-    <link rel="stylesheet" href="../CSS/30min-model.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
       rel="stylesheet"
@@ -29,106 +28,104 @@
     />
     <link
       rel="icon"
-      href="../Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg"
+      href="./Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg"
       sizes="32x32"
       type="image/png"
     />
-    <link rel="stylesheet" href="CaseStudies.css">
+    
     <!-- Responsive Fixes CSS -->
 
     <!-- Navbar CSS -->
     <link rel="stylesheet" href="../CSS/navbar.css" />
-    <link rel="stylesheet" href="../CSS/footer.css">
-    <link rel="stylesheet" href="../CSS/booking-modal.css" />
+    <link rel="stylesheet" href="../CSS/30min-model.css"/>
+    <link rel="stylesheet" href="../CSS/footer.css" />
+    <link rel="stylesheet" href="../CSS/mobile-menu.css" />
+    <link rel="stylesheet" href="./CaseStudies.css" />
+
   </head>
 
   <body>
-    <!-- Header -->
-    <!-- Header -->
-<header id="header">
-    <div class="container">
-        <nav>
-            <a href="home.html" class="logo">
-                <img src="../Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
-            </a>
-            <div class="nav-links">
+       <!-- Header -->
 
-                <!-- ABOUT DROPDOWN TRIGGER -->
-                <a href="#" class="about-toggle">About Us</a>
-                <!-- ABOUT DROPDOWN PANEL -->
-                <div class="about-dropdown">
-                    <div>
-                        <h2>About Us</h2>
-                    </div>
-
-                    <div class="about-container">
-
-                        <div class="about-links">
-                            <div>
-                                <a href="../About/aboutus.html">About Zonixtec</a>
-                                <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
-                                <a href="../OurHistory/OurHistory.html">Our Journey</a>
-                            </div>
-                            <div>
-                                <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
-                                <a href="../Leadership/Leadership.html">Leadership</a>
-                                <a href="../CaseStudies/CaseStudies.html">Case Study</a>
-                            </div>
-                        </div>
-
-                        <span class="about-close">&times;</span>
-
-                        <div class="about-image">
-                            <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
-                                alt="">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="dropdown">
-                    <a href="../Services/Services.html" class="dropdown-toggle">Services <i class="fas fa-chevron-down"></i></a>
-                    <div class="dropdown-content">
-                        <div class="dropdown-scroll">
-                            <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
-                            <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
-                            <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
-                            <a href="../CRMSolutions/CRMSolutions.html">Custom CRM Solutions</a>
-                            <a href="../ERPSolutions/ERPSolutions.html">Custom ERP Solutions</a>
-                            <a href="../BillingInvoice/BillingInvoice.html">Billing-Invoice Solutions</a>
-                            <a href="../AIStrategy/AIStrategy.html">AI Strategy & Consulting</a>
-                            <a href="../DigitalMarketing/DigitalMarketing.html">Digital Marketing Services</a>
-                            <a href="../MobileDevelopment/MobileDevelopment.html">Mobile App Development</a>
-                            <a href="../ui.html">UI/UX Design Services</a>
-                            <a href="../CloudSolutions/CloudSolutions.html">Cloud Solutions</a>
-                            <a href="../HRMSSolutions/HRMSSolutions.html">HRMS Solutions</a>
-                        </div>
-                    </div>
-                </div>
-
-                <a href="../Career/Career.html">Career</a>
-                <a href="../Contact/contact.html">Contact</a>
-                <a href="javascript:void(0);" class="cta-buttons" onclick="openBookingModal()">
-                    <i class="fas fa-phone-alt"></i> Book A 30 Min Call
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="../Home/home.html" class="logo">
+                    <img src="../Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
                 </a>
+                <div class="nav-links">
 
-            </div>
+                    <!-- ABOUT DROPDOWN TRIGGER -->
+                    <a href="#" class="about-toggle">About Us</a>
+                    <!-- ABOUT DROPDOWN PANEL -->
+                    <div class="about-dropdown">
+                        <div>
+                            <h2>About Us</h2>
+                        </div>
 
-            <!-- BOOKING MODAL For Each Page -->
+                        <div class="about-container">
 
-            <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-        </nav>
-    </div>
-</header>
+                            <div class="about-links">
+                                <div>
+                                    <a href="../About/aboutus.html">About Zonixtec</a>
+                                    <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
+                                    <a href="../OurHistory/OurHistory.html">Our Journey</a>
+                                </div>
+                                <div>
+                                    <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
+                                    <a href="../Leadership/Leadership.html">Leadership</a>
+                                    <a href="../CaseStudies/CaseStudies.html">Case Study</a>
+                                </div>
+                            </div>
 
-<div class="mobile-menu-overlay" id="mobileOverlay"></div>
+                            <span class="about-close"><i class="fas fa-times"></i></span>
 
+                            <div class="about-image">
+                                <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="nav-services-dropdown">
+                        <a href="../Services/Services.html" class="nav-services-toggle">Services <i
+                                class="fas fa-chevron-down"></i></a>
+                        <div class="nav-services-content">
+                            <div class="nav-services-scroll">
+                                <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
+                                <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
+                                <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
+                                <a href="../CRMSolutions/CRMSolutions.html">Custom CRM Solutions</a>
+                                <a href="../ERPSolutions/ERPSolutions.html">Custom ERP Solutions</a>
+                                <a href="../BillingInvoice/BillingInvoice.html">Billing-Invoice Solutions</a>
+                                <a href="../AIStrategy/AIStrategy.html">AI Strategy & Consulting</a>
+                                <a href="../DigitalMarketing/DigitalMarketing.html">Digital Marketing Services</a>
+                                <a href="../MobileDevelopment/MobileDevelopment.html">Mobile App Development</a>
+                                <a href="../ui.html">UI/UX Design Services</a>
+                                <a href="../CloudSolutions/CloudSolutions.html">Cloud Solutions</a>
+                                <a href="../HRMSSolutions/HRMSSolutions.html">HRMS Solutions</a>
+                            </div>
+                        </div>
+                    </div>
 
+                    <a href="../Career/Career.html">Career</a>
+                    <a href="../Contact/contact.html">Contact</a>
+                    <a href="javascript:void(0);" class="cta-buttons" onclick="openBookingModal()">
+                        <i class="fas fa-phone-alt"></i> Book A 30 Min Call
+                    </a>
 
+                </div>
+
+                <!-- BOOKING MODAL For Each Page -->
+
+                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </nav>
+        </div>
+    </header>
 
     <!-- Case Study Hero -->
     <section class="case-hero">
@@ -298,81 +295,6 @@
             </div>
           </div>
 
-          <!-- <div class="case-section">
-                    <h2>Results After 3 Months</h2>
-                    <p>We designed and launched a <strong>user-friendly website</strong> for Kaleshwari Temple that created a "Digital presence" honoring tradition while working with modern convenience.</p>
-                    
-                    <div class="solution-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Real-time Information</h3>
-                                <p>Displayed real-time darshan timings and festival updates.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Cultural Heritage</h3>
-                                <p>Shared the temple's history, rituals, and cultural significance.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Event Participation</h3>
-                                <p>Allowed devotees to view event schedules and participate in online rituals.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-check-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h3>Simple & Accessible</h3>
-                                <p>No complex tech, no heavy jargon – just a smooth, spiritual digital home.</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                </div> -->
-
-          <!-- <div class="results-section">
-                    <h2 style="text-align: center; color: var(--secondary);">The Results</h2>
-                    <p style="text-align: center; color: var(--gray); margin-bottom: 0;">Within 3 months of launch, Kaleshwari Temple
-                        saw significant improvements across key metrics</p>
-                
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <div class="result-value">48%</div>
-                            <div class="result-label">Increase in event participation</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">63%</div>
-                            <div class="result-label">Fewer queries about darshan timings</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">37%</div>
-                            <div class="result-label">Growth in donations</div>
-                        </div>
-                        <div class="result-item">
-                            <div class="result-value">94%</div>
-                            <div class="result-label">Younger devotees connected</div>
-                        </div>
-                    </div>
-                </div> -->
-
           <section class="results-section" style="margin-top: 10px">
             <h2 class="border">Results After 3 Months</h2>
 
@@ -446,24 +368,6 @@
               </div>
             </div>
           </section>
-
-          <!-- The Journey Section
-                <div class="case-section">
-                    <h2>The Journey</h2>
-                    <p>At first, there was hesitation – would devotees really visit the website? Some committee members feared it might "lose the personal touch."</p>
-                    <p>The early days were a mix of <strong>facepalm moments</strong>:</p>
-                    <ul style="color: var(--gray); margin: 15px 0 15px 20px; font-size: 1.1rem;">
-                        <li>Some elders struggled to share content online</li>
-                        <li>Event images were sometimes uploaded late</li>
-                        <li>Mobile responsiveness had to be reworked twice to match simple usability</li>
-                    </ul>
-                    <p>But with continuous feedback and collaborative adjustments, things started falling into place. Slowly, the <strong>website turned into a reliable source of truth</strong> for devotees.</p>
-                    
-                    <blockquote>
-                        "We didn't just get a website; we got a partner who understood our faith and helped us adapt without losing our tradition."
-                        <span class="quote-author">– Shri. Krishnal Maharaj Tagunde, Kaleshwari Temple</span>
-                    </blockquote>
-                </div> -->
 
           <!-- Comparison Section -->
           <div class="comparison-section">
@@ -542,150 +446,120 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-    <div class="container">
-        <div class="footer-container">
-            <!-- Solutions Section with Dropdowns -->
-            <div class="footer-col">
-                <h3>Solutions</h3>
-                <div class="footer-links">
-                    <!-- AI Services Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <a href="../AIServices/AIServices.html"><i class="fas fa-chevron-right"></i> AI Services</a>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+      <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <!-- Solutions Section with Dropdowns -->
+                <div class="footer-col">
+                    <h3>Solutions</h3>
+                    <div class="footer-links">
+                        <!-- AI Services Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <a href="../AIServices/AIServices.html"><i class="fas fa-chevron-right"></i> AI
+                                    Services</a>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../AIStrategy/AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy
+                                    & Consulting</a>
+                                <a href="../MachineLearning/MachineLearning.html"><i class="fas fa-chevron-right"></i>
+                                    Machine Learning</a>
+                                <a href="../NLP/NLP.html"><i class="fas fa-chevron-right"></i> Natural Language
+                                    Processing</a>
+                                <a href="../ComputerVision/ComputerVision.html"><i class="fas fa-chevron-right"></i>
+                                    Computer Vision</a>
+                                <a href="../PredictiveAnalytics/PredictiveAnalytics.html"><i
+                                        class="fas fa-chevron-right"></i> Predictive Analysis</a>
+                                <a href="../ProcessAutomation/ProcessAutomation.html"><i
+                                        class="fas fa-chevron-right"></i> Process Automation</a>
+                            </div>
                         </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../AIStrategy/AIStrategy.html"><i class="fas fa-chevron-right"></i> AI Strategy & Consulting</a>
-                            <a href="../MachineLearning/MachineLearning.html"><i class="fas fa-chevron-right"></i> Machine Learning</a>
-                            <a href="../NLP/NLP.html"><i class="fas fa-chevron-right"></i> Natural Language Processing</a>
-                            <a href="../ComputerVision/ComputerVision.html"><i class="fas fa-chevron-right"></i> Computer Vision</a>
-                            <a href="../PredictiveAnalytics/PredictiveAnalytics.html"><i class="fas fa-chevron-right"></i> Predictive Analysis</a>
-                            <a href="../ProcessAutomation/ProcessAutomation.html"><i class="fas fa-chevron-right"></i> Process Automation</a>
+
+                        <!-- Core Development Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Core Development</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../CustomSoftware/CustomSoftware.html"><i class="fas fa-chevron-right"></i>
+                                    Custom Software Development</a>
+                                <a href="../MobileDevelopment/MobileDevelopment.html"><i
+                                        class="fas fa-chevron-right"></i> Mobile App Development</a>
+                                <a href="../CloudSolutions/CloudSolutions.html"><i class="fas fa-chevron-right"></i>
+                                    Cloud Solutions</a>
+                            </div>
+                        </div>
+
+                        <!-- Design & Experience Dropdown -->
+                        <div class="footer-dropdown">
+                            <div class="footer-dropdown-header">
+                                <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
+                                <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
+                            </div>
+                            <div class="footer-dropdown-content">
+                                <a href="../ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
+                            </div>
                         </div>
                     </div>
-                    
-                    <!-- Core Development Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Core Development</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../CustomSoftware/CustomSoftware.html"><i class="fas fa-chevron-right"></i> Custom Software Development</a>
-                            <a href="../MobileDevelopment/MobileDevelopment.html"><i class="fas fa-chevron-right"></i> Mobile App Development</a>
-                            <a href="../CloudSolutions/CloudSolutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Design & Experience Dropdown -->
-                    <div class="footer-dropdown">
-                        <div class="footer-dropdown-header">
-                            <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
-                            <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                        </div>
-                        <div class="footer-dropdown-content">
-                            <a href="../ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
-                        </div>
+                </div>
+
+                <!-- Insights Section -->
+                <div class="footer-col">
+                    <h3>Insights</h3>
+                    <div class="footer-links">
+                        <a href="../CaseStudies/CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
+                        <a href="../Blogs/Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
+                        <a href="../CEODesk/CEODesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
+                        <a href="../FAQs/FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
+                        <a href="../Guides/Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
+                        <a href="../HowTos/HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
                     </div>
                 </div>
-            </div>
 
-            <!-- Insights Section -->
-            <div class="footer-col">
-                <h3>Insights</h3>
-                <div class="footer-links">
-                    <a href="../CaseStudies/CaseStudies.html"><i class="fas fa-chevron-right"></i> Case Studies</a>
-                    <a href="../Blogs/Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-                    <a href="../CEODesk/CEODesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-                    <a href="../FAQs/FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
-                    <a href="../Guides/Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
-                    <a href="../HowTos/HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
+                <!-- Company Section -->
+                <div class="footer-col">
+                    <h3>Company</h3>
+                    <div class="footer-links">
+                        <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
+                        <a href="../About/aboutus.html" id="aboutLink"><i class="fas fa-chevron-right"></i> Mission &
+                            Vision</a>
+                        <a href="../About/aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
+                        <a href="../About/aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core
+                            Values</a>
+                        <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="../Leadership/Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Company Section -->
-            <div class="footer-col">
-                <h3>Company</h3>
-                <div class="footer-links">
-                    <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                    <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-                    <a href="../About/aboutus.html" id="aboutLink"><i class="fas fa-chevron-right"></i> Mission & Vision</a>
-                    <a href="../About/aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our Journey</a>
-                    <a href="../About/aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core Values</a>
-                    <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="../Leadership/Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
+                <!-- Quick Links Section -->
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="../Home/home.html"><i class="fas fa-chevron-right"></i> Home</a>
+                        <a href="../Testimonials/Testimonials.html"><i class="fas fa-chevron-right"></i>
+                            Testimonials</a>
+                        <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
+                        <a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Quick Links Section -->
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <div class="footer-links">
-                    <a href="../Home/home.html"><i class="fas fa-chevron-right"></i> Home</a>
-                    <a href="../Testimonials/Testimonials.html"><i class="fas fa-chevron-right"></i> Testimonials</a>
-                    <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                    <a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-                </div>
-            </div>
 
-            <!-- Newsletter Section -->
-            <div class="footer-col">
-                <h3>Newsletter</h3>
-                <p>Subscribe to our newsletter to receive updates on our latest services, technology insights, and industry trends.</p>
-                <div class="form-group" id="newsletter-group">
-                    <input type="email" class="form-control" id="newsletter-email" placeholder="Your Email" required>
-                    <button class="submit-btn" id="newsletter-btn" type="button">Subscribe</button>
-                </div>
-                <div id="newsletter-thankyou" style="display:none; color: #27ae60; margin-top:10px;">
-                    Thank you for subscribing!
-                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Zonixtec Software Solutions. All Rights Reserved. | Designed with by Zonixtec Team</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Zonixtec Software Solutions. All Rights Reserved. | Designed with ❤️ by Zonixtec Team</p>
-        </div>
-    </div>
-</footer>
-
-
-
-
-    <link rel="stylesheet" href="CaseStudies.css">
-    <script>
-      document.querySelectorAll(".footer-dropdown-header").forEach((header) => {
-        header.addEventListener("click", () => {
-          const parent = header.parentElement;
-          parent.classList.toggle("open");
-        });
-      });
-    </script>
-
-    <script>
-      // Mobile menu toggle
-      document
-        .querySelector(".mobile-menu-btn")
-        .addEventListener("click", function () {
-          document.querySelector(".nav-links").classList.toggle("active");
-          document.querySelector("body").classList.toggle("menu-open");
-        });
-
-      // Header scroll effect
-      window.addEventListener("scroll", function () {
-        const header = document.getElementById("header");
-        if (window.scrollY > 50) {
-          header.classList.add("scrolled");
-        } else {
-          header.classList.remove("scrolled");
-        }
-      });
-    </script>
+    </footer>
+  
 
     <script src="Customscroll.js"></script>
 
     <!-- Chatbot -->
-    <link rel="stylesheet" href="../CSS/chatbot.css" />
-    <script src="../script/chatbot.js"></script>
+    <link rel="stylesheet" href="./CSS/chatbot.css" />
+    <script src="./script/chatbot.js"></script>
 
     <!-- Booking Modal -->
      <div id="bookingModal" class="booking-modal">
@@ -870,30 +744,7 @@
     <!-- Booking Modal Script -->
     <script src="../script/30min-booking.js"></script>
     <script src="../script/navbar.js"></script>
-    <script src="../script/footer.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".circle-wrapper").forEach((circle) => {
-          let value = circle.getAttribute("data-value");
-          let progress = circle.querySelector(".circle-progress");
-          let radius = 60,
-            circumference = 2 * Math.PI * radius;
-          let offset = circumference - (value / 100) * circumference;
-          progress.style.strokeDashoffset = offset;
-        });
-      });
-    </script>
-
     <script src="../script/allabout.js"></script>
+    <script src="../script/footer.js"></script>
   </body>
 </html>
-
-
-
-
-
-
-
-
-

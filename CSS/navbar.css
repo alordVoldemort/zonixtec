@@ -59,7 +59,7 @@ nav {
 .nav-links .dropdown > a {
   color: var(--light);
   text-decoration: none;
-  padding: 8px 12px;
+  padding: 8px 9px;
   border-radius: 5px;
   transition: all .3s;
   font-weight: 500;

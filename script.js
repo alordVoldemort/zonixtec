@@ -579,7 +579,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Footer newsletter subscribe logic (moved from inline script in index.html)
+// Footer newsletter subscribe logic (moved from inline script in Home.html)
 document.addEventListener('DOMContentLoaded', function() {
     const btn = document.getElementById('newsletter-btn');
     const emailInput = document.getElementById('newsletter-email');

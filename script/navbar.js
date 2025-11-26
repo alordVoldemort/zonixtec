@@ -83,11 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     
-    
+    // Prevent dropdown content clicks from closing the dropdown on desktop
     const dropdownContents = document.querySelectorAll('.dropdown-content');
     dropdownContents.forEach(content => {
         content.addEventListener('click', function(e) {
-            e.stopPropagation();
+            // Only stop propagation on desktop, not on mobile
+            if (window.innerWidth > 768) {
+                e.stopPropagation();
+            }
         });
     });
 
@@ -147,23 +150,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
   let isDesktop = window.innerWidth > 768;
+  
+  console.log('🔧 Dropdown script loaded. Found toggles:', dropdownToggles.length);
 
   
   window.addEventListener("resize", () => {
@@ -173,35 +164,55 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  dropdownToggles.forEach((toggle) => {
+  // Navbar Services Dropdown (unique classes to avoid footer conflicts)
+  const navServicesToggles = document.querySelectorAll(".nav-services-toggle");
+  console.log('🔧 Navbar services dropdown script loaded. Found toggles:', navServicesToggles.length);
+
+  navServicesToggles.forEach((toggle) => {
     const dropdown = toggle.parentElement;
 
     
     toggle.addEventListener("click", function (e) {
-      if (!isDesktop) {
-        
-        e.preventDefault();
-        const isActive = dropdown.classList.contains("active");
-        closeAllDropdowns();
-        if (!isActive) {
-          dropdown.classList.add("active");
+      e.preventDefault();
+      e.stopPropagation();
+      
+      console.log('🖱️ Dropdown clicked');
+      
+      const isActive = dropdown.classList.contains("active");
+      console.log('Current state:', isActive ? 'active' : 'inactive');
+      
+      // Close all other nav dropdowns first
+      document.querySelectorAll(".nav-services-dropdown").forEach((d) => {
+        if (d !== dropdown) {
+          d.classList.remove("active");
         }
+      });
+      
+      // Toggle the current dropdown
+      if (isActive) {
+        console.log('➖ Closing dropdown');
+        dropdown.classList.remove("active");
       } else {
-        
-        e.preventDefault();
-        const isActive = dropdown.classList.contains("active");
-        closeAllDropdowns();
-        if (!isActive) {
-          dropdown.classList.add("active");
-        }
+        console.log('➕ Opening dropdown');
+        dropdown.classList.add("active");
       }
+      
+      // Verify class was added
+      console.log('✅ Dropdown classes after toggle:', dropdown.className);
+      console.log('📏 Dropdown content display:', window.getComputedStyle(dropdown.querySelector('.nav-services-content')).display);
+      console.log('📏 Dropdown content max-height:', window.getComputedStyle(dropdown.querySelector('.nav-services-content')).maxHeight);
     });
 
     
 
     dropdown.addEventListener("mouseenter", () => {
       if (isDesktop) {
-        closeAllDropdowns();
+        // Close all other nav dropdowns
+        document.querySelectorAll(".nav-services-dropdown").forEach((d) => {
+          if (d !== dropdown) {
+            d.classList.remove("active");
+          }
+        });
         dropdown.classList.add("active");
       }
     });
@@ -213,18 +224,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // ——— CLOSE NAV DROPDOWN WHEN CLICKING A LINK INSIDE IT ———
+  document.querySelectorAll('.nav-services-content a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      console.log('🔗 Nav service link clicked, closing dropdown');
+      // Close the dropdown on link click (both mobile and desktop)
+      const dropdown = this.closest('.nav-services-dropdown');
+      if (dropdown) {
+        dropdown.classList.remove('active');
+      }
+    });
+  });
+
   
   document.addEventListener("click", function (e) {
-    const clickedInsideDropdown = e.target.closest(".dropdown");
+    const clickedInsideDropdown = e.target.closest(".nav-services-dropdown");
     const clickedMenuBtn = e.target.closest(".mobile-menu-btn");
 
     if (!clickedInsideDropdown && !clickedMenuBtn) {
+      console.log('🚫 Clicked outside, closing all nav dropdowns');
       closeAllDropdowns();
     }
   });
 
   function closeAllDropdowns() {
-    document.querySelectorAll(".dropdown").forEach((dropdown) => {
+    document.querySelectorAll(".nav-services-dropdown").forEach((dropdown) => {
       dropdown.classList.remove("active");
     });
   }
@@ -235,4 +259,6 @@ document.addEventListener("DOMContentLoaded", function () {
       closeAllDropdowns();
     }
   });
+  
+  console.log('✅ Dropdown handlers registered successfully');
 });

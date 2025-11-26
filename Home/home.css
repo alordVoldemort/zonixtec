@@ -464,6 +464,7 @@
             width: 100%;
             height: 100%;
             z-index: 2;
+            overflow: hidden;
         }
 
         .slide {
@@ -477,16 +478,21 @@
             justify-content: center;
             opacity: 0;
             transform: translateX(100%);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            pointer-events: none;
         }
 
         .slide.active {
             opacity: 1;
             transform: translateX(0);
+            pointer-events: auto;
+            z-index: 2;
         }
 
         .slide.prev {
             transform: translateX(-100%);
+            z-index: 1;
         }
 
         /* Hero Content */
@@ -771,6 +777,10 @@
             overflow: hidden;
             backdrop-filter: blur(10px);
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 380px;
         }
 
         .service-card:active {
@@ -907,6 +917,10 @@
             transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             position: relative;
             z-index: 2;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .service-card:hover h3 {
@@ -922,6 +936,10 @@
             position: relative;
             z-index: 2;
             line-height: 1.6;
+            flex-grow: 1;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
         }
 
         .service-card:hover p {
@@ -940,6 +958,8 @@
             padding: 8px 16px;
             border-radius: 20px;
             border: 1px solid transparent;
+            margin-top: auto;
+            align-self: center;
         }
 
         .service-link:hover {
@@ -1783,33 +1803,7 @@
         }
 
         @media (max-width: 768px) {
-            /* Dropdown styles */
-            .dropdown-content {
-                position: static;
-                background: rgba(15, 23, 42, 0.9);
-                box-shadow: none;
-                border: 1px solid rgba(100, 116, 139, 0.2);
-                border-radius: 8px;
-                margin: 10px 0;
-                display: none;
-                width: 100%;
-                padding: 8px 0;
-            }
-
-            .dropdown.active .dropdown-content {
-                display: block;
-            }
-
-            .dropdown-toggle {
-                justify-content: space-between;
-                padding: 15px 30px;
-            }
-
-            .dropdown-content a {
-                padding: 12px 40px;
-                font-size: 0.9rem;
-                margin: 2px 15px;
-            }
+            /* Dropdown styles handled by allDropdown.css */
 
             /* Footer dropdown */
             .footer-dropdown-content {
@@ -1873,6 +1867,20 @@
                 grid-template-columns: 1fr;
             }
 
+            .service-card {
+                min-height: 350px;
+            }
+
+            .service-card h3 {
+                font-size: 1.2rem;
+                min-height: 45px;
+            }
+
+            .service-card p {
+                font-size: 0.95rem;
+                min-height: 85px;
+            }
+
             .stats-container {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1899,6 +1907,26 @@
             .secondary-button {
                 padding: 12px 20px;
                 font-size: 0.9rem;
+            }
+
+            .service-card {
+                min-height: 340px;
+                padding: 25px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                min-height: 42px;
+            }
+
+            .service-card p {
+                font-size: 0.9rem;
+                min-height: 80px;
+            }
+
+            .service-link {
+                font-size: 0.9rem;
+                padding: 7px 14px;
             }
         }
 
@@ -2874,30 +2902,5 @@
             }
         }
 
-        /* Ensure dropdowns work properly on tablets */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .dropdown:hover .dropdown-content {
-                display: block;
-            }
-
-            .dropdown-content {
-                position: absolute;
-                top: 100%;
-                background: rgba(10, 10, 26, 0.95);
-                backdrop-filter: blur(15px);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-                border-radius: 10px;
-                padding: 15px 0;
-            }
-
-            .dropdown-scroll {
-                max-height: 300px;
-                overflow-y: auto;
-            }
-
-            .dropdown-content a {
-                padding: 10px 20px;
-                font-size: 0.85rem;
-            }
-        }
+        /* Dropdown styles handled by allDropdown.css */
 
