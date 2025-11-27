@@ -1,569 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>Our Journey Timeline</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="../CSS/allDropdown.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Our Journey Timeline</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="stylesheet" href="../CSS/allDropdown.css" />
-
-      
     <!-- Flatpickr for Date Picker -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="icon" href="../Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg" sizes="32x32" type="image/png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      href="../Assets/WhatsApp Image 2025-10-15 at 15.47.06.jpeg"
+      sizes="32x32"
+      type="image/png"
+    />
 
-  <!--  CSS -->
-  <link rel="stylesheet" href="../CSS/navbar.css" />
-  <link rel="stylesheet" href="../CSS/mobile-menu.css" />
-  <link rel="stylesheet" href="../CSS/30min-model.css" />
-  <link rel="stylesheet" href="../OurHistory/OurHistory.css" />
-  <link rel="stylesheet" href="../CSS/footer.css" />
-</head>
+    <!--  CSS -->
+    <link rel="stylesheet" href="../CSS/navbar.css" />
+    <link rel="stylesheet" href="../CSS/mobile-menu.css" />
+    <link rel="stylesheet" href="../CSS/30min-model.css" />
+    <link rel="stylesheet" href="../OurHistory/OurHistory.css" />
+    <link rel="stylesheet" href="../CSS/footer.css" />
+  </head>
 
-<body>
-  <!-- Header -->
-  <header id="header">
-    <div class="container">
-      <nav>
-        <a href="../Home/home.html" class="logo">
-          <img src="../Assets/Logo.svg" alt="Zonixtec Logo" style="height: 40px; width: auto;">
-        </a>
-        <div class="nav-links">
-
-          <!-- ABOUT DROPDOWN TRIGGER -->
-          <a href="#" class="about-toggle">About Us</a>
-          <!-- ABOUT DROPDOWN PANEL -->
-          <div class="about-dropdown">
-            <div>
-              <h2>About Us</h2>
-            </div>
-
-            <div class="about-container">
-
-              <div class="about-links">
-                <div>
-                  <a href="../About/aboutus.html">About Zonixtec</a>
-                  <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
-                  <a href="../OurHistory/OurHistory.html">Our Journey</a>
-                </div>
-                <div>
-                  <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
-                  <a href="../Leadership/Leadership.html">Leadership</a>
-                  <a href="../CaseStudies/CaseStudies.html">Case Study</a>
-                </div>
-              </div>
-
-              <span class="about-close"><i class="fas fa-times"></i></span>
-
-              <div class="about-image">
-                <img src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png" alt="">
-              </div>
-            </div>
-          </div>
-
-          <div class="nav-services-dropdown">
-            <a href="../Services/Services.html" class="nav-services-toggle">Services <i class="fas fa-chevron-down"></i></a>
-            <div class="nav-services-content">
-              <div class="nav-services-scroll">
-                <a href="../WebDesignDevelopment/WebDesignDevelopment.html">Web Design & Development</a>
-                <a href="../WebAppDevelopment/WebAppDevelopment.html">Web App Development</a>
-                <a href="../CustomSoftware/CustomSoftware.html">Custom Software Development</a>
-                <a href="../CRMSolutions/CRMSolutions.html">Custom CRM Solutions</a>
-                <a href="../ERPSolutions/ERPSolutions.html">Custom ERP Solutions</a>
-                <a href="../BillingInvoice/BillingInvoice.html">Billing-Invoice Solutions</a>
-                <a href="../AIStrategy/AIStrategy.html">AI Strategy & Consulting</a>
-                <a href="../DigitalMarketing/DigitalMarketing.html">Digital Marketing Services</a>
-                <a href="../MobileDevelopment/MobileDevelopment.html">Mobile App Development</a>
-                <a href="../ui.html">UI/UX Design Services</a>
-                <a href="../CloudSolutions/CloudSolutions.html">Cloud Solutions</a>
-                <a href="../HRMSSolutions/HRMSSolutions.html">HRMS Solutions</a>
-              </div>
-            </div>
-          </div>
-
-          <a href="../Career/Career.html">Career</a>
-          <a href="../Contact/contact.html">Contact</a>
-          <a href="javascript:void(0);" class="cta-buttons" onclick="openBookingModal()">
-            <i class="fas fa-phone-alt"></i> Book A 30 Min Call
+  <body>
+    <!-- Header -->
+    <header id="header">
+      <div class="container">
+        <nav>
+          <a href="../Home/home.html" class="logo">
+            <img
+              src="../Assets/Logo.svg"
+              alt="Zonixtec Logo"
+              style="height: 40px; width: auto"
+            />
           </a>
+          <div class="nav-links">
+            <!-- ABOUT DROPDOWN TRIGGER -->
+            <a href="#" class="about-toggle">About Us</a>
+            <!-- ABOUT DROPDOWN PANEL -->
+            <div class="about-dropdown">
+              <div>
+                <h2>About Us</h2>
+              </div>
 
-        </div>
- 
-       <!-- BOOKING MODAL For Each Page -->
-                <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                    <span class="hamburger-line"></span>
-                </button>
-            </nav>
-        </div>
+              <div class="about-container">
+                <div class="about-links">
+                  <div>
+                    <a href="../About/aboutus.html">About Zonixtec</a>
+                    <a href="../WhyZonixtec/WhyZonixtec.html">Why Zonixtec?</a>
+                    <a href="../OurHistory/OurHistory.html">Our Journey</a>
+                  </div>
+                  <div>
+                    <a href="../CEODesk/CEODesk.html">From CEO's Desk</a>
+                    <a href="../Leadership/Leadership.html">Leadership</a>
+                    <a href="../CaseStudies/CaseStudies.html">Case Study</a>
+                  </div>
+                </div>
+
+                <span class="about-close"><i class="fas fa-times"></i></span>
+
+                <div class="about-image">
+                  <img
+                    src="../Assets/ai-nuclear-energy-background-future-innovation-disruptive-technology 3.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-services-dropdown">
+              <a href="../Services/Services.html" class="nav-services-toggle"
+                >Services <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="nav-services-content">
+                <div class="nav-services-scroll">
+                  <a href="../WebDesignDevelopment/WebDesignDevelopment.html"
+                    >Web Design & Development</a
+                  >
+                  <a href="../WebAppDevelopment/WebAppDevelopment.html"
+                    >Web App Development</a
+                  >
+                  <a href="../CustomSoftware/CustomSoftware.html"
+                    >Custom Software Development</a
+                  >
+                  <a href="../CRMSolutions/CRMSolutions.html"
+                    >Custom CRM Solutions</a
+                  >
+                  <a href="../ERPSolutions/ERPSolutions.html"
+                    >Custom ERP Solutions</a
+                  >
+                  <a href="../BillingInvoice/BillingInvoice.html"
+                    >Billing-Invoice Solutions</a
+                  >
+                  <a href="../AIStrategy/AIStrategy.html"
+                    >AI Strategy & Consulting</a
+                  >
+                  <a href="../DigitalMarketing/DigitalMarketing.html"
+                    >Digital Marketing Services</a
+                  >
+                  <a href="../MobileDevelopment/MobileDevelopment.html"
+                    >Mobile App Development</a
+                  >
+                  <a href="../ui.html">UI/UX Design Services</a>
+                  <a href="../CloudSolutions/CloudSolutions.html"
+                    >Cloud Solutions</a
+                  >
+                  <a href="../HRMSSolutions/HRMSSolutions.html"
+                    >HRMS Solutions</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <a href="../Career/Career.html">Career</a>
+            <a href="../Contact/contact.html">Contact</a>
+            <a
+              href="javascript:void(0);"
+              class="cta-buttons"
+              onclick="openBookingModal()"
+            >
+              <i class="fas fa-phone-alt"></i> Book A 30 Min Call
+            </a>
+          </div>
+
+          <!-- BOOKING MODAL For Each Page -->
+          <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </nav>
+      </div>
     </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- OUR HISTORY -->
-    <section class="section-padding history-intro">
-      <h2 class="section-title section-title-left animate-on-scroll">OUR HISTORY</h2>
-      <div class="container history-section">
-        <div class="history-text animate-on-scroll">
-          <p>
-            Zonixtec was founded in 2024 with a simple goal: to build digital
-            solutions that help businesses work smarter. What began with five
-            passionate developers in a small room has now grown into a
-            fast-moving technology company offering CRM, ERP, HRMS, custom
-            software, mobile apps, and cloud solutions.
+    <!-- MAIN CONTENT -->
+    <main>
+      <!-- OUR HISTORY -->
+      <section class="section-padding history-intro">
+        <h2 class="section-title section-title-left animate-on-scroll">
+          OUR HISTORY
+        </h2>
+        <div class="container history-section">
+          <div class="history-text animate-on-scroll">
+            <p>
+              Zonixtec was founded in 2024 with a simple goal: to build digital
+              solutions that help businesses work smarter. What began with five
+              passionate developers in a small room has now grown into a
+              fast-moving technology company offering CRM, ERP, HRMS, custom
+              software, mobile apps, and cloud solutions.
+            </p>
+          </div>
+          <div class="history-image animate-on-scroll">
+            <img
+              src="../Assets/e52ed230048cf45505f7862b56b19a99 1.png"
+              alt="Zonixtec team collaborating on innovative technology solutions"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- JOURNEY TIMELINE -->
+      <section class="journey-section">
+        <div class="container">
+          <h2 class="journey-title animate-on-scroll">Our Journey</h2>
+          <p class="journey-subtitle animate-on-scroll">
+            Your Trusted Partner for Reliable & Scalable Digital Solutions
           </p>
-        </div>
-        <div class="history-image animate-on-scroll">
-          <img src="../Assets/e52ed230048cf45505f7862b56b19a99 1.png" alt="Zonixtec team collaborating on innovative technology solutions" loading="lazy" />
-        </div>
-      </div>
-    </section>
 
-    <!-- JOURNEY TIMELINE -->
-    <section class="journey-section">
+          <div class="timeline-container">
+            <!-- Standard Line (Mobile & Tablet) -->
+            <div class="timeline-line"></div>
+
+            <!-- Custom Image Line (Desktop/Laptop only) -->
+            <div class="timeline-image-line">
+              <img
+                src="../Assets/Line 25.png"
+                alt="Timeline journey path connecting milestones"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- 2024 - Foundation -->
+            <div class="timeline-row left animate-on-scroll">
+              <div class="timeline-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <div class="timeline-card">
+                <span class="timeline-year-badge">2024</span>
+                <h3>Foundation</h3>
+                <p>
+                  We started Zonixtec with a clear belief that technology should
+                  solve real problems, not create new ones. Our first team of
+                  five set the tone for innovation and customer-focused
+                  development.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2024 - First Major Client -->
+            <div class="timeline-row right animate-on-scroll">
+              <div class="timeline-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <div class="timeline-card">
+                <span class="timeline-year-badge">2024</span>
+                <h3>First Major Client</h3>
+                <p>
+                  Our first custom CRM system delivered a 45% sales improvement
+                  for a client. This milestone proved our ability to build
+                  impactful, reliable, and scalable business solutions.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2024 - Opening Our First Office -->
+            <div id="settu" class="animate-on-scroll">
+              <div class="timeline-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="timeline-card">
+                <span class="timeline-year-badge">2024</span>
+                <h3>Opening Our First Office</h3>
+                <p>
+                  We moved from a small room to our first office, creating a
+                  dedicated space for collaboration, brainstorming, and stronger
+                  teamwork.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2025 - New Dedicated Workspace -->
+            <div id="workspace" class="timeline-row right animate-on-scroll">
+              <div class="timeline-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="timeline-card">
+                <span class="timeline-year-badge">2025</span>
+                <h3>New Dedicated Workspace</h3>
+                <p>
+                  We set up our full-scale office and expanded our services.
+                  With improved infrastructure and a growing team, we
+                  strengthened our capabilities in CRM, ERP, custom software,
+                  mobile, and web development.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- OUR STORY HEADING -->
       <div class="container">
-        <h2 class="journey-title animate-on-scroll">Our Journey</h2>
-        <p class="journey-subtitle animate-on-scroll">
-          Your Trusted Partner for Reliable & Scalable Digital Solutions
-        </p>
-
-        <div class="timeline-container">
-          <!-- Standard Line (Mobile & Tablet) -->
-          <div class="timeline-line"></div>
-
-          <!-- Custom Image Line (Desktop/Laptop only) -->
-          <div class="timeline-image-line">
-            <img src="../Assets/Line 25.png" alt="Timeline journey path connecting milestones" loading="lazy" />
-          </div>
-
-          <!-- 2024 - Foundation -->
-          <div class="timeline-row left animate-on-scroll">
-            <div class="timeline-icon">
-              <i class="fas fa-rocket"></i>
-            </div>
-            <div class="timeline-card">
-              <span class="timeline-year-badge">2024</span>
-              <h3>Foundation</h3>
-              <p>
-                We started Zonixtec with a clear belief that technology should
-                solve real problems, not create new ones. Our first team of
-                five set the tone for innovation and customer-focused
-                development.
-              </p>
-            </div>
-          </div>
-
-          <!-- 2024 - First Major Client -->
-          <div class="timeline-row right animate-on-scroll">
-            <div class="timeline-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <div class="timeline-card">
-              <span class="timeline-year-badge">2024</span>
-              <h3>First Major Client</h3>
-              <p>
-                Our first custom CRM system delivered a 45% sales improvement
-                for a client. This milestone proved our ability to build
-                impactful, reliable, and scalable business solutions.
-              </p>
-            </div>
-          </div>
-
-          <!-- 2024 - Opening Our First Office -->
-          <div id="settu" class="animate-on-scroll">
-            <div class="timeline-icon">
-              <i class="fas fa-building"></i>
-            </div>
-            <div class="timeline-card">
-              <span class="timeline-year-badge">2024</span>
-              <h3>Opening Our First Office</h3>
-              <p>
-                We moved from a small room to our first office, creating a
-                dedicated space for collaboration, brainstorming, and stronger
-                teamwork.
-              </p>
-            </div>
-          </div>
-
-          <!-- 2025 - New Dedicated Workspace -->
-          <div id="workspace" class="timeline-row right animate-on-scroll">
-            <div class="timeline-icon">
-              <i class="fas fa-star"></i>
-            </div>
-            <div class="timeline-card">
-              <span class="timeline-year-badge">2025</span>
-              <h3>New Dedicated Workspace</h3>
-              <p>
-                We set up our full-scale office and expanded our services.
-                With improved infrastructure and a growing team, we
-                strengthened our capabilities in CRM, ERP, custom software,
-                mobile, and web development.
-              </p>
-            </div>
-          </div>
-        </div>
+        <h2 class="story-heading animate-on-scroll">
+          Our Story in a Few Words
+        </h2>
       </div>
-    </section>
 
-    <!-- OUR STORY HEADING -->
-    <div class="container">
-      <h2 class="story-heading animate-on-scroll">Our Story in a Few Words</h2>
-    </div>
-
-    <!-- OUR STORY SECTION -->
-    <section class="story-section">
-      <p class="animate-on-scroll">
-        Zonixtec has grown from a small team of passionate developers into a
-        trusted technology partner for businesses seeking reliable, modern,
-        and scalable digital solutions. Our journey reflects our commitment to
-        quality, transparency, and continuous improvement.
-      </p>
-      <p class="animate-on-scroll">
-        From building our first CRM solution to expanding into ERP systems,
-        custom software, mobile apps, and cloud services, every milestone has
-        strengthened our mission—to create technology that simplifies
-        operations and drives real business impact.
-      </p>
-      <p class="animate-on-scroll">
-        Today, we continue to grow, innovate, and serve clients across
-        industries with the same dedication we started with. For us, this is
-        just the beginning of a much bigger journey.
-      </p>
-    </section>
-
-    <div class="container">
-      <section class="founder-note animate-on-scroll">
-        <h3>Founder's Note</h3>
-        <div class="quote">
-          "Some journeys start with code. Ours started with belief."
-        </div>
-        <p>
-          Zonixtec began with the dream of building technology that helps
-          businesses grow. Every achievement—our first client, our first
-          office, our expanding team—comes from our commitment to quality,
-          innovation, and customer success.
+      <!-- OUR STORY SECTION -->
+      <section class="story-section">
+        <p class="animate-on-scroll">
+          Zonixtec has grown from a small team of passionate developers into a
+          trusted technology partner for businesses seeking reliable, modern,
+          and scalable digital solutions. Our journey reflects our commitment to
+          quality, transparency, and continuous improvement.
+        </p>
+        <p class="animate-on-scroll">
+          From building our first CRM solution to expanding into ERP systems,
+          custom software, mobile apps, and cloud services, every milestone has
+          strengthened our mission—to create technology that simplifies
+          operations and drives real business impact.
+        </p>
+        <p class="animate-on-scroll">
+          Today, we continue to grow, innovate, and serve clients across
+          industries with the same dedication we started with. For us, this is
+          just the beginning of a much bigger journey.
         </p>
       </section>
-    </div>
 
-    <!-- CTA SECTION -->
-    <div class="container">
-      <div class="cta-section animate-on-scroll">
-        <h2>Let's Have a Small Talk</h2>
-        <a href="javascript:void(0);" onclick="openBookingModal()" class="cta-button">
-          <i class="fas fa-phone"></i> Book 30 Min Call
-        </a>
+      <div class="container">
+        <section class="founder-note animate-on-scroll">
+          <h3>Founder's Note</h3>
+          <div class="quote">
+            "Some journeys start with code. Ours started with belief."
+          </div>
+          <p>
+            Zonixtec began with the dream of building technology that helps
+            businesses grow. Every achievement—our first client, our first
+            office, our expanding team—comes from our commitment to quality,
+            innovation, and customer success.
+          </p>
+        </section>
       </div>
-    </div>
-  </main>
 
-  <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-container">
-                    <!-- Solutions Section with Dropdowns -->
-                    <div class="footer-col">
-                        <h3>Solutions</h3>
-                        <div class="footer-links">
-                            <!-- AI Services Dropdown -->
-                            <div class="footer-dropdown">
-                                <div class="footer-dropdown-header">
-                                    <a href="../AIServices/AIServices.html"><i class="fas fa-chevron-right"></i> AI
-                                        Services</a>
-                                    <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                                </div>
-                                <div class="footer-dropdown-content">
-                                    <a href="../AIStrategy/AIStrategy.html"><i class="fas fa-chevron-right"></i> AI
-                                        Strategy & Consulting</a>
-                                    <a href="../MachineLearning/MachineLearning.html"><i
-                                            class="fas fa-chevron-right"></i> Machine Learning</a>
-                                    <a href="../NLP/NLP.html"><i class="fas fa-chevron-right"></i> Natural Language
-                                        Processing</a>
-                                    <a href="../ComputerVision/ComputerVision.html"><i class="fas fa-chevron-right"></i>
-                                        Computer Vision</a>
-                                    <a href="../PredictiveAnalytics/PredictiveAnalytics.html"><i
-                                            class="fas fa-chevron-right"></i> Predictive Analysis</a>
-                                    <a href="../ProcessAutomation/ProcessAutomation.html"><i
-                                            class="fas fa-chevron-right"></i> Process Automation</a>
-                                </div>
-                            </div>
+      <!-- CTA SECTION -->
+      <div class="container">
+        <div class="cta-section animate-on-scroll">
+          <h2>Let's Have a Small Talk</h2>
+          <a
+            href="javascript:void(0);"
+            onclick="openBookingModal()"
+            class="cta-button"
+          >
+            <i class="fas fa-phone"></i> Book A 30 Min Call
+          </a>
+        </div>
+      </div>
+    </main>
 
-                            <!-- Core Development Dropdown -->
-                            <div class="footer-dropdown">
-                                <div class="footer-dropdown-header">
-                                    <span><i class="fas fa-chevron-right"></i> Core Development</span>
-                                    <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                                </div>
-                                <div class="footer-dropdown-content">
-                                    <a href="../CustomSoftware/CustomSoftware.html"><i class="fas fa-chevron-right"></i>
-                                        Custom Software Development</a>
-                                    <a href="../MobileDevelopment/MobileDevelopment.html"><i
-                                            class="fas fa-chevron-right"></i> Mobile App Development</a>
-                                    <a href="../CloudSolutions/CloudSolutions.html"><i class="fas fa-chevron-right"></i>
-                                        Cloud Solutions</a>
-                                </div>
-                            </div>
-
-                            <!-- Design & Experience Dropdown -->
-                            <div class="footer-dropdown">
-                                <div class="footer-dropdown-header">
-                                    <span><i class="fas fa-chevron-right"></i> Design & Experience</span>
-                                    <span class="dropdown-toggle"><i class="fas fa-chevron-down"></i></span>
-                                </div>
-                                <div class="footer-dropdown-content">
-                                    <a href="../ui.html"><i class="fas fa-chevron-right"></i> UI/UX Design</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Insights Section -->
-                    <div class="footer-col">
-                        <h3>Insights</h3>
-                        <div class="footer-links">
-                            <a href="../CaseStudies/CaseStudies.html"><i class="fas fa-chevron-right"></i> Case
-                                Studies</a>
-                            <a href="../Blogs/Blogs.html"><i class="fas fa-chevron-right"></i> Blogs</a>
-                            <a href="../CEODesk/CEODesk.html"><i class="fas fa-chevron-right"></i> From CEO's Desk</a>
-                            <a href="../FAQs/FAQs.html"><i class="fas fa-chevron-right"></i> FAQs</a>
-                            <a href="../Guides/Guides.html"><i class="fas fa-chevron-right"></i> Guides</a>
-                            <a href="../HowTos/HowTos.html"><i class="fas fa-chevron-right"></i> How-tos</a>
-                        </div>
-                    </div>
-
-                    <!-- Company Section -->
-                    <div class="footer-col">
-                        <h3>Company</h3>
-                        <div class="footer-links">
-                            <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a>
-                            <a href="../About/aboutus.html"><i class="fas fa-chevron-right"></i> Our Story</a>
-                            <a href="../About/aboutus.html" id="aboutLink"><i class="fas fa-chevron-right"></i> Mission
-                                & Vision</a>
-                            <a href="../About/aboutus.html" id="OurJou"><i class="fas fa-chevron-right"></i> Our
-                                Journey</a>
-                            <a href="../About/aboutus.html" id="OurCore"><i class="fas fa-chevron-right"></i> Core
-                                Values</a>
-                            <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                            <a href="../Leadership/Leadership.html"><i class="fas fa-chevron-right"></i> Leadership</a>
-                        </div>
-                    </div>
-
-                    <!-- Quick Links Section -->
-                    <div class="footer-col">
-                        <h3>Quick Links</h3>
-                        <div class="footer-links">
-                            <a href="../Home/home.html"><i class="fas fa-chevron-right"></i> Home</a>
-                            <a href="../Testimonials/Testimonials.html"><i class="fas fa-chevron-right"></i>
-                                Testimonials</a>
-                            <a href="../Career/Career.html"><i class="fas fa-chevron-right"></i> Careers</a>
-                            <a href="../Contact/contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a>
-                        </div>
-                    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-container">
+          <!-- Solutions Section with Dropdowns -->
+          <div class="footer-col">
+            <h3>Solutions</h3>
+            <div class="footer-links">
+              <!-- AI Services Dropdown -->
+              <div class="footer-dropdown">
+                <div class="footer-dropdown-header">
+                  <a href="../AIServices/AIServices.html"
+                    ><i class="fas fa-chevron-right"></i> AI Services</a
+                  >
+                  <span class="dropdown-toggle"
+                    ><i class="fas fa-chevron-down"></i
+                  ></span>
                 </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2024 Zonixtec Software Solutions. All Rights Reserved. | Designed with by Zonixtec Team
-                    </p>
+                <div class="footer-dropdown-content">
+                  <a href="../AIStrategy/AIStrategy.html"
+                    ><i class="fas fa-chevron-right"></i> AI Strategy &
+                    Consulting</a
+                  >
+                  <a href="../MachineLearning/MachineLearning.html"
+                    ><i class="fas fa-chevron-right"></i> Machine Learning</a
+                  >
+                  <a href="../NLP/NLP.html"
+                    ><i class="fas fa-chevron-right"></i> Natural Language
+                    Processing</a
+                  >
+                  <a href="../ComputerVision/ComputerVision.html"
+                    ><i class="fas fa-chevron-right"></i> Computer Vision</a
+                  >
+                  <a href="../PredictiveAnalytics/PredictiveAnalytics.html"
+                    ><i class="fas fa-chevron-right"></i> Predictive Analysis</a
+                  >
+                  <a href="../ProcessAutomation/ProcessAutomation.html"
+                    ><i class="fas fa-chevron-right"></i> Process Automation</a
+                  >
                 </div>
+              </div>
+
+              <!-- Core Development Dropdown -->
+              <div class="footer-dropdown">
+                <div class="footer-dropdown-header">
+                  <span
+                    ><i class="fas fa-chevron-right"></i> Core Development</span
+                  >
+                  <span class="dropdown-toggle"
+                    ><i class="fas fa-chevron-down"></i
+                  ></span>
+                </div>
+                <div class="footer-dropdown-content">
+                  <a href="../CustomSoftware/CustomSoftware.html"
+                    ><i class="fas fa-chevron-right"></i> Custom Software
+                    Development</a
+                  >
+                  <a href="../MobileDevelopment/MobileDevelopment.html"
+                    ><i class="fas fa-chevron-right"></i> Mobile App
+                    Development</a
+                  >
+                  <a href="../CloudSolutions/CloudSolutions.html"
+                    ><i class="fas fa-chevron-right"></i> Cloud Solutions</a
+                  >
+                </div>
+              </div>
+
+              <!-- Design & Experience Dropdown -->
+              <div class="footer-dropdown">
+                <div class="footer-dropdown-header">
+                  <span
+                    ><i class="fas fa-chevron-right"></i> Design &
+                    Experience</span
+                  >
+                  <span class="dropdown-toggle"
+                    ><i class="fas fa-chevron-down"></i
+                  ></span>
+                </div>
+                <div class="footer-dropdown-content">
+                  <a href="../ui.html"
+                    ><i class="fas fa-chevron-right"></i> UI/UX Design</a
+                  >
+                </div>
+              </div>
             </div>
-        </footer>
+          </div>
 
+          <!-- Insights Section -->
+          <div class="footer-col">
+            <h3>Insights</h3>
+            <div class="footer-links">
+              <a href="../CaseStudies/CaseStudies.html"
+                ><i class="fas fa-chevron-right"></i> Case Studies</a
+              >
+              <a href="../Blogs/Blogs.html"
+                ><i class="fas fa-chevron-right"></i> Blogs</a
+              >
+              <a href="../CEODesk/CEODesk.html"
+                ><i class="fas fa-chevron-right"></i> From CEO's Desk</a
+              >
+              <a href="../FAQs/FAQs.html"
+                ><i class="fas fa-chevron-right"></i> FAQs</a
+              >
+              <a href="../Guides/Guides.html"
+                ><i class="fas fa-chevron-right"></i> Guides</a
+              >
+              <a href="../HowTos/HowTos.html"
+                ><i class="fas fa-chevron-right"></i> How-tos</a
+              >
+            </div>
+          </div>
 
-  <!-- Chatbot -->
-  <link rel="stylesheet" href="../CSS/chatbot.css" />
-  <script src="../script/chatbot.js"></script>
+          <!-- Company Section -->
+          <div class="footer-col">
+            <h3>Company</h3>
+            <div class="footer-links">
+              <a href="../About/aboutus.html"
+                ><i class="fas fa-chevron-right"></i> About Us</a
+              >
+              <a href="../About/aboutus.html"
+                ><i class="fas fa-chevron-right"></i> Our Story</a
+              >
+              <a href="../About/aboutus.html" id="aboutLink"
+                ><i class="fas fa-chevron-right"></i> Mission & Vision</a
+              >
+              <a href="../About/aboutus.html" id="OurJou"
+                ><i class="fas fa-chevron-right"></i> Our Journey</a
+              >
+              <a href="../About/aboutus.html" id="OurCore"
+                ><i class="fas fa-chevron-right"></i> Core Values</a
+              >
+              <a href="../Career/Career.html"
+                ><i class="fas fa-chevron-right"></i> Careers</a
+              >
+              <a href="../Leadership/Leadership.html"
+                ><i class="fas fa-chevron-right"></i> Leadership</a
+              >
+            </div>
+          </div>
 
-  <!-- Booking Modal -->
-  <div id="bookingModal" class="booking-modal">
-    <div class="booking-modal-content">
-
-      <!-- CLOSE BUTTON -->
-      <span class="booking-modal-close" onclick="closeBookingModal()">&times;</span>
-
-      <!-- STEP PROGRESS -->
-      <div class="booking-progress-indicator">
-        <div class="booking-progress-step booking-active" id="progress1" data-step="1"></div>
-        <div class="booking-progress-line" id="line1"></div>
-        <div class="booking-progress-step" id="progress2" data-step="2"></div>
-        <div class="booking-progress-line" id="line2"></div>
-        <div class="booking-progress-step" id="progress3" data-step="3"></div>
-        <div class="booking-progress-line" id="line3"></div>
-        <div class="booking-progress-step" id="progress4" data-step="4"></div>
+          <!-- Quick Links Section -->
+          <div class="footer-col">
+            <h3>Quick Links</h3>
+            <div class="footer-links">
+              <a href="../Home/home.html"
+                ><i class="fas fa-chevron-right"></i> Home</a
+              >
+              <a href="../Testimonials/Testimonials.html"
+                ><i class="fas fa-chevron-right"></i> Testimonials</a
+              >
+              <a href="../Career/Career.html"
+                ><i class="fas fa-chevron-right"></i> Careers</a
+              >
+              <a href="../Contact/contact.html"
+                ><i class="fas fa-chevron-right"></i> Contact Us</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2024 Zonixtec Software Solutions. All Rights Reserved. |
+            Designed with by Zonixtec Team
+          </p>
+        </div>
       </div>
+    </footer>
 
-      <!-- STEP 1 -->
-      <div class="booking-modal-step booking-active" id="step1">
-        <div class="booking-step-header">
-          <div class="booking-step-number">1</div>
-          <h2 class="booking-step-title">Zonixtec — 30-Minute Discovery Call</h2>
+    <!-- Chatbot -->
+    <link rel="stylesheet" href="../CSS/chatbot.css" />
+    <script src="../script/chatbot.js"></script>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="booking-modal">
+      <div class="booking-modal-content">
+        <!-- CLOSE BUTTON -->
+        <span class="booking-modal-close" onclick="closeBookingModal()"
+          >&times;</span
+        >
+
+        <!-- STEP PROGRESS -->
+        <div class="booking-progress-indicator">
+          <div
+            class="booking-progress-step booking-active"
+            id="progress1"
+            data-step="1"
+          ></div>
+          <div class="booking-progress-line" id="line1"></div>
+          <div class="booking-progress-step" id="progress2" data-step="2"></div>
+          <div class="booking-progress-line" id="line2"></div>
+          <div class="booking-progress-step" id="progress3" data-step="3"></div>
+          <div class="booking-progress-line" id="line3"></div>
+          <div class="booking-progress-step" id="progress4" data-step="4"></div>
         </div>
 
-        <div class="booking-discovery-subtitle">
-          Duration: 30 Minutes | Mode: Web Conference
-        </div>
+        <!-- STEP 1 -->
+        <div class="booking-modal-step booking-active" id="step1">
+          <div class="booking-step-header">
+            <div class="booking-step-number">1</div>
+            <h2 class="booking-step-title">
+              Zonixtec — 30-Minute Discovery Call
+            </h2>
+          </div>
 
-        <div class="booking-session-overview">
-          <h4 class="booking-session-title">In this quick session, we'll cover:</h4>
-          <div class="booking-session-items-grid">
-            <div class="booking-session-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Introduction & Requirement Understanding</span>
+          <div class="booking-discovery-subtitle">
+            Duration: 30 Minutes | Mode: Web Conference
+          </div>
+
+          <div class="booking-session-overview">
+            <h4 class="booking-session-title">
+              In this quick session, we'll cover:
+            </h4>
+            <div class="booking-session-items-grid">
+              <div class="booking-session-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Introduction & Requirement Understanding</span>
+              </div>
+              <div class="booking-session-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Relevant Use Case Demo</span>
+              </div>
+              <div class="booking-session-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Technology Solutions & Offerings</span>
+              </div>
+              <div class="booking-session-item">
+                <i class="fas fa-check-circle"></i>
+                <span>Project Roadmap & Next Steps</span>
+              </div>
             </div>
-            <div class="booking-session-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Relevant Use Case Demo</span>
+
+            <div class="booking-discovery-goal">
+              <strong>Goal:</strong>
+              <p>
+                Understand your needs and explore how Zonixtec can deliver the
+                right tech solutions for your project.
+              </p>
             </div>
-            <div class="booking-session-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Technology Solutions & Offerings</span>
-            </div>
-            <div class="booking-session-item">
-              <i class="fas fa-check-circle"></i>
-              <span>Project Roadmap & Next Steps</span>
-            </div>
-          </div>
-
-          <div class="booking-discovery-goal">
-            <strong>Goal:</strong>
-            <p>Understand your needs and explore how Zonixtec can deliver the right tech solutions for
-              your
-              project.</p>
-          </div>
-        </div>
-
-        <div class="booking-step-navigation">
-          <div></div>
-          <button class="booking-btn-primary" onclick="nextStep(1)">
-            Next: Select Date <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- STEP 2 -->
-      <div class="booking-modal-step" id="step2">
-        <div class="booking-step-header">
-          <div class="booking-step-number">2</div>
-          <h2 class="booking-step-title">Select Your Preferred Date</h2>
-        </div>
-
-        <input type="text" id="dateInput" class="booking-calendar-input" placeholder="Pick a date" readonly />
-
-        <div class="booking-step-navigation">
-          <button class="booking-btn-secondary" onclick="previousStep(2)">
-            <i class="fas fa-arrow-left"></i> Back
-          </button>
-          <button class="booking-btn-primary" id="dateNextBtn" onclick="nextStep(2)" disabled>
-            Next: Select Time <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- STEP 3 -->
-      <div class="booking-modal-step" id="step3">
-        <div class="booking-step-header">
-          <div class="booking-step-number">3</div>
-          <h2 class="booking-step-title">Choose Your Time Slot</h2>
-        </div>
-
-        <div class="booking-time-slots">
-          <div class="booking-time-slot" data-time="10:30">10:30 AM</div>
-          <div class="booking-time-slot" data-time="11:30">11:30 AM</div>
-          <div class="booking-time-slot" data-time="12:00">12:00 PM</div>
-          <div class="booking-time-slot" data-time="12:30">12:30 PM</div>
-          <div class="booking-time-slot" data-time="13:00">1:00 PM</div>
-          <div class="booking-time-slot" data-time="13:30">1:30 PM</div>
-          <div class="booking-time-slot" data-time="14:00">2:00 PM</div>
-          <div class="booking-time-slot" data-time="14:30">2:30 PM</div>
-          <div class="booking-time-slot" data-time="15:00">3:00 PM</div>
-          <div class="booking-time-slot" data-time="15:30">3:30 PM</div>
-          <div class="booking-time-slot" data-time="16:00">4:00 PM</div>
-          <div class="booking-time-slot" data-time="16:30">4:30 PM</div>
-          <div class="booking-time-slot" data-time="17:00">5:00 PM</div>
-        </div>
-
-        <div class="booking-step-navigation">
-          <button class="booking-btn-secondary" onclick="previousStep(3)">
-            <i class="fas fa-arrow-left"></i> Back
-          </button>
-          <button class="booking-btn-primary" id="timeNextBtn" onclick="nextStep(3)" disabled>
-            Next: Your Info <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- STEP 4 -->
-      <div class="booking-modal-step" id="step4">
-        <div class="booking-step-header">
-          <div class="booking-step-number">4</div>
-          <h2 class="booking-step-title">Your Information</h2>
-        </div>
-
-        <form class="booking-modal-form" id="bookingFormPage">
-
-          <div class="form-group-row">
-            <label for="bookingName">Full Name</label>
-            <input type="text" id="bookingName" placeholder="Enter your full name" required />
-          </div>
-          <span class="error-text" id="nameError"></span>
-
-          <div class="form-group-row">
-            <label for="bookingEmail">Email</label>
-            <input type="email" id="bookingEmail" placeholder="Enter your email" required />
-          </div>
-          <span class="error-text" id="emailError"></span>
-
-          <div class="form-group-row">
-            <label for="bookingPhone">Phone</label>
-            <input type="tel" id="bookingPhone" placeholder="Enter your phone number" required />
-          </div>
-          <span class="error-text" id="phoneError"></span>
-
-          <div class="form-group-row">
-            <label for="bookingCompany">Company</label>
-            <input type="text" id="bookingCompany" placeholder="Company (optional)" />
-          </div>
-
-          <div class="form-group-row">
-            <label for="bookingMessage">Message</label>
-            <textarea id="bookingMessage" placeholder="Describe what services you need..."></textarea>
           </div>
 
           <div class="booking-step-navigation">
-            <button type="button" class="booking-btn-secondary" onclick="previousStep(4)">
-              <i class="fas fa-arrow-left"></i> Back
-            </button>
-
-            <button type="submit" class="booking-btn-primary">
-              <i class="fas fa-calendar-check"></i> Book My Free Consultation
+            <div></div>
+            <button class="booking-btn-primary" onclick="nextStep(1)">
+              Next: Select Date <i class="fas fa-arrow-right"></i>
             </button>
           </div>
-        </form>
-      </div>
+        </div>
 
-      <!-- SUCCESS -->
-      <div id="bookingSuccessPage" class="booking-success-message">
-        <i class="fas fa-check-circle"></i>
-        <h3>Your Call is Booked!</h3>
-        <p>Our team will contact you shortly. Thank you!</p>
-      </div>
+        <!-- STEP 2 -->
+        <div class="booking-modal-step" id="step2">
+          <div class="booking-step-header">
+            <div class="booking-step-number">2</div>
+            <h2 class="booking-step-title">Select Your Preferred Date</h2>
+          </div>
 
+          <input
+            type="text"
+            id="dateInput"
+            class="booking-calendar-input"
+            placeholder="Pick a date"
+            readonly
+          />
+
+          <div class="booking-step-navigation">
+            <button class="booking-btn-secondary" onclick="previousStep(2)">
+              <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <button
+              class="booking-btn-primary"
+              id="dateNextBtn"
+              onclick="nextStep(2)"
+              disabled
+            >
+              Next: Select Time <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="booking-modal-step" id="step3">
+          <div class="booking-step-header">
+            <div class="booking-step-number">3</div>
+            <h2 class="booking-step-title">Choose Your Time Slot</h2>
+          </div>
+
+          <div class="booking-time-slots">
+            <div class="booking-time-slot" data-time="10:30">10:30 AM</div>
+            <div class="booking-time-slot" data-time="11:30">11:30 AM</div>
+            <div class="booking-time-slot" data-time="12:00">12:00 PM</div>
+            <div class="booking-time-slot" data-time="12:30">12:30 PM</div>
+            <div class="booking-time-slot" data-time="13:00">1:00 PM</div>
+            <div class="booking-time-slot" data-time="13:30">1:30 PM</div>
+            <div class="booking-time-slot" data-time="14:00">2:00 PM</div>
+            <div class="booking-time-slot" data-time="14:30">2:30 PM</div>
+            <div class="booking-time-slot" data-time="15:00">3:00 PM</div>
+            <div class="booking-time-slot" data-time="15:30">3:30 PM</div>
+            <div class="booking-time-slot" data-time="16:00">4:00 PM</div>
+            <div class="booking-time-slot" data-time="16:30">4:30 PM</div>
+            <div class="booking-time-slot" data-time="17:00">5:00 PM</div>
+          </div>
+
+          <div class="booking-step-navigation">
+            <button class="booking-btn-secondary" onclick="previousStep(3)">
+              <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <button
+              class="booking-btn-primary"
+              id="timeNextBtn"
+              onclick="nextStep(3)"
+              disabled
+            >
+              Next: Your Info <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- STEP 4 -->
+        <div class="booking-modal-step" id="step4">
+          <div class="booking-step-header">
+            <div class="booking-step-number">4</div>
+            <h2 class="booking-step-title">Your Information</h2>
+          </div>
+
+          <form class="booking-modal-form" id="bookingFormPage">
+            <div class="form-group-row">
+              <label for="bookingName">Full Name</label>
+              <input
+                type="text"
+                id="bookingName"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+            <span class="error-text" id="nameError"></span>
+
+            <div class="form-group-row">
+              <label for="bookingEmail">Email</label>
+              <input
+                type="email"
+                id="bookingEmail"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <span class="error-text" id="emailError"></span>
+
+            <div class="form-group-row">
+              <label for="bookingPhone">Phone</label>
+              <input
+                type="tel"
+                id="bookingPhone"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+            <span class="error-text" id="phoneError"></span>
+
+            <div class="form-group-row">
+              <label for="bookingCompany">Company</label>
+              <input
+                type="text"
+                id="bookingCompany"
+                placeholder="Company (optional)"
+              />
+            </div>
+
+            <div class="form-group-row">
+              <label for="bookingMessage">Message</label>
+              <textarea
+                id="bookingMessage"
+                placeholder="Describe what services you need..."
+              ></textarea>
+            </div>
+
+            <div class="booking-step-navigation">
+              <button
+                type="button"
+                class="booking-btn-secondary"
+                onclick="previousStep(4)"
+              >
+                <i class="fas fa-arrow-left"></i> Back
+              </button>
+
+              <button type="submit" class="booking-btn-primary">
+                <i class="fas fa-calendar-check"></i> Book My Free Consultation
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- SUCCESS -->
+        <div id="bookingSuccessPage" class="booking-success-message">
+          <i class="fas fa-check-circle"></i>
+          <h3>Your Call is Booked!</h3>
+          <p>Our team will contact you shortly. Thank you!</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- External Scripts -->
-  <script src="../script/30min-booking.js"></script>
-  <script src="../script/navbar.js"></script>
-  <script src="../script/allabout.js"></script>
-  <script src="../script/footer.js"></script>
-  <script src="./OurHistory.js"></script>
-</body>
-
+    <!-- External Scripts -->
+    <script src="../script/30min-booking.js"></script>
+    <script src="../script/navbar.js"></script>
+    <script src="../script/allabout.js"></script>
+    <script src="../script/footer.js"></script>
+    <script src="./OurHistory.js"></script>
+  </body>
 </html>
