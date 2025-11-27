@@ -178,18 +178,6 @@
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
-            animation: fadeInDown 0.8s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .section-title span {
@@ -454,38 +442,6 @@
             animation: overlayPulse 8s ease-in-out infinite alternate;
         }
 
-        /* Smooth gradient transition at bottom of hero */
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 150px;
-            background: linear-gradient(to bottom, 
-                transparent 0%, 
-                rgba(15, 23, 42, 0.3) 40%,
-                rgba(15, 23, 42, 0.6) 65%,
-                rgba(15, 23, 42, 0.8) 85%,
-                rgba(15, 23, 42, 0.95) 100%);
-            z-index: 1;
-            pointer-events: none;
-        }
-
-        /* Ensure buttons and controls are above fade */
-        .slider-nav,
-        .hero-buttons,
-        .secondary-button,
-        .hero-content,
-        .slide {
-            z-index: 10;
-            position: relative;
-        }
-
-        .secondary-button {
-            z-index: 10 !important;
-        }
-
         @keyframes overlayPulse {
             0% {
                 background: linear-gradient(135deg,
@@ -645,8 +601,6 @@
             justify-content: center;
             flex-wrap: wrap;
             animation: buttonsAppear 1.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.2s both;
-            position: relative;
-            z-index: 10;
         }
 
         @keyframes buttonsAppear {
@@ -739,34 +693,7 @@
 
         /* About Section */
         .about {
-            background: linear-gradient(to bottom,
-                rgba(15, 23, 42, 0.85) 0%,
-                rgba(15, 23, 42, 0.95) 50%,
-                rgba(15, 23, 42, 0.85) 100%);
-            position: relative;
-            margin-top: -1px;
-            padding-top: 100px;
-            padding-bottom: 100px;
-        }
-
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background: linear-gradient(to bottom,
-                transparent 0%,
-                rgba(0, 102, 255, 0.03) 50%,
-                transparent 100%);
-            pointer-events: none;
-            animation: subtleGlow 4s ease-in-out infinite alternate;
-        }
-
-        @keyframes subtleGlow {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.6; }
+            background-color: rgba(15, 23, 42, 0.85);
         }
 
         .about-container {
@@ -774,35 +701,11 @@
             align-items: center;
             gap: 40px;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .about-content {
             flex: 2 1 400px;
             min-width: 280px;
-            animation: fadeInLeft 1s ease-out 0.4s both;
-        }
-
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         .about-content h2 {
@@ -832,25 +735,6 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 20px 60px rgba(0, 102, 255, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInRight 1s ease-out 0.6s both;
-        }
-
-        .about-imagee img:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 80px rgba(0, 102, 255, 0.3);
-        }
-
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
         }
 
         /* Services Section */
@@ -1953,6 +1837,7 @@
             }
 
             .hero-buttons {
+                margin-bottom: 99px;
                 flex-direction: column;
                 align-items: center;
                 gap: 15px;
@@ -2299,6 +2184,7 @@
             font-weight: bold;
             font-size: 1.2rem;
         }
+        
 
         .scroll-text code {
             background: rgba(0, 242, 255, 0.1);
@@ -2368,9 +2254,10 @@
             /* Slider navigation - show on tablets */
             .prev-btn,
             .next-btn {
+                margin-bottom: 130px;
                 display: flex;
-                width: 40px;
-                height: 40px;
+                width: 20px;
+                height: 20px;
                 font-size: 1rem;
                 background: rgba(255, 255, 255, 0.15);
                 border: 1px solid rgba(0, 242, 255, 0.4);
@@ -3017,6 +2904,4 @@
                 align-items: center;
             }
         }
-
-        /* Dropdown styles handled by allDropdown.css */
 

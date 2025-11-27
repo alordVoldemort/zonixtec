@@ -431,26 +431,23 @@
                     }
                 });
 
-                // Resume on mouse leave
                 heroSection.addEventListener('mouseleave', () => {
                     startAutoSlide();
                 });
 
-                // Pause when user interacts with controls
                 sliderControls.forEach(control => {
                     control.addEventListener('click', () => {
                         if (autoSlideInterval) {
                             clearInterval(autoSlideInterval);
                             autoSlideInterval = null;
                         }
-                        // Resume after 3 seconds of inactivity
                         setTimeout(() => {
                             startAutoSlide();
                         }, 3000);
                     });
                 });
 
-                // Pause when page is not visible
+                
                 document.addEventListener('visibilitychange', () => {
                     if (document.hidden) {
                         if (autoSlideInterval) {
@@ -460,7 +457,7 @@
                         videos.forEach(video => video.pause());
                     } else {
                         startAutoSlide();
-                        // Resume current video
+                       
                         if (videos[currentSlideIndex]) {
                             videos[currentSlideIndex].play().catch(err => {
                                 console.log('Video autoplay failed:', err);
@@ -470,7 +467,7 @@
                 });
             }
 
-            // Enhanced keyboard navigation
+            
             document.addEventListener('keydown', function (e) {
                 if (e.key === 'ArrowLeft') {
                     e.preventDefault();
@@ -480,7 +477,7 @@
                     e.preventDefault();
                     nextSlide();
                     startAutoSlide();
-                } else if (e.key === ' ') { // Spacebar to pause/resume
+                } else if (e.key === ' ') { 
                     e.preventDefault();
                     if (autoSlideInterval) {
                         clearInterval(autoSlideInterval);
@@ -491,7 +488,7 @@
                 }
             });
 
-            // Enhanced touch/swipe support for mobile
+            
             let touchStartX = 0;
             let touchEndX = 0;
             let touchStartY = 0;
@@ -513,13 +510,11 @@
                 const diffX = touchStartX - touchEndX;
                 const diffY = Math.abs(touchStartY - touchEndY);
 
-                // Only trigger swipe if horizontal movement is greater than vertical
+                
                 if (Math.abs(diffX) > swipeThreshold && diffY < swipeThreshold) {
                     if (diffX > 0) {
-                        // Swiped left - go to next slide
                         nextSlide();
                     } else {
-                        // Swiped right - go to previous slide
                         prevSlide();
                     }
                     startAutoSlide();
@@ -635,12 +630,11 @@
                             if (d !== dropdown) d.classList.remove('active');
                         });
 
-                        // Toggle current dropdown
+                        
                         dropdown.classList.toggle('active');
                     });
                 });
 
-                // Close dropdowns when clicking outside
                 document.addEventListener('touchstart', function (e) {
                     if (!e.target.closest('.dropdown')) {
                         document.querySelectorAll('.dropdown.active').forEach(dropdown => {
@@ -651,6 +645,20 @@
             }
         });
 
-        // Dropdown logic removed - handled by navbar.js to avoid conflicts
+        
 
+document.addEventListener("DOMContentLoaded", function () {
+    const nameField = document.getElementById("name");
 
+    if (nameField) {
+        nameField.addEventListener("input", function () {
+            const value = nameField.value.trim();
+
+            if (value.length >= 2) {
+                nameField.style.borderColor = "green";
+            } else {
+                nameField.style.borderColor = "red";
+            }
+        });
+    }
+});
