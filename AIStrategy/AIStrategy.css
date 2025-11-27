@@ -114,40 +114,9 @@
             font-size: 1.5rem;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
+        
 
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-size: 1rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a:not(.cta-button):hover {
-            color: var(--secondary);
-        }
-
-
-        /* .nav-links a:not(.cta-button)::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:not(.cta-button):hover::after {
-            width: 100%;
-        } */
+        
 
         .cta-button {
             background: var(--tech-gradient);
@@ -166,12 +135,6 @@
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
         }
 
-        .mobile-menu-btn {
-            display: none;
-            color: var(--light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
 
         /* Services Hero Section */
         .services-hero {
@@ -212,7 +175,7 @@
             display: flex;
             align-items: center;
             gap: 50px;
-            margin-bottom: 80px;
+            padding:30px
         }
 
         .services-intro {
@@ -313,6 +276,61 @@
             font-size: 1.1rem;
             font-weight: 500;
         }
+
+        
+.overview-section {
+    background: rgba(10, 10, 26, 0.7);
+    border-radius: 10px;
+    padding: 60px;
+    margin-bottom: 60px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.overview-section h2 {
+    text-align: center;
+    color: var(--secondary);
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+}
+
+.overview-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.overview-text {
+    font-size: 1.1rem;
+    color: var(--gray);
+    line-height: 1.8;
+    text-align: left;
+}
+
+.overview-text p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* .overview-highlight-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+} */
+
+.overview-highlight {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--secondary);
+    text-align: center;
+    padding: 30px;
+    background: rgba(0, 102, 255, 0.1);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 102, 255, 0.3);
+    line-height: 1.4;
+}
+
 
         /* Core Offerings Section */
         .offerings-section {
@@ -887,16 +905,10 @@
             letter-spacing: 0.5px;
         }
 
-        /* .cta-buttons:hover {
-            background: linear-gradient(135deg, #cfd3d8, #6666f5);
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(63, 142, 252, 0.45);
-            color: #fff !important;
-        } */
-
         /* Responsive styles */
         @media (max-width: 992px) {
             .services-overview {
+                margin-bottom: -230px;
                 flex-direction: column;
             }
 
@@ -935,31 +947,29 @@
                 font-size: 2rem;
             }
 
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background-color: rgba(15, 23, 42, 0.95);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 30px;
-                transition: right 0.3s ease;
-                z-index: 999;
-            }
+            /* Overview Section Mobile */
+    .overview-section {
+        padding: 30px 20px;
+        margin-bottom: 40px;
+    }
+    
+    .overview-section h2 {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+    
+    .overview-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .overview-text {
+        font-size: 1rem;
+        text-align: left;
+    }
+    
 
-            .nav-links.active {
-                right: 0;
-            }
 
-            .mobile-menu-btn {
-                display: block;
-                z-index: 1000;
-            }
 
             .footer-container {
                 grid-template-columns: 1fr;

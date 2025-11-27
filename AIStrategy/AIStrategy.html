@@ -17,16 +17,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <link rel="stylesheet" href="../CSS/30min-model.css">
+    
     <link rel="stylesheet" href="../CSS/orbital-tech-stack.css">
-   
-    <!-- Responsive Fixes CSS -->
-
 
     <!-- Navbar CSS -->
     <link rel="stylesheet" href="../CSS/navbar.css">
+    <link rel="stylesheet" href="../CSS/footer.css">
     <link rel="stylesheet" href="../CSS/booking-modal.css">
+    <link rel="stylesheet" href="../CSS/30min-model.css">
     <link rel="stylesheet" href="./AIStrategy.css">
+
+    <link rel="stylesheet" href="../CSS/mobile-menu.css">
 </head>
 
 <body>
@@ -100,8 +101,6 @@
 
                 </div>
 
-                <!-- BOOKING MODAL For Each Page -->
-
                 <button class="mobile-menu-btn" aria-label="Toggle mobile menu">
                     <span class="hamburger-line"></span>
                     <span class="hamburger-line"></span>
@@ -125,46 +124,30 @@
         </div>
     </section>
 
-    <!-- About the Service Section -->
-    <section class="section-padding">
-        <div class="container">
-            <div class="services-overview">
-                <div class="services-intro">
-                    <p class="section-subtitle">STRATEGIC AI ADOPTION</p>
-                    <h2>About AI Strategy & Consulting</h2>
-                    <p>Our consulting approach ensures that organizations don't just "use AI"—they use AI with purpose.
-                        We start by assessing your current AI maturity, analyzing processes that can be optimized, and
-                        crafting an implementation strategy tailored to your business goals.</p>
-                    <p>With our expertise, you'll navigate the complex AI landscape with confidence, avoiding common
-                        pitfalls and maximizing the return on your AI investments.</p>
+<section class="section-padding"></section>
+    <div class="container">
+        <div class="overview-section">
+            <h2>Analyze | Strategize | Transform</h2>
 
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-value">20-40%</div>
-                            <div class="stat-label">Cost Optimization</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">4-8</div>
-                            <div class="stat-label">Weeks Roadmap</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-value">100%</div>
-                            <div class="stat-label">ROI Focused</div>
-                        </div>
-                    </div>
+            <div class="overview-content">
+                <div class="overview-text">
+                    
+                    <p>At Zonixtec, we help businesses unlock the true potential of AI with clear, actionable, and ROI-focused 
+                        strategies.</p>
+                    <p>Our AI Strategy & Consulting services simplify adoption, identify high-impact 
+                        opportunities, and ensure every AI initiative drives measurable business value.</p>
+
                 </div>
-                <div class="services-image">
-                    <!-- Image with fallback placeholder -->
-                    <img src="../uploads/AL Strategy and consulating.webp" alt="AI Strategy & Consulting"
-                        onerror="this.style.display='none'; document.getElementById('image-placeholder').style.display='flex';">
-                    <div class="image-placeholder" id="image-placeholder" style="display:none;">
-                        <i class="fas fa-chess-queen"></i>
-                        <p>AI Strategy & Consulting Visualization</p>
-                    </div>
+                <div class="overview-highlight-container-img">
+                    <img src="../uploads/AL Strategy and consulating.webp" alt="AI Strategies and Consulting"
+                    style="width:100%; max-width:600px; border-radius:10px; object-fit:cover;"
+                    >
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Core Offerings Section -->
     <section class="section-padding offerings-section">
@@ -757,96 +740,10 @@
         </div>
     </footer>
 
-    <style>
-        .footer-dropdown-content {
-            display: none;
-            margin-left: 15px;
-        }
 
-        .footer-dropdown.open .footer-dropdown-content {
-            display: block;
-        }
+    
 
-        .footer-dropdown-header {
-            display: flex;
-            color: var(--gray);
-            /* transform: ; */
-            justify-content: space-between;
-            cursor: pointer;
-            margin: 5px 0;
-        }
-
-        .footer-dropdown-header:hover {
-            color: var(--secondary);
-        }
-    </style>
-
-    <script>
-        // Footer dropdown functionality
-        document.querySelectorAll('.footer-dropdown-header').forEach(header => {
-            header.addEventListener('click', () => {
-                const parent = header.parentElement;
-                parent.classList.toggle('open');
-            });
-        });
-
-        // FAQ Accordion - Only one open at a time
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const wasActive = item.classList.contains('active');
-
-                // Close all FAQ items first
-                document.querySelectorAll('.faq-item').forEach(faqItem => {
-                    faqItem.classList.remove('active');
-                });
-
-                // If the clicked item wasn't active, open it
-                if (!wasActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-    </script>
-
-    <script>
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn').addEventListener('click', function () {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Newsletter functionality
-        document.addEventListener('DOMContentLoaded', function () {
-            const btn = document.getElementById('newsletter-btn');
-            const emailInput = document.getElementById('newsletter-email');
-            const thankyou = document.getElementById('newsletter-thankyou');
-
-            btn.addEventListener('click', function () {
-                if (emailInput.value && /\S+@\S+\.\S+/.test(emailInput.value)) {
-                    thankyou.style.display = 'block';
-                    setTimeout(() => { thankyou.style.display = 'none'; }, 3000);
-                    emailInput.value = '';
-                } else {
-                    emailInput.focus();
-                    emailInput.style.borderColor = '#e74c3c';
-                    setTimeout(() => { emailInput.style.borderColor = ''; }, 1500);
-                }
-            });
-
-            // FAQ accordion is handled in the first script block above
-
-
-            // Show image placeholder if image fails to load
-            const image = document.querySelector('.services-image img');
-            const placeholder = document.getElementById('image-placeholder');
-
-            if (image && image.naturalWidth === 0) {
-                image.style.display = 'none';
-                placeholder.style.display = 'flex';
-            }
-        });
-    </script>
+    
 
     <script src="Customscroll.js"></script>
 
@@ -854,9 +751,6 @@
     <link rel="stylesheet" href="./CSS/chatbot.css">
     <script src="./script/chatbot.js"></script>
 
-
-    <!-- Booking Modal -->
-    <!--open booking 30 min call modal -->
 
     <div id="bookingModal" class="booking-modal">
         <div class="booking-modal-content">
@@ -1033,8 +927,11 @@
     <!-- Booking Modal Script -->
     <script src="./script/booking-modal.js"></script>
     <script src="./script/navbar.js"></script>
-    <script src="./script/30min-booking.js"></script>
+    <script src="../script/footer.js"></script>
+    <script src="../script/30min-booking.js"></script>
     <script src="./script/allabout.js"></script>
+    <script src="./AIStrategy.js"></script>
+
 </body>
 
 </html>

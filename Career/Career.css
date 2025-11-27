@@ -1146,32 +1146,9 @@
 
         /* Mobile View (below 768px) */
         @media (max-width: 767px) {
-
-            /* Header adjustments */
             .logo {
                 font-size: 1.5rem;
             }
-
-            /* .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background: rgba(15, 23, 42, 0.95);
-                backdrop-filter: blur(10px);
-                flex-direction: column;
-                justify-content: center;
-                gap: 30px;
-                transition: right 0.4s ease;
-                z-index: 999;
-            }
-
-
-            .nav-links.active {
-                right: 0;
-            } */
 
             .mobile-menu-btn {
                 display: flex;
@@ -1332,7 +1309,6 @@
             }
         }
  
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -1404,26 +1380,13 @@
             color: #f8fafc;
         }
 
-        /* .close-modal {
-            -webkit-background-clip:text;
-            background: red;
-            border: none;
-            color: #f8fafc;
-            font-size: 2.5rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        } */
 
         .close-modal {
             background: red;
-            /* Your background color or gradient */
             -webkit-background-clip: text;
-            /* Clip background to text */
             background-clip: text;
             color: transparent;
-            /* Hide normal text color */
             -webkit-text-fill-color: transparent;
-            /* Make text see-through */
 
             border: none;
             font-size: 2.5rem;
@@ -1720,7 +1683,7 @@
         @media (max-width: 768px) {
 
                            .dropdown-scroll {
-        max-height: 250px; /* Smaller scroll container for mobile */
+        max-height: 250px; 
     }
 
             .modal-content {
@@ -1760,24 +1723,3 @@
             }
         }
  
-        /* Footer Dropdown Styles */
-        .footer-dropdown-content {
-            display: none;
-            margin-left: 15px;
-        }
-
-        .footer-dropdown.open .footer-dropdown-content {
-            display: block;
-        }
-
-        .footer-dropdown-header {
-            display: flex;
-            color: var(--gray);
-            justify-content: space-between;
-            cursor: pointer;
-            margin: 5px 0;
-        }
-
-        .footer-dropdown-header:hover {
-            color: var(--secondary);
-        }
